@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SS Online & Offline Computer Services — Hyderabad</title>
+  <style>
+  :root{
+    --blue:#0ea5e9; /* logo-like blue */
+    --dark:#111217;
+    --muted:#6b7280;
+    --card:#ffffff;
+    --glass: rgba(255,255,255,0.06);
+    --radius:14px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    color:var(--dark);
+    background: radial-gradient(circle at top right, #ffe9b3 0%, #fff4dc 40%, #fff9f1 100%);
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* ✨ Floating Diwali Lights ✨ */
+  body::before, body::after {
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background-image:
+      radial-gradient(circle, rgba(255,215,0,0.5) 2px, transparent 3px),
+      radial-gradient(circle, rgba(255,140,0,0.4) 1.5px, transparent 3px);
+    background-size:100px 100px, 150px 150px;
+    animation: sparkle 10s linear infinite;
+    z-index:0;
+    pointer-events:none;
+  }
+  @keyframes sparkle {
+    0% {background-position:0 0, 0 0;}
+    100% {background-position:500px 1000px, -400px 600px;}
+  }
+
+  header, .section, footer {
+    position:relative;
+    z-index:2;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;box-shadow:0 6px 18px rgba(12,16,22,0.06);position:sticky;top:0;z-index:40;border-bottom:3px solid #ffd700}
+  .brand{display:flex;gap:14px;align-items:center}
+  .brand img{height:64px;width:64px;object-fit:contain;border-radius:8px}
+  .brand h1{margin:0;font-size:20px;color:var(--blue);letter-spacing:1px}
+  nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+  .cta{background:var(--blue);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1fr 460px;gap:36px;align-items:center;padding:64px 64px;position:relative;z-index:2}
+  .hero-left h2{margin:0;font-size:32px;color:var(--dark)}
+  .tag{font-size:18px;color:var(--muted);margin-top:10px}
+  .hero-cta{margin-top:22px;display:flex;gap:12px}
+  .btn{padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-secondary{border:2px solid var(--blue);color:var(--blue);background:transparent}
+
+  .hero-right{background:linear-gradient(180deg, rgba(14,165,233,0.06), rgba(14,165,233,0.02));padding:22px;border-radius:18px;box-shadow:0 8px 30px rgba(14,165,233,0.06)}
+  .card-item{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:#fff;margin-bottom:12px}
+  .card-item h4{margin:0;font-size:15px}
+  .contact-small{font-weight:700;color:var(--dark)}
+
+  /* Services */
+  .section{padding:48px 64px;margin-top:20px;border-radius:16px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .service{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+  .service h3{margin:0 0 8px 0;color:var(--blue)}
+  .service p{margin:0;color:var(--muted)}
+
+  /* About */
+  .about{display:flex;gap:28px;align-items:top}
+  .about img{width:360px;border-radius:12px;object-fit:cover;box-shadow:0 8px 20px rgba(255,165,0,0.25)}
+
+  /* Gallery */
+  .Gallery {
+    display: flex;
+    gap: 12px;
+    width:100%;
+    overflow-x:auto;
+    padding-bottom: 20px;
+    margin-top: 40px;
+  } 
+  .Gallery img {
+    height:260px;
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(255,165,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  .Gallery img:hover {transform:scale(1.05)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
+  .contact-card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+
+  .footer{
+    padding:22px 64px;
+    background:linear-gradient(90deg, #ff9900, #ffcc33);
+    color:#fff;
+    margin-top:40px;
+    border-top-left-radius:18px;
+    border-top-right-radius:18px;
+    box-shadow:0 -3px 15px rgba(255,140,0,0.3);
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;padding:32px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .about{flex-direction:column}
+    header{padding:12px 18px}
+    .hero-right{order:2}
+  }
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr}
+    .hero-left h2{font-size:22px}
+    .brand img{height:48px;width:48px}
+  }
+</style>
+</head>
+<body class="body">
+  <header>
+    <div class="brand">
+      <!-- Logo: replace path with your logo filename if needed -->
+      <img src="https://i.postimg.cc/Gh0VdBYW/logo-jpeg.jpg" alt="">
+      <div>
+        <h1>SS Online</h1>
+        <div style="font-size:12px;color:var(--muted);letter-spacing:0.6px">Computer Services — Hyderabad</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="tel:9502608440">Call: 9502608440</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Expert Computer Repair & IT Solutions in Hyderabad</h2>
+        <div class="tag">Fast, reliable hardware & software services — on-site or in-shop. Trusted by local customers for quick turnarounds and honest pricing.</div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Book a Service</a>
+          <a class="btn btn-secondary" href="#services">View Services</a>
+        </div>
+
+        <div style="margin-top:28px;display:flex;gap:18px">
+          <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)">
+            <div style="font-size:12px;color:var(--muted)">Email</div>
+            <div class="contact-small"><a href="mailto:sscomputerservices999@gmail.com" style="text-decoration:none;color:var(--dark)">sscomputerservices999@gmail.com</a></div>
+          </div>
+          <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)">
+            <div style="font-size:12px;color:var(--muted)">Phone</div>
+            <div class="contact-small"><a href="tel:9502608440" style="text-decoration:none;color:var(--dark)">9502608440</a></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card-item">
+          <div style="width:52px;height:52px;border-radius:10px;background:linear-gradient(180deg,var(--blue), #0284c7);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">1</div>
+          <div>
+            <h4>Free Diagnosis</h4>
+            <div style="font-size:13px;color:var(--muted)">Bring your device for a quick diagnosis and transparent quote.</div>
+          </div>
+        </div>
+        <div class="card-item">
+          <div style="width:52px;height:52px;border-radius:10px;background:linear-gradient(180deg,var(--blue), #0284c7);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">2</div>
+          <div>
+            <h4>On-site & Remote Support</h4>
+            <div style="font-size:13px;color:var(--muted)">We fix problems at your home/office or via remote assistance.</div>
+          </div>
+        </div>
+        <div class="card-item">
+          <div style="width:52px;height:52px;border-radius:10px;background:linear-gradient(180deg,var(--blue), #0284c7);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">3</div>
+          <div>
+            <h4>Genuine Parts & Warranty</h4>
+            <div style="font-size:13px;color:var(--muted)">We use quality parts and offer a service warranty for peace of mind.</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services" class="section">
+      <h2 style="margin-top:0;">Our Services</h2>
+      <p style="color:var(--muted);margin-top:6px">Comprehensive hardware and software support for desktops, laptops and small office networks.</p>
+
+      <div class="grid" style="margin-top:18px">
+        <div class="service">
+          <h3>Computer & Laptop Repair</h3>
+          <p>Broken screens, power issues, motherboard repair, keyboard replacement — fast diagnostics and repairs.</p>
+        </div>
+        <div class="service">
+          <h3>Software Installation & Troubleshooting</h3>
+          <p>OS installation, driver updates, application setup, and software conflict resolution.</p>
+        </div>
+        <div class="service">
+          <h3>Networking Setup & Wi-Fi</h3>
+          <p>Home and small office network design, router setup, cabling, and Wi‑Fi performance tuning.</p>
+        </div>
+        <div class="service">
+          <h3>Data Recovery & Password Recovery</h3>
+          <p>Recover lost or accidentally deleted files from laptops, desktops, or external drives. We also help you regain access to accounts, systems, or encrypted files securely and quickly, ensuring your important data is safe.</p>
+        </div>
+        <div class="service">
+          <h3>Hardware Upgrades</h3>
+          <p>RAM, SSD upgrades, hard drive replacement, GPU & component upgrades to boost performance.</p>
+        </div>
+        <div class="service">
+          <h3>Virus & Malware Removal</h3>
+          <p>Complete clean-up, anti-virus installation, and security hardening for safer computing.</p>
+        </div>
+        <div class="service">
+          <h3>CCTV Installation & Printer service</h3>
+          <p>Professional setup and maintenance of CCTV cameras for home or office security. We also provide printer installation, troubleshooting, and repair for smooth operations.</p>
+        </div>
+        <div class="service">
+          <h3>Website Designing</h3>
+          <p>We create modern, responsive, and user-friendly websites that showcase your business effectively and enhance your online presence.</p>
+        </div>
+        <div class="service">
+          <h3>Remote Diagnosis</h3>
+          <p>Quickly identify and resolve computer or network issues remotely, saving you time and ensuring fast, efficient support without visiting your location.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section"style="padding-top:6px">
+      <h2>About SS Online</h2>
+      <div class="about" style="margin-top:12px">
+        <div>
+          <p style="color:var(--muted);max-width:720px">SS Online & Offline Computer Services is a Hyderabad-based computer service shop offering end-to-end hardware and software solutions. With years of hands-on experience, we provide fast diagnostics, honest pricing, and both on-site and in-shop repairs. Our commitment is to get you back to work quickly — using genuine parts and offering support you can trust.</p>
+          <p style="color:var(--muted);margin-top:8px">Open to individuals and small businesses. Need a quick fix or a full system overhaul? We handle it all.</p>
+          <h3>Why Laptop General Cleaning Service?</h3>
+          <p style="color:var(--muted);margin-top:8px">After 1 Year Using your Laptop, your system will hang, generate heat inside. as of professional suggestion every 6 months need to do computer general service</p>
+          <h3>Why Choose Home Visit Computer Repair Services?</h3>
+          <p style="color:var(--muted);margin-top:8px">When you choose our home visit computer repair services, you get:</p>
+<p style="color:var(--muted);margin-top:8px">1. Hassle-doorstep support: No need to carry your system anywhere — we come to your location and handle everything for you.</p>
+<p style="color:var(--muted);margin-top:8px">2. Trusted experts: Our certified technicians have the knowledge and tools to fix any computer issue quickly and effectively.</p>
+<p style="color:var(--muted);margin-top:8px">3. Fair and open pricing: You’ll always know the cost upfront — no hidden charges or surprise bills.</p>
+<p style="color:var(--muted);margin-top:8px">4. Fast and efficient repairs: We value your time, so we aim to solve problems as quickly as possible without compromising on quality.</p>
+<p style="color:var(--muted);margin-top:8px">5. Dependable results: Every repair is done with care and attention, ensuring your computer runs smoothly and reliably.</p>
+
+        </div>
+        <div class="about img">
+          <img src="https://i.postimg.cc/KYXb1ZKS/Whats-App-Image-2025-10-19-at-11-09-24-PM.jpg" alt=""/>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <dev class="Gallery">
+      <img src="https://media.gettyimages.com/id/489081568/photo/computer-repair.jpg?s=612x612&w=0&k=20&c=lDWP5Ny7br8H_96lKdqESNNAjeMLlI21zYBsREoZ6XY=" alt="">
+      <img src="https://plus.unsplash.com/premium_photo-1664301887532-328f07bb2c24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="">
+      <img src="https://media.istockphoto.com/id/1066995748/photo/repair-of-computer-hard-drives.jpg?s=612x612&w=0&k=20&c=LxlSulxNxVR5aeYLGBoilDFF59jt355j2GkYr4MTQPU=" alt="">    
+      </div>
+    </section>
+
+    <section id="contact" class="section" style="padding-bottom:40px">
+      <h2>Contact & Bookings</h2>
+      <div class="contact-grid" style="margin-top:12px">
+        <div class="contact-card">
+          <h3 style="margin-top:0">Get in touch</h3>
+          <p style="color:var(--muted)">Call or email us to book a repair, request remote support, or ask for a quote.</p>
+          <p style="margin:10px 0"><strong>Phone:</strong> <a href="tel:9502608440">9502608440</a></p>
+          <p style="margin:10px 0"><strong>Email:</strong> <a href="mailto:sscomputerservices999@gmail.com">sscomputerservices999@gmail.com</a></p>
+          <p style="margin:10px 0"><strong>Addres:</Address>:</strong> <a href="mailto:sscomputerservices999@gmail.com">Siddi Vinayaka nagar Road no.2 Pride Enclave Near Bollaram RailWay Station -500010 </a></p>
+
+          <form style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
+            <input placeholder="your name" style="padding:10px;border-radius:8px;border:1px solid #e6e9ef" />
+            <input placeholder="Phone or email" style="padding:10px;border-radius:8px;border:1px solid #e6e9ef" />
+            <textarea placeholder="Describe the problem (short)" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e6e9ef"></textarea>
+            <button type="button" class="btn btn-primary">Send Enquiry</button>
+          </form>
+        </div>
+
+        <div>
+          <div class="contact-card" style="height:100%;padding:0;overflow:hidden">
+            <!-- Embedded map pointing to Hyderabad (you can replace with your exact address) -->
+            <iframe width="100%" height="100%" style="min-height:300px;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.4867!3d17.3850!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIzJzUwLjAiTiA3OMKwMjknNDQuMCJF!5e0!3m2!1sen!2sin!4v1697630000000"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <div>
+        <div style="font-weight:700">SS Online & Offline Computer Services</div>
+        <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px">Hyderabad • Phone: 9502608440 • sscomputerservices999@gmail.com</div>
+      </div>
+      <div style="text-align:right;color:rgba(255,255,255,0.8);font-size:13px">© <span id="year"></span> SS Online. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
