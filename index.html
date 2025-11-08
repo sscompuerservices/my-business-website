@@ -41,14 +41,12 @@
     0% {background-position:0 0, 0 0;}
     100% {background-position:500px 1000px, -400px 600px;}
   }
-
   header, .section, footer {
     position:relative;
     z-index:2;
     background:rgba(255,255,255,0.92);
     backdrop-filter: blur(8px);
   }
-
   header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;box-shadow:0 6px 18px rgba(12,16,22,0.06);position:sticky;top:0;z-index:40;border-bottom:3px solid #ffd700}
   .brand{display:flex;gap:14px;align-items:center}
   .brand img{height:64px;width:64px;object-fit:contain;border-radius:8px}
@@ -81,23 +79,6 @@
   .about{display:flex;gap:28px;align-items:top}
   .about img{width:360px;border-radius:12px;object-fit:cover;box-shadow:0 8px 20px rgba(255,165,0,0.25)}
 
-  /* Gallery */
-  .Gallery {
-    display: flex;
-    gap: 12px;
-    width:100%;
-    overflow-x:auto;
-    padding-bottom: 20px;
-    margin-top: 40px;
-  } 
-  .Gallery img {
-    height:260px;
-    border-radius:12px;
-    box-shadow:0 4px 14px rgba(255,165,0,0.3);
-    transition: transform 0.3s ease;
-  }
-  .Gallery img:hover {transform:scale(1.05)}
-
   /* Contact */
   .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
   .contact-card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
@@ -112,19 +93,137 @@
     box-shadow:0 -3px 15px rgba(255,140,0,0.3);
   }
 
-  /* Responsive */
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr;padding:32px}
-    .grid{grid-template-columns:repeat(2,1fr)}
-    .about{flex-direction:column}
-    header{padding:12px 18px}
-    .hero-right{order:2}
+  /* ✅ Enhanced Responsive Design */
+
+/* Mobile-first defaults */
+body {
+  font-size: 16px;
+}
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 18px;
   }
-  @media (max-width:520px){
-    .grid{grid-template-columns:1fr}
-    .hero-left h2{font-size:22px}
-    .brand img{height:48px;width:48px}
+  nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    text-align: center;
+  }
+  .hero-left h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .about img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-card {
+    margin-bottom: 20px;
+  }
+}
+/* Tablet (600px–900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  .about img {
+    width: 80%;
+  }
+  header {
+    padding: 16px 28px;
+  }
+}
+/* Laptop & Desktop (900px and up) */
+@media (min-width: 901px) {
+  .hero {
+    grid-template-columns: 1fr 460px;
+    padding: 64px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+  /*Gallery*/
+/* 📸 Gallery styling */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.remove-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
 </style>
 </head>
 <body class="body">
@@ -145,36 +244,26 @@
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
-      <a class="cta" href="tel:9502608440">Call: 9502608440</a>
+      <a class="cta" href="tel:7036834143">Call: 7036834143</a>
     </nav>
   </header>
-
   <main>
     <section class="hero">
       <div class="hero-left">
         <h2>Expert Computer Repair & IT Solutions in Hyderabad</h2>
         <div class="tag">Fast, reliable hardware & software services — on-site or in-shop. Trusted by local customers for quick turnarounds and honest pricing.</div>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Book a Service</a>
+          <a class="btn btn-primary" href="javascript:void(0)" onclick="openCalendly()">Book a Service</a>
           <a class="btn btn-secondary" href="#services">View Services</a>
         </div>
-      <div class="calendly-inline-widget"
-  data-url="https://calendly.com/sscomputerservices999/30min"
-  style="min-width:50px;height:200px;">
-        </div>
-         <script type="text/javascript"
-           src="https://assets.calendly.com/assets/external/widget.js" async>
-          </script>
-
-
-        <div style="margin-top:28px;display:flex;gap:18px">
+             <div style="margin-top:28px;display:flex;gap:18px">
           <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)">
             <div style="font-size:12px;color:var(--muted)">Email</div>
             <div class="contact-small"><a href="mailto:sscomputerservices999@gmail.com" style="text-decoration:none;color:var(--dark)">sscomputerservices999@gmail.com</a></div>
           </div>
           <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)">
             <div style="font-size:12px;color:var(--muted)">Phone</div>
-            <div class="contact-small"><a href="tel:9502608440" style="text-decoration:none;color:var(--dark)">9502608440</a></div>
+            <div class="contact-small"><a href="tel:7036834143" style="text-decoration:none;color:var(--dark)">7036834143</a></div>
           </div>
         </div>
       </div>
@@ -266,20 +355,126 @@
 
         </div>
         <div class="about img">
-          <img src="https://i.postimg.cc/KYXb1ZKS/Whats-App-Image-2025-10-19-at-11-09-24-PM.jpg" alt=""/>
+          <img src="https://i.postimg.cc/rpwssSS8/Whats-App-Image-2025-11-09-at-12-46-23-AM.jpg" alt=""/>
         </div>
       </div>
     </section>
+    <!-- 🖼️ GALLERY SECTION -->
+<section id="gallery" class="section">
+  <h2>Our Work Gallery</h2>
 
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <dev class="Gallery">
-      <img src="https://media.gettyimages.com/id/489081568/photo/computer-repair.jpg?s=612x612&w=0&k=20&c=lDWP5Ny7br8H_96lKdqESNNAjeMLlI21zYBsREoZ6XY=" alt="">
-      <img src="https://plus.unsplash.com/premium_photo-1664301887532-328f07bb2c24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="">
-      <img src="https://media.istockphoto.com/id/1066995748/photo/repair-of-computer-hard-drives.jpg?s=612x612&w=0&k=20&c=LxlSulxNxVR5aeYLGBoilDFF59jt355j2GkYr4MTQPU=" alt="">    
-      </div>
-    </section>
+  <!-- Gallery Grid -->
+  <div id="gallery-grid" class="gallery-grid"></div>
 
+  <!-- Buttons -->
+  <button id="add-photo-btn" class="btn btn-primary" style="margin-top:15px;">
+    ➕ Add Photo
+  </button>
+  <button id="logout-btn" class="btn btn-secondary" style="margin-top:15px; display:none;">
+    🚪 Logout
+  </button>
+
+  <!-- Hidden File Input -->
+  <input type="file" id="photo-input" accept="image/*" style="display:none" />
+</section>
+
+<!-- 🧠 GALLERY SCRIPT -->
+<script>
+  const addPhotoBtn = document.getElementById("add-photo-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const input = document.getElementById("photo-input");
+  const galleryGrid = document.getElementById("gallery-grid");
+
+  // 🖼️ Load saved images on startup
+  window.addEventListener("DOMContentLoaded", () => {
+    renderGallery();
+    if (localStorage.getItem("isOwner") === "true") {
+      logoutBtn.style.display = "inline-block";
+    }
+  });
+
+  // 🔒 Add Photo button → Ask for password before opening local gallery
+  addPhotoBtn.addEventListener("click", () => {
+    const isOwner = localStorage.getItem("isOwner") === "true";
+
+    if (!isOwner) {
+      const entered = prompt("Enter owner password to manage gallery:");
+      if (entered === "ssonline2025") {
+        localStorage.setItem("isOwner", "true");
+        logoutBtn.style.display = "inline-block";
+        alert("Access granted — you can now add or remove photos.");
+      } else {
+        alert("Incorrect password. Access denied.");
+        return;
+      }
+    }
+
+    // Open local file selector
+    input.click();
+  });
+
+  // 📸 Handle new image selection
+  input.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      const imgSrc = evt.target.result;
+      const saved = JSON.parse(localStorage.getItem("galleryImages") || "[]");
+      saved.push(imgSrc);
+      localStorage.setItem("galleryImages", JSON.stringify(saved));
+      renderGallery();
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ♻️ Render Gallery
+  function renderGallery() {
+    galleryGrid.innerHTML = "";
+    const saved = JSON.parse(localStorage.getItem("galleryImages") || "[]");
+    saved.forEach((src, index) => addImageToGallery(src, index));
+    updateRemoveButtonsVisibility();
+  }
+
+  // 🧩 Add one image to gallery grid
+  function addImageToGallery(src, index) {
+    const div = document.createElement("div");
+    div.className = "gallery-item";
+    div.innerHTML = `
+      <img src="${src}" class="gallery-img" alt="Gallery image">
+      <button class="remove-btn" onclick="removeImage(${index})" title="Remove">×</button>
+    `;
+    galleryGrid.appendChild(div);
+  }
+
+  // 🗑️ Remove image instantly (owner only)
+  function removeImage(index) {
+    if (localStorage.getItem("isOwner") !== "true") return alert("Access denied.");
+    const saved = JSON.parse(localStorage.getItem("galleryImages") || "[]");
+    if (confirm("Are you sure you want to remove this photo?")) {
+      saved.splice(index, 1);
+      localStorage.setItem("galleryImages", JSON.stringify(saved));
+      renderGallery();
+    }
+  }
+
+  // 👁️ Show remove buttons only when logged in
+  function updateRemoveButtonsVisibility() {
+    const isOwner = localStorage.getItem("isOwner") === "true";
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+      btn.style.display = isOwner ? "flex" : "none";
+    });
+  }
+
+  // 🚪 Logout owner access
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("isOwner");
+    alert("Logged out successfully.");
+    logoutBtn.style.display = "none";
+    updateRemoveButtonsVisibility();
+  });
+</script>
     <section id="contact" class="section" style="padding-bottom:40px">
   <h2>Contact & Bookings</h2>
   <div class="contact-grid" style="margin-top:12px">
@@ -288,7 +483,7 @@
       <p style="color:var(--muted)">
         Call or email us to book a repair, request remote support, or ask for a quote.
       </p>
-      <p style="margin:10px 0"><strong>Phone:</strong> <a href="tel:9502608440">9502608440</a></p>
+      <p style="margin:10px 0"><strong>Phone:</strong> <a href="tel:7036834143">7036834143</a></p>
       <p style="margin:10px 0"><strong>Email:</strong> <a href="mailto:sscomputerservices999@gmail.com">sscomputerservices999@gmail.com</a></p>
       <p style="margin:10px 0"><strong>Address:</strong> Siddi Vinayaka Nagar Road No.2, Pride Enclave, Near Bollaram Railway Station - 500010</p>
 
@@ -311,53 +506,12 @@
       </div>
     </section>
   </main>
-  <section id="feedback" class="section" style="padding:40px 0;">
-  <h2>Feedback & Ratings</h2>
-  <p style="color:var(--muted)">We value your opinion! Please rate our service and share your feedback below.</p>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-        style="margin-top:16px;display:flex;flex-direction:column;gap:10px;max-width:400px">
-
-    <input type="text" name="name" placeholder="Your Name" required
-           style="padding:10px;border-radius:8px;border:1px solid #e6e9ef">
-
-    <!-- Star Rating -->
-    <div style="display:flex;gap:5px;align-items:center">
-      <label>Rating:</label>
-      <div id="rating-stars" style="cursor:pointer;">
-        ⭐⭐⭐⭐⭐
-      </div>
-      <input type="hidden" name="rating" id="rating-value" value="5">
-    </div>
-
-    <textarea name="feedback" placeholder="Your feedback" rows="4" required
-              style="padding:10px;border-radius:8px;border:1px solid #e6e9ef"></textarea>
-
-    <button type="submit" class="btn btn-primary"
-            style="background:var(--blue);color:white;padding:10px;border:none;border-radius:8px;cursor:pointer">
-      Submit Feedback
-    </button>
-  </form>
-</section>
-
-<script>
-  // simple star rating interaction
-  const starsContainer = document.getElementById('rating-stars');
-  const hiddenInput = document.getElementById('rating-value');
-
-  starsContainer.innerHTML = '⭐'.repeat(5);
-  starsContainer.addEventListener('click', (e) => {
-    const x = e.offsetX;
-    const starWidth = starsContainer.clientWidth / 5;
-    const stars = Math.ceil(x / starWidth);
-    hiddenInput.value = stars;
-    starsContainer.innerHTML = '⭐'.repeat(stars) + '☆'.repeat(5 - stars);
-  });
 </script>
 <footer class="footer">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
       <div>
         <div style="font-weight:700">SS Online & Offline Computer Services</div>
-        <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px">Hyderabad • Phone: 9502608440 • sscomputerservices999@gmail.com</div>
+        <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px">Hyderabad • Phone: 7036834143 • sscomputerservices999@gmail.com</div>
       </div>
       <div style="text-align:right;color:rgba(255,255,255,0.8);font-size:13px">© <span id="year"></span> SS Online. All rights reserved.</div>
     </div>
@@ -365,5 +519,21 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+  // ✅ Free WhatsApp Booking — replaces Calendly modal
+  function openCalendly() {
+    // 👉 Your WhatsApp number (country code + number, no + sign)
+    const phoneNumber = "917036834143"; 
+
+    // ✏️ Pre-filled message for customer
+    const message = encodeURIComponent(
+      "Hi, I’d like to book a computer service. Please confirm an available date & time."
+    );
+
+    // ✅ Open WhatsApp chat (mobile or desktop)
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappURL, "_blank");
+  }
+</script>
 </body>
 </html>
