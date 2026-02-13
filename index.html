@@ -357,73 +357,7 @@ body {
     </section>
   </main>
 </script>
-<section id="feedback-section" class="section" style="padding-top:20px">
-  <h2>Customer Feedback</h2>
-  <div style="
-    display:flex;
-    justify-content:space-between;
-    gap:40px;
-    flex-wrap:wrap;
-  ">
-    <!-- LEFT: QR CODE -->
-    <div style="flex:1; min-width:260px; text-align:center;">
-      <h3>Give Your Feedback</h3>
-      <img src="https://i.postimg.cc/MGx4Vvb9/frame.png" alt="Feedback QR" style="width:220px;">
-      <p style="color:var(--muted)">Scan the QR code to submit your feedback</p>
-    </div>
-    <!-- RIGHT: AUTO FEEDBACK LIST -->
-    <div style="flex:1; min-width:260px;">
-      <h3>Recent Feedback</h3>
-      <div id="feedback-list">Loading feedback...</div>
-    </div>
-  </div>
-</section>
-<script>
-async function loadFeedback() {
-  const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSpCIPMhGr8yU4WrdagfQK58u3CScA_WjxAmvYbuOLpx_rPmus53ALo4V9lW60VRFZ5jyFLb4exZFrM/pub?output=csv";
-  try {
-    const response = await fetch(sheetURL);
-    const data = await response.text();
-    const rows = data.split("\n").slice(1);
-    let html = "";
-    rows.forEach(row => {
-      const cols = row.split(",");
-      const name = cols[0] || "Anonymous";
-      const rating = cols[1] || "";
-      const message = cols.slice(2).join(",");
-      if (name.trim() === "" && message.trim() === "") return;
-      html += `
-        <div style="
-          background:#f3f4f6;
-          padding:15px;
-          border-radius:8px;
-          margin-bottom:12px;
-        ">
-          <strong>${name}</strong><br>
-          ⭐ Rating: ${rating}/5<br>
-          ${message}
-        </div>
-      `;
-    });
-    document.getElementById("feedback-list").innerHTML = html || "No feedback yet.";
-  } catch (error) {
-    document.getElementById("feedback-list").innerHTML = "Unable to load feedback.";
-  }
-}
-loadFeedback();
-</script>
-<footer class="footer">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-      <div>
-        <div style="font-weight:700">SS Online & Offline Computer Services</div>
-        <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px">Hyderabad • Phone: 9502608440 • sscomputerservices999@gmail.com</div>
-      </div>
-      <div style="text-align:right;color:rgba(255,255,255,0.8);font-size:13px">© <span id="year"></span> SS Online. All rights reserved.</div>
-    </div>
-  </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
   <script>
   // ✅ Free WhatsApp Booking — replaces Calendly modal
   function openCalendly() {
