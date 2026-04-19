@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SS Products</title>
+
+<style>
+body{
+  font-family: Arial;
+  margin:0;
+  background:#f4f8fc;
+}
+
+header{
+  padding:15px;
+  background:#0ea5e9;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.container{
+  padding:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:contain;
+}
+.card{
+  padding:18px;
+}
+button{
+  margin-top:10px;
+  padding:8px 12px;
+  background:#0ea5e9;
+  border:none;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+/*background*/
+body{
+  background: url('images/bg.jpg') no-repeat center center/cover;
+}
+.card{
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.card:hover{
+  transform: translateY(-5px);
+}
+body{
+  background: linear-gradient(to right, #e0f2fe, #f8fafc);
+}
+#popup button{
+  margin:5px;
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+#popup button:first-child{
+  background:green;
+  color:white;
+}
+#popup button:nth-child(2){
+  background:#25D366;
+  color:white;
+}
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.card:hover{
+  transform: translateY(-6px);
+}
+.options{
+  display:none;
+  margin-top:10px;
+}
+.options button{
+  display:block;
+  width:100%;
+  margin:5px 0;
+  padding:8px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+.options button:first-child{
+  background:green;
+  color:white;
+}
+.options button:last-child{
+  background:#25D366;
+  color:white;
+}
+@media (max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+  .card img{
+    height:140px;
+  }
+  button{
+    width:100%;
+  }
+}
+/*/Loading/*/
+#pageLoader{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:white;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#loaderBar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:3px;
+  background:#0ea5e9;
+  z-index:9999;
+  transition:width 0.6s ease;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0)}
+  100%{transform:rotate(360deg)}
+}
+</style>
+</head>
+<body>
+<header>
+ <button onclick="showLoader('index.html')" style="
+  margin-right:10px;
+  padding:6px 10px;
+  background:white;
+  color:#0ea5e9;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+">
+  ⬅ Back
+</button>
+  🛒 MY Products
+</header>
+<div class="container">
+  <div class="grid" id="productContainer"></div>
+</div>
+<script>
+/* =========================
+   1. PRODUCT DATA
+========================= */
+const products = [
+  { name:"Laptop Screen", img:"laptop-screen.jpg" },
+  { name:"Laptop Keyboard", img:"keyboard.jpg" },
+  { name:"Laptop Charger", img:"laptop.jpg" },
+  { name:"MacBook Charger", img:"mac-charger.jpg" },
+  { name:"Laptop Battery", img:"battery.jpg" },
+  { name:"Laptop Memory", img:"ram.jpg" },
+  { name:"Motherboard Repair", img:"motherboard.jpg" },
+  { name:"Laptop Fan", img:"fan.jpg" },
+  { name:"Laptop Hard Disk", img:"hdd.jpg" },
+  { name:"Laptop Speaker", img:"speaker.jpg" },
+  { name:"Laptop Hinge", img:"hinge.jpg" },
+  { name:"Power Button Repair", img:"power.jpg" },
+  { name:"Liquid Spill Repair", img:"water.jpg" },
+  { name:"Battery Not Charging", img:"battery-issue.jpg" },
+  { name:"Charger Not Working", img:"charger-issue.jpg" },
+  { name:"Memory Upgrade", img:"ram-upgrade.jpg" },
+  { name:"HDD & SSD Upgrade", img:"hdd-upgrade.jpg" },
+  { name:"Not Powering On", img:"no-power.jpg" },
+  { name:"Base Repair", img:"base.jpg" },
+  { name:"Laptop Body Change", img:"body.jpg" },
+  { name:"General Service", img:"service.jpg" },
+  { name:"Hard Disk Failure", img:"hdd-fail.jpg" },
+  { name:"Overheating", img:"heat.jpg" },
+
+  { name:"Desktop CPU", img:"cpu.jpg" },
+  { name:"Desktop Monitor", img:"monitor.jpg" },
+  { name:"Desktop Keyboard", img:"keyboard1.jpg" },
+  { name:"Desktop Mouse", img:"mouse.jpg" },
+  { name:"SMPS (Power Supply)", img:"smps.jpg" },
+  { name:"Graphics Card", img:"gpu.jpg" },
+  { name:"Motherboard (Desktop)", img:"motherboard1.jpg" },
+  { name:"Desktop RAM", img:"ram1.jpg" },
+  { name:"Desktop Hard Disk", img:"hdd1.jpg" },
+  { name:"SSD for Desktop", img:"ssd1.jpg" },
+  { name:"Cabinet / Case", img:"cabinet.jpg" },
+  { name:"Cooling Fan", img:"fan1.jpg" },
+  { name:"Processor", img:"pro.jpg" }
+];
+/* =========================
+   2. RENDER PRODUCTS
+========================= */
+const container = document.getElementById("productContainer");
+
+products.forEach(p => {
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="./images/${p.img}" 
+         onerror="this.onerror=null; this.src='./images/default.jpg';">
+
+    <h3>${p.name}</h3>
+
+    <button onclick="toggleOptions(this, '${p.name}')">
+  Enquire
+</button>
+
+<div class="options">
+  <button onclick="callNow()">📞 Call</button>
+  <button onclick="whatsappMsg('${p.name}')">💬 WhatsApp</button>
+</div>
+  `;
+
+  container.appendChild(card);
+});
+/* =========================
+   3. FUNCTIONS
+========================= */
+let selectedProduct = "";
+
+function showOptions(product){
+  selectedProduct = product;
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("productName").innerText = product;
+}
+function closePopup(){
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
+function callNow(){
+  window.location.href = "tel:919502608440";
+}
+function whatsappMsg(){
+  const msg = encodeURIComponent(
+    "Hello, I want this service:\n" + selectedProduct
+  );
+  window.open("https://wa.me/919502608440?text=" + msg, "_blank");
+}
+function toggleOptions(btn){
+  const options = btn.nextElementSibling;
+  const isOpen = options.style.display === "block";
+  document.querySelectorAll(".options").forEach(opt => {
+    opt.style.display = "none";
+  });
+  if(!isOpen){
+    options.style.display = "block";
+  }
+}
+// 📞 Call
+function callNow(){
+  window.location.href = "tel:+919502608440";
+}
+// 💬 WhatsApp
+function whatsappMsg(product){
+  const msg = encodeURIComponent(
+    "Hello, I want this service:\n" + product
+  );
+  window.open("https://wa.me/919502608440?text=" + msg, "_blank");
+}
+</script>
+<script>
+function goHome(){
+  window.location.href = "index.html"; // your home page file
+}
+</script>
+<script>
+function showLoader(url){
+  const bar = document.getElementById("loaderBar");
+
+  bar.style.width = "70%";
+
+  setTimeout(()=>{
+    bar.style.width = "100%";
+  },200);
+
+  setTimeout(()=>{
+    window.location.href = url;
+  },500);
+}
+</script>
+<div id="loaderBar"></div>
+</div>
+</body>
+</html>
