@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta name="author" content="SS Computer Services">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="IN-TG">
+<meta name="geo.placename" content="Hyderabad">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SS Online & Offline Computer Services — Hyderabad</title>
   <style>
   :root{
     --blue:#0ea5e9; /* logo-like blue */
@@ -55,7 +58,20 @@
   /* Services */
   .section{padding:48px 64px;margin-top:20px;border-radius:16px}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .service{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+  .service{
+  background:#ffffff;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  border:1px solid #eef2f7;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.service:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
   .service h3{margin:0 0 8px 0;color:var(--blue)}
   .service p{margin:0;color:var(--muted)}
 
@@ -165,7 +181,7 @@ body {
   }
 }
  /* Gallery */
-  .Gallery {
+  .gallery {
     display: flex;
     gap: 12px;
     width:100%;
@@ -173,34 +189,16 @@ body {
     padding-bottom: 20px;
     margin-top: 40px;
   } 
-  .Gallery img {
+  .gallery img {
     height:260px;
     border-radius:12px;
     box-shadow:0 4px 14px rgba(255,165,0,0.3);
     transition: transform 0.3s ease;
   }
-  .Gallery img:hover {transform:scale(1.05)}
+  .gallery img:hover {transform:scale(1.05)}
   .small-service-section{
   padding:40px 20px;
 }
-
-.small-service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  gap:20px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.small-card{
-  background:#ffffff;
-  border-radius:12px;
-  padding:15px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  text-align:center;
-  transition:0.3s;
-}
-
 .small-card:hover{
   transform:translateY(-5px);
 }
@@ -226,6 +224,84 @@ body {
   background:#0ea5e9;
 }
 
+button {
+  cursor: pointer;
+}
+/* NAV DROPDOWN */
+.nav-services {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-services {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 10px;
+  min-width: 220px;
+  z-index: 999;
+}
+
+.dropdown-services div {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dropdown-services div:hover {
+  background: #f1f5f9;
+}
+/*/ text highletter/*/
+.delivery-banner{
+  font-size:12px;
+  padding:4px 8px;
+  background:#ffeb3b;
+  color:#000;
+  text-align:center;
+  font-weight:600;
+  cursor:pointer;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {opacity:1;}
+  50% {opacity:0.4;}
+  100% {opacity:1;}
+}
+/*/ Loading/*/
+#pageLoader{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:white;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#loaderBar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:3px;
+  background:#0ea5e9;
+  z-index:9999;
+  transition:width 0.6s ease;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0)}
+  100%{transform:rotate(360deg)}
+}
 </style>
 <meta name="google-site-verification" content="9cTfQ8NYFnd94E-xoa5yw3ETiCNwT2lTH6BxArHUo9s" />
 <title>SS Online & Offline Computer Services — Hyderabad</title>
@@ -237,7 +313,7 @@ body {
     <div class="brand">
       <!-- Logo: replace path with your logo filename if needed -->
        <div>
-        <img src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg" alt="">
+        <img src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg" loading="lazy" alt="">
     </div>
       
       <div>
@@ -245,12 +321,29 @@ body {
         <div style="font-size:12px;color:var(--muted);letter-spacing:0.6px">Computer Services — Hyderabad</div>
       </div>
     </div>
+    <div class="delivery-banner" onclick="homeDeliveryMsg()">
+  🚚 AP / TS Home Delivery Available – Click Here
+</div>
     <nav>
-      <a href="#services">Services</a>
+      <div class="nav-services">
+  <a href="javascript:void(0)">Services ▾</a>
+
+  <div class="dropdown-services">
+    <div onclick="quickBook('Laptop Service')">💻 Laptop Service</div>
+    <div onclick="quickBook('Desktop Service')">🖥 Desktop Service</div>
+    <div onclick="quickBook('Printer Setup')">🖨 Printer Setup</div>
+    <div onclick="quickBook('CCTV Installation')">📷 CCTV Installation</div>
+    <div onclick="quickBook('Doorstep Inspection')">🚪 Doorstep Inspection</div>
+    <div onclick="quickBook('Data Recovery')">💾 Data Recovery</div>
+    <div onclick="quickBook('PC Customization')">⚙ PC Customization</div>
+    <div onclick="quickBook('AMC 1 Year')">📅 AMC (1 Year)</div>
+    <div onclick="quickBook('Software Installation')">🪟 Software Installation</div>
+  </div>
+</div>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a class="cta" href="tel:9502608440">Call: 9502608440</a>
+      <a href="#" onclick="showLoader('products.html')">Our Products</a>
+      <a class="cta" href="tel:9502608440">Call Now 📞</a>
     </nav>
   </header>
   <main>
@@ -297,142 +390,49 @@ body {
         </div>
       </aside>
     </section>
-
     <section id="services" class="section">
       <h2 style="margin-top:0;">Our Services</h2>
       <p style="color:var(--muted);margin-top:6px">Comprehensive hardware and software support for desktops, laptops and small office networks.</p>
 
       <div class="grid" style="margin-top:18px">
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Computer & Laptop Repair</h3>
           <p>Broken screens, power issues, motherboard repair, keyboard replacement — fast diagnostics and repairs.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Software Installation & Troubleshooting</h3>
           <p>OS installation, driver updates, application setup, and software conflict resolution.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Networking Setup & Wi-Fi</h3>
           <p>Home and small office network design, router setup, cabling, and Wi‑Fi performance tuning.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Data Recovery & Password Recovery</h3>
           <p>Recover lost or accidentally deleted files from laptops, desktops, or external drives. We also help you regain access to accounts, systems, or encrypted files securely and quickly, ensuring your important data is safe.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Hardware Upgrades</h3>
           <p>RAM, SSD upgrades, hard drive replacement, GPU & component upgrades to boost performance.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Virus & Malware Removal</h3>
           <p>Complete clean-up, anti-virus installation, and security hardening for safer computing.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>CCTV Installation & Printer service</h3>
           <p>Professional setup and maintenance of CCTV cameras for home or office security. We also provide printer installation, troubleshooting, and repair for smooth operations.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Website Designing</h3>
           <p>We create modern, responsive, and user-friendly websites that showcase your business effectively and enhance your online presence.</p>
         </div>
-        <div class="service">
+        <div class="service" onclick="openService('Computer & Laptop Repair','Broken screens, power issues, motherboard repair, keyboard replacement')">
           <h3>Remote Diagnosis</h3>
           <p>Quickly identify and resolve computer or network issues remotely, saving you time and ensuring fast, efficient support without visiting your location.</p>
         </div>
       </div>
     </section>
-  <section class="small-service-section">
-  <h2 style="text-align:center;">Quick Service Pricing</h2>
-
-  <div class="small-service-grid">
-
-    <div class="small-card">
-      <h4>Laptop Service</h4>
-      <div class="small-price">₹399</div>
-      <button class="book-btn" 
-        onclick="bookService('Laptop Service', '399')">
-          Book Service
-         </button>
-
-    </div>
-
-    <div class="small-card">
-      <h4>Desktop Service</h4>
-      <div class="small-price">₹399</div>
-      <button class="book-btn" 
-        onclick="bookService('Desktop Service', '399')">
-          Book Service
-         </button>
-
-    </div>
-
-    <div class="small-card">
-      <h4>Printer Setup</h4>
-      <div class="small-price">₹349</div>
-      <button class="book-btn" 
-        onclick="bookService('Printer Setup', '349')">
-          Book Service
-         </button>
-
-    </div>
-
-    <div class="small-card">
-      <h4>CC Camera Installation</h4>
-      <div class="small-price">₹1499</div>
-      <button class="book-btn" 
-        onclick="bookService('CC Camera Installation', '1499')">
-          Book Service
-         </button>
-    </div>
-
-    <div class="small-card">
-      <h4>Doorstep Inspetion</h4>
-      <div class="small-price">₹249</div>
-      <button class="book-btn" 
-        onclick="bookService('Doorstep Inspetion', '249')">
-          Book Service
-         </button>
-    </div>
-
-    <div class="small-card">
-      <h4>Data Recovery</h4>
-      <div class="small-price">₹3999</div>
-      <button class="book-btn" 
-        onclick="bookService('Data Recovery', '3999')">
-          Book Service
-         </button>
-    </div>
-
-    <div class="small-card">
-      <h4>Pc Customization</h4>
-      <div class="small-price">₹999</div>
-      <button class="book-btn" 
-        onclick="bookService('Pc Customization', '999')">
-          Book Service
-         </button>
-    </div>
-
-    <div class="small-card">
-      <h4>AMC(1-year)</h4>
-      <div class="small-price">₹2499</div>
-      <button class="book-btn" 
-        onclick="bookService('AMC', '2499')">
-          Book Service
-         </button>
-    </div>
-
-    <div class="small-card">
-      <h4>Software Installation</h4>
-      <div class="small-price">₹399</div>
-      <button class="book-btn" 
-        onclick="bookService('Software Installation', '399')">
-          Book Service
-         </button>
-    </div>
-
-  </div>
-</section>
-
     <section id="about" class="section"style="padding-top:6px">
       <h2>About SS Online</h2>
       <div class="about" style="margin-top:12px">
@@ -450,49 +450,33 @@ body {
 <p style="color:var(--muted);margin-top:8px">5. Dependable results: Every repair is done with care and attention, ensuring your computer runs smoothly and reliably.</p>
         </div>
         <div class="about img">
-          <img src="https://i.postimg.cc/jjy3x1XT/Chat-GPT-Image-Feb-14-2026-12-30-57-AM.png" alt=""/>
+          <img src="https://i.postimg.cc/jjy3x1XT/Chat-GPT-Image-Feb-14-2026-12-30-57-AM.png"  loading="lazy" alt=""/>
         </div>
       </div>
     <section id="gallery">
       <h2>Gallery</h2>
-      <div class="Gallery">
-      <img src="https://media.gettyimages.com/id/489081568/photo/computer-repair.jpg?s=612x612&w=0&k=20&c=lDWP5Ny7br8H_96lKdqESNNAjeMLlI21zYBsREoZ6XY=" alt="">
-      <img src="https://plus.unsplash.com/premium_photo-1664301887532-328f07bb2c24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="">
-      <img src="https://media.istockphoto.com/id/1066995748/photo/repair-of-computer-hard-drives.jpg?s=612x612&w=0&k=20&c=LxlSulxNxVR5aeYLGBoilDFF59jt355j2GkYr4MTQPU=" alt="">    
+      <div class="gallery">
+      <img src="https://media.gettyimages.com/id/489081568/photo/computer-repair.jpg?s=612x612&w=0&k=20&c=lDWP5Ny7br8H_96lKdqESNNAjeMLlI21zYBsREoZ6XY=" loading="lazy" alt="">
+      <img src="https://plus.unsplash.com/premium_photo-1664301887532-328f07bb2c24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" loading="lazy" alt="">
+      <img src="https://media.istockphoto.com/id/1066995748/photo/repair-of-computer-hard-drives.jpg?s=612x612&w=0&k=20&c=LxlSulxNxVR5aeYLGBoilDFF59jt355j2GkYr4MTQPU=" loading="lazy" alt="">    
       </div>
     </section>
     <section id="contact" class="section" style="padding-bottom:40px">
-  <h2>Contact & Bookings</h2>
-  <div class="contact-grid" style="margin-top:12px">
-    <div class="contact-card">
-      <h3 style="margin-top:0">Get in touch</h3>
-      <p style="color:var(--muted)">
-        Call or email us to book a repair, request remote support, or ask for a quote.
-      </p>
-      <p style="margin:10px 0"><strong>Phone:</strong> <a href="tel:9502608440">9502608440</a></p>
-      <p style="margin:10px 0"><strong>Email:</strong> <a href="mailto:sscomputerservices999@gmail.com">sscomputerservices999@gmail.com</a></p>
-      <p style="margin:10px 0"><strong>Address:</strong> Siddi Vinayaka Nagar Road No.2, Pride Enclave, Near Bollaram Railway Station - 500010</p>
-
-      <!-- ✅ Contact form -->
-      <form action="https://formspree.io/f/xrbydwoo" method="POST" style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
-        <input type="text" name="name" placeholder="Your Name" required style="padding:10px;border-radius:8px;border:1px solid #e6e9ef">
-        <input type="text" name="contact" placeholder="Phone or Email" required style="padding:10px;border-radius:8px;border:1px solid #e6e9ef">
-        <textarea name="message" placeholder="Describe the problem (short)" rows="4" required style="padding:10px;border-radius:8px;border:1px solid #e6e9ef"></textarea>
-        <button type="submit" class="btn btn-primary" style="background:var(--blue);color:white;padding:10px;border:none;border-radius:8px;cursor:pointer">Send Enquiry</button>
-      </form>
-    </div>
-        <div>
-          <div class="contact-card" style="height:100%;padding:0;overflow:hidden">
+            <div class="contact-card" style="height:100%;padding:0;overflow:hidden">
             <!-- Embedded map pointing to Hyderabad (you can replace with your exact address) -->
-            <iframe width="100%" height="100%" style="min-height:300px;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.4867!3d17.3850!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIzJzUwLjAiTiA3OMKwMjknNDQuMCJF!5e0!3m2!1sen!2sin!4v1697630000000"
-            ></iframe>
+            <iframe
+  width="100%"
+  height="300"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.4687245637774!2d78.5053358736931!3d17.53285669860108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb85664045a75d%3A0x418c5bce7fede503!2sPride%20enclave!5e0!3m2!1sen!2sin!4v1776618850785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>">
           </div>
         </div>
       </div>
     </section>
   </main>
-</script>
 <footer class="footer">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
       <div>
@@ -522,19 +506,123 @@ body {
   }
 </script>
 <script>
+// ✅ Floating year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ✅ WhatsApp main booking (hero button)
+function openCalendly() {
+  const phoneNumber = "919502608440";
+  const message = encodeURIComponent(
+    "Hi, I’d like to book a computer service. Please confirm an available date & time."
+  );
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+}
+
+// ✅ Quick pricing booking
 function bookService(serviceName, price){
-    var phone = "919502608440";
+  const phone = "919502608440";
 
-    var message = "Hello SS Computer Services,%0A%0A"
-                + "I want to book:%0A"
-                + "Service: " + serviceName + "%0A"
-                + "Price: ₹" + price + "%0A%0A"
-                + "Please confirm availability.";
+  const message = encodeURIComponent(
+    "Hello SS Computer Services,\n\nI want to book:\nService: " 
+    + serviceName + "\nPrice: ₹" + price + "\n\nPlease confirm availability."
+  );
 
-    var url = "https://wa.me/" + phone + "?text=" + message;
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+}
 
-    window.open(url, "_blank");
+// ✅ Service popup
+let currentService = "";
+
+function openService(title, desc){
+  currentService = title;
+  document.getElementById("serviceModal").style.display = "flex";
+  document.getElementById("serviceTitle").innerText = title;
+  document.getElementById("serviceDesc").innerText = desc;
+}
+
+function closeService(){
+  document.getElementById("serviceModal").style.display = "none";
+}
+
+function bookFromPopup(){
+  const phone = "919502608440";
+  const msg = encodeURIComponent("Hi, I want to book " + currentService + " service.");
+  window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
+}
+const serviceBtn = document.querySelector('.nav-services a');
+const dropdown = document.querySelector('.dropdown-services');
+
+// Toggle on click
+serviceBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  dropdown.style.display =
+    dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+// Prevent closing when clicking inside dropdown
+dropdown.addEventListener('click', function(e){
+  e.stopPropagation();
+});
+
+// Close when clicking outside
+document.addEventListener('click', function(){
+  dropdown.style.display = 'none';
+});
+function quickBook(service){
+  const phone = "919502608440";
+  const msg = encodeURIComponent("Hi, I want " + service + " service.");
+  window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
+}
+function homeDeliveryMsg(){
+  const phone = "919502608440";
+
+  const msg = encodeURIComponent(
+    "Hello, I saw your website.\nI need Home Delivery service in AP/TS.\nPlease share details."
+  );
+
+  window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
 }
 </script>
+<script>
+function showLoader(url){
+  const bar = document.getElementById("loaderBar");
+
+  bar.style.width = "70%";
+
+  setTimeout(()=>{
+    bar.style.width = "100%";
+  },200);
+
+  setTimeout(()=>{
+    window.location.href = url;
+  },500);
+}
+</script>
+<a href="https://wa.me/919502608440" target="_blank" 
+style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;
+padding:14px 16px;border-radius:50%;font-size:20px;text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:999;">
+💬
+</a>
+<div id="serviceModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:9999;">
+
+  <div style="background:#fff;padding:25px;width:340px;border-radius:14px;text-align:center;">
+    
+    <span onclick="closeService()" style="float:right;cursor:pointer;font-size:20px;">✖</span>
+    
+    <h3 id="serviceTitle"></h3>
+    <p id="serviceDesc"></p>
+
+    <button onclick="bookFromPopup()" 
+    style="margin-top:12px;padding:10px;width:100%;border:none;
+    background:#0ea5e9;color:#fff;border-radius:8px;">
+      Book Now
+    </button>
+  </div>
+</div>
+<div id="loaderBar"></div>
 </body>
 </html>
