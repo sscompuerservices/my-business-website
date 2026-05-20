@@ -1,413 +1,581 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="SS Computer Services">
-<meta name="robots" content="index, follow">
-<meta name="geo.region" content="IN-TG">
-<meta name="geo.placename" content="Hyderabad">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="IN-TG">
+  <meta name="geo.placename" content="Hyderabad">
+  <meta name="google-site-verification" content="9cTfQ8NYFnd94E-xoa5yw3ETiCNwT2lTH6BxArHUo9s">
+  <meta name="description" content="Expert computer repair, software & hardware services in Hyderabad. Call 9502608440 for professional support.">
+  <meta name="keywords" content="computer repair Hyderabad, laptop service, computer maintenance, SS Computer Services Hyderabad">
+
+  <title>SS Online & Offline Computer Services — Hyderabad</title>
+
   <style>
-:root{
-  --blue:#0ea5e9;
-  --dark:#111217;
-  --muted:#6b7280;
-  --radius:14px;
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-}
+    :root{
+      --blue:#0ea5e9;
+      --blue-dark:#0284c7;
+      --dark:#111217;
+      --muted:#6b7280;
+      --gold:#ffd700;
+      --green:#25D366;
+      --white:#ffffff;
+      --radius:16px;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    }
 
-*{
-  box-sizing:border-box;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-html{
-  scroll-behavior:smooth;
-}
+    body{
+      margin:0;
+      color:var(--dark);
+      background:linear-gradient(-45deg,#dbeafe,#f0f9ff,#e0f2fe,#ffffff,#e6f3ff);
+      background-size:500% 500%;
+      animation:movingBg 28s linear infinite;
+      overflow-x:hidden;
+      font-size:16px;
+      padding-bottom:0;
+    }
 
-body{
-  margin:0;
-  color:var(--dark);
-  background:linear-gradient(135deg,#e6f3ff 0%,#f8fbff 60%,#ffffff 100%);
-  overflow-x:hidden;
-  font-size:16px;
-}
+    @keyframes movingBg{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
-header,
-.section,
-footer{
-  position:relative;
-  z-index:2;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(8px);
-}
+    header,.section,.service-tiles-section,.products-slider-section,.trust-section,.gallery-section,footer{
+      position:relative;
+      z-index:2;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(8px);
+    }
 
-/* HEADER */
-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 32px;
-  box-shadow:0 6px 18px rgba(12,16,22,0.06);
-  position:sticky;
-  top:0;
-  z-index:40;
-  border-bottom:3px solid #ffd700;
-}
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 32px;
+      box-shadow:0 6px 18px rgba(12,16,22,.06);
+      position:sticky;
+      top:0;
+      z-index:40;
+      border-bottom:3px solid var(--gold);
+    }
 
-.brand{
-  display:flex;
-  gap:14px;
-  align-items:center;
-}
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
 
-.brand img{
-  height:64px;
-  width:64px;
-  object-fit:contain;
-  border-radius:8px;
-}
+    .brand img{
+      height:64px;
+      width:64px;
+      object-fit:contain;
+      border-radius:8px;
+    }
 
-.brand h1{
-  margin:0;
-  font-size:20px;
-  color:var(--blue);
-  letter-spacing:1px;
-}
+    .brand h1{
+      margin:0;
+      font-size:20px;
+      color:var(--blue);
+      letter-spacing:1px;
+    }
 
-nav a{
-  margin-left:18px;
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:600;
-}
+    nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
 
-.cta{
-  background:var(--blue);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+    }
 
-/* DELIVERY BANNER */
-.delivery-banner{
-  font-size:12px;
-  padding:4px 8px;
-  background:#ffeb3b;
-  color:#000;
-  text-align:center;
-  font-weight:600;
-  cursor:pointer;
-  animation:blink 1.5s infinite;
-}
+    .cta{
+      background:var(--blue);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+    }
 
-@keyframes blink{
-  0%{opacity:1;}
-  50%{opacity:0.4;}
-  100%{opacity:1;}
-}
+    .nav-services{
+      position:relative;
+      display:inline-block;
+    }
 
-/* NAV DROPDOWN */
-.nav-services{
-  position:relative;
-  display:inline-block;
-}
+    .dropdown-services{
+      display:none;
+      position:absolute;
+      top:36px;
+      left:0;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+      padding:10px;
+      min-width:230px;
+      z-index:999;
+    }
 
-.dropdown-services{
-  display:none;
-  position:absolute;
-  top:40px;
-  left:0;
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  padding:10px;
-  min-width:220px;
-  z-index:999;
-}
+    .dropdown-services div{
+      padding:10px;
+      cursor:pointer;
+      border-radius:8px;
+      font-size:14px;
+    }
 
-.dropdown-services div{
-  padding:10px;
-  cursor:pointer;
-  border-radius:8px;
-  font-size:14px;
-}
+    .dropdown-services div:hover{background:#f1f5f9}
 
-.dropdown-services div:hover{
-  background:#f1f5f9;
-}
+    .delivery-marquee{
+      width:100%;
+      background:linear-gradient(90deg,#fff3cd,#ffd700,#fff3cd);
+      color:#111;
+      font-size:13px;
+      font-weight:800;
+      overflow:hidden;
+      white-space:nowrap;
+      padding:7px 0;
+      cursor:pointer;
+      border-top:1px solid #facc15;
+      border-bottom:1px solid #facc15;
+    }
 
-/* HERO */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 420px;
-  gap:34px;
-  align-items:center;
-  padding:70px 64px;
-  min-height:520px;
-}
+    .delivery-track{
+      display:inline-block;
+      padding-left:100%;
+      animation:deliveryScroll 18s linear infinite;
+    }
 
-.hero-left{
-  max-width:680px;
-}
+    .delivery-marquee:hover .delivery-track{animation-play-state:paused}
 
-.hero-badge{
-  display:inline-block;
-  background:#e0f2fe;
-  color:#0284c7;
-  padding:8px 14px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:16px;
-}
+    @keyframes deliveryScroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-100%)}
+    }
 
-.hero-left h2{
-  margin:0;
-  font-size:42px;
-  line-height:1.15;
-  color:#111217;
-}
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:34px;
+      align-items:center;
+      padding:70px 64px;
+      min-height:520px;
+    }
 
-.tag{
-  font-size:18px;
-  line-height:1.7;
-  color:var(--muted);
-  margin-top:16px;
-}
+    .hero-left{max-width:680px}
 
-.hero-right{
-  background:linear-gradient(180deg,#eef8ff,#ffffff);
-  padding:24px;
-  border-radius:24px;
-  box-shadow:0 18px 45px rgba(14,165,233,0.16);
-}
+    .hero-badge{
+      display:inline-block;
+      background:#e0f2fe;
+      color:var(--blue-dark);
+      padding:8px 14px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
 
-.card-item{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  padding:18px;
-  border-radius:18px;
-  background:#fff;
-  margin-bottom:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-}
+    .hero-left h2{
+      margin:0;
+      font-size:42px;
+      line-height:1.15;
+      color:var(--dark);
+    }
 
-.card-item:last-child{
-  margin-bottom:0;
-}
+    .highlight{color:var(--blue)}
 
-.step-box{
-  min-width:56px;
-  height:56px;
-  border-radius:16px;
-  background:linear-gradient(180deg,#0ea5e9,#0284c7);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-weight:800;
-  font-size:22px;
-}
+    .tag{
+      font-size:18px;
+      line-height:1.7;
+      color:var(--muted);
+      margin-top:16px;
+    }
 
-.card-item h4{
-  margin:0 0 5px;
-  font-size:16px;
-  color:#111217;
-}
+    .hero-right{
+      background:linear-gradient(180deg,#eef8ff,#ffffff);
+      padding:24px;
+      border-radius:24px;
+      box-shadow:0 18px 45px rgba(14,165,233,.16);
+    }
 
-.card-item p{
-  margin:0;
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.5;
-}
+    .card-item{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:18px;
+      border-radius:18px;
+      background:#fff;
+      margin-bottom:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+    }
 
-/* COMMON SECTION */
-.section{
-  padding:48px 64px;
-  margin-top:20px;
-  border-radius:16px;
-}
+    .card-item:last-child{margin-bottom:0}
 
-/* QUICK SERVICES */
-.service-tiles-section{
-  padding:48px 64px;
-  margin-top:20px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.92);
-}
+    .step-box{
+      min-width:56px;
+      height:56px;
+      border-radius:16px;
+      background:linear-gradient(180deg,var(--blue),var(--blue-dark));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:800;
+      font-size:22px;
+    }
 
-.service-tiles-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:18px;
-  margin-top:22px;
-}
+    .card-item h4{margin:0 0 5px;font-size:16px}
+    .card-item p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
 
-.service-tile{
-  background:#fff;
-  padding:20px;
-  border-radius:16px;
-  text-align:center;
-  cursor:pointer;
-  border:1px solid #eef2f7;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
-  transition:0.3s;
-}
+    .section,.service-tiles-section,.products-slider-section,.trust-section,.gallery-section{
+      padding:48px 64px;
+      margin-top:20px;
+      border-radius:16px;
+    }
 
-.service-tile:hover{
-  transform:translateY(-8px);
-  box-shadow:0 16px 30px rgba(14,165,233,0.2);
-}
+    .trust-section h2{margin:0;text-align:center}
 
-.tile-icon{
-  font-size:34px;
-  margin-bottom:10px;
-}
+    .trust-grid,.service-tiles-grid{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:18px;
+    }
 
-.service-tile h3{
-  margin:0;
-  font-size:15px;
-  color:#111217;
-}
+    .trust-card,.service-tile,.product-card,.contact-card{
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
+      border:1px solid #eef2f7;
+    }
 
-.service-tile span{
-  display:block;
-  margin-top:10px;
-  font-size:12px;
-  color:#25D366;
-  font-weight:700;
-}
+    .trust-card,.service-tile{
+      padding:22px;
+      text-align:center;
+      transition:.3s;
+    }
 
-/* PRODUCTS SLIDER */
-.products-slider-section{
-  padding:48px 64px;
-  margin-top:20px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.92);
+    .trust-card:hover,.service-tile:hover,.product-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 30px rgba(14,165,233,.2);
+    }
+
+    .trust-icon,.tile-icon{font-size:34px;margin-bottom:10px}
+    .trust-card h3,.service-tile h3{margin:0;font-size:16px}
+    .trust-card p,.service-tile span{font-size:13px;color:var(--muted)}
+    .service-tile span{display:block;margin-top:10px;color:var(--green);font-weight:800}
+    .service-tile{cursor:pointer}
+
+    .products-slider{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding:12px 0;
+      cursor:grab;
+    }
+
+    .products-slider::-webkit-scrollbar{display:none}
+
+    .product-card{
+      min-width:170px;
+      padding:14px;
+      text-align:center;
+      flex-shrink:0;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .product-card img{
+      width:100%;
+      height:100px;
+      object-fit:contain;
+      margin-bottom:10px;
+    }
+
+    .product-card h3{font-size:14px;margin:0}
+    .product-card small{display:block;margin-top:6px;font-size:12px;color:var(--green);font-weight:800}
+
+    .about{
+      display:flex;
+      gap:28px;
+      align-items:flex-start;
+      margin-top:12px;
+    }
+
+    .about p{color:var(--muted);line-height:1.7}
+
+    .about img{
+      width:360px;
+      border-radius:12px;
+      object-fit:cover;
+      box-shadow:0 8px 20px rgba(255,165,0,.25);
+    }
+
+    .section-title h2{margin:0;font-size:30px;color:var(--dark)}
+    .section-title p{color:var(--muted);margin-top:6px}
+/*/ Gallery/*/
+.gallery-section{
+  background:#0f172a;
+  border-radius:20px;
   overflow:hidden;
 }
 
-.products-slider{
-  display:flex;
-  gap:18px;
-  overflow-x:auto;
-  scroll-behavior:smooth;
-  padding-bottom:10px;
-  cursor:grab;
+.gallery-section .section-title{
+  text-align:center;
 }
 
-.products-slider::-webkit-scrollbar{
+.gallery-section .section-title h2{
+  color:#fff;
+  font-size:34px;
+}
+
+.gallery-section .section-title p{
+  color:#cbd5e1;
+}
+
+.vertical-gallery{
+  height:650px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  margin-top:30px;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+}
+
+.vertical-gallery::-webkit-scrollbar{
   display:none;
 }
 
-.product-card{
-  min-width:170px;
-  background:#fff;
-  border-radius:14px;
-  padding:14px;
-  text-align:center;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  border:1px solid #eef2f7;
-  flex-shrink:0;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.product-card:hover{
-  transform:translateY(-6px);
-}
-
-.product-card img{
-  width:100%;
-  height:100px;
-  object-fit:contain;
-  margin-bottom:10px;
-}
-
-.product-card h3{
-  font-size:14px;
-  margin:0;
-}
-
-.product-card small{
-  display:block;
-  margin-top:6px;
-  font-size:12px;
-  color:#25D366;
-  font-weight:700;
-}
-
-/* ABOUT */
-.about{
+.vertical-gallery-track{
   display:flex;
-  gap:28px;
-  align-items:flex-start;
+  flex-direction:column;
+  gap:18px;
+  padding:10px 0;
+  animation:verticalAutoScroll 80s linear infinite;
 }
 
-.about img{
-  width:360px;
-  border-radius:12px;
-  object-fit:cover;
-  box-shadow:0 8px 20px rgba(255,165,0,0.25);
+.vertical-gallery:hover .vertical-gallery-track{
+  animation-play-state:paused;
 }
 
-/* GALLERY */
-.gallery-section{
-  padding:48px 64px;
-  margin-top:20px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.92);
+.gallery-card{
+  width:78%;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  background:#111827;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-.gallery-section h2{
-  margin-top:0;
-}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-top:20px;
-}
-
-.gallery-grid img{
+.gallery-card img{
   width:100%;
-  height:200px;
+  height:220px;
   object-fit:cover;
-  border-radius:14px;
-  cursor:pointer;
-  transition:0.3s;
+  display:block;
+  transition:.4s ease;
 }
 
-.gallery-grid img:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+.gallery-card:hover img{
+  transform:scale(1.03);
 }
 
-/* CONTACT */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 360px;
-  gap:24px;
+@keyframes verticalAutoScroll{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-50%);
+  }
 }
 
-.contact-card{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(16,24,40,0.04);
+@media(max-width:600px){
+
+  .vertical-gallery{
+    height:500px;
+  }
+
+  .gallery-card{
+    width:95%;
+  }
+
+  .gallery-card img{
+    height:180px;
+  }
+}
+/* Tablet */
+@media(max-width:900px){
+  .gallery-grid-fixed{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-/* BOOKING POPUP */
-.booking-modal{
+/* Mobile */
+@media(max-width:600px){
+  .gallery-grid-fixed{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-card img{
+    height:260px;
+  }
+}
+
+    .contact-card{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .booking-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.65);
+      backdrop-filter:blur(8px);
+      z-index:999999;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .booking-box{
+      width:100%;
+      max-width:380px;
+      background:#fff;
+      border-radius:18px;
+      padding:22px;
+      position:relative;
+      box-shadow:0 20px 50px rgba(0,0,0,.3);
+    }
+
+    .booking-box h2{margin-top:0;color:var(--blue);text-align:center}
+
+    .booking-box input,.booking-box textarea{
+      width:100%;
+      padding:11px;
+      margin-bottom:10px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      font-size:14px;
+    }
+
+    .booking-close{
+      position:absolute;
+      right:12px;
+      top:10px;
+      border:none;
+      background:#fee2e2;
+      color:#dc2626;
+      border-radius:50%;
+      width:30px;
+      height:30px;
+      cursor:pointer;
+    }
+
+    .send-btn{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      background:var(--green);
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:var(--green);
+      color:#fff;
+      padding:14px 16px;
+      border-radius:50%;
+      font-size:20px;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);
+      z-index:999;
+    }
+
+    .footer{
+      padding:22px 64px;
+      background:linear-gradient(90deg,#ff9900,#ffcc33);
+      color:#fff;
+      margin-top:40px;
+      border-top-left-radius:18px;
+      border-top-right-radius:18px;
+      box-shadow:0 -3px 15px rgba(255,140,0,.3);
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    .mobile-action-bar{display:none}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;padding:40px 28px}
+      .about{flex-direction:column}
+      .about img{width:100%;max-height:320px}
+    }
+
+    @media(max-width:600px){
+      header{flex-direction:column;align-items:flex-start;padding:14px 18px}
+      nav{margin-top:10px;gap:10px}
+      .hero{padding:36px 20px;text-align:left;min-height:auto}
+      .hero-left h2{font-size:30px}
+      .tag{font-size:16px}
+      .section,.service-tiles-section,.products-slider-section,.trust-section,.gallery-section{padding:32px 20px}
+      .product-card{min-width:145px}
+      .gallery-slider{height:300px;border-radius:18px}
+      .gallery-btn{width:38px;height:38px;font-size:20px}
+      .footer{padding:22px 20px;margin-bottom:80px}
+      .footer-row{flex-direction:column;align-items:flex-start}
+      body{padding-bottom:80px}
+      .mobile-action-bar{
+        position:fixed;
+        left:10px;
+        right:10px;
+        bottom:12px;
+        z-index:999999;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:8px;
+        background:#fff;
+        padding:10px;
+        border-radius:18px;
+        box-shadow:0 10px 30px rgba(0,0,0,.25);
+      }
+      .mobile-action-bar a,.mobile-action-bar button{
+        border:none;
+        text-decoration:none;
+        text-align:center;
+        padding:11px 8px;
+        border-radius:12px;
+        font-size:13px;
+        font-weight:800;
+        color:#fff;
+        cursor:pointer;
+      }
+      .mobile-action-bar a:nth-child(1){background:var(--blue)}
+      .mobile-action-bar a:nth-child(2){background:var(--green)}
+      .mobile-action-bar button{background:#f59e0b}
+    }
+    /*/Product/*/
+    .product-popup{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,.65);
   backdrop-filter:blur(8px);
   z-index:999999;
   align-items:center;
@@ -415,33 +583,37 @@ nav a{
   padding:20px;
 }
 
-.booking-box{
+.product-popup-card{
   width:100%;
-  max-width:380px;
-  background:white;
-  border-radius:18px;
-  padding:22px;
-  position:relative;
-  box-shadow:0 20px 50px rgba(0,0,0,0.3);
-}
-
-.booking-box h2{
-  margin-top:0;
-  color:#0ea5e9;
+  max-width:420px;
+  background:#fff;
+  border-radius:22px;
+  padding:20px;
   text-align:center;
+  position:relative;
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
 }
 
-.booking-box input,
-.booking-box textarea{
+.product-popup-card img{
   width:100%;
-  padding:11px;
-  margin-bottom:10px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  font-size:14px;
+  height:230px;
+  object-fit:contain;
+  border-radius:16px;
+  background:#f8fafc;
+  margin-bottom:14px;
 }
 
-.booking-close{
+.product-popup-card h2{
+  margin:8px 0;
+  color:var(--blue);
+}
+
+.product-popup-card p{
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.product-close{
   position:absolute;
   right:12px;
   top:10px;
@@ -449,578 +621,391 @@ nav a{
   background:#fee2e2;
   color:#dc2626;
   border-radius:50%;
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   cursor:pointer;
 }
-
-.send-btn{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:#25D366;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* FOOTER */
-.footer{
-  padding:22px 64px;
-  background:linear-gradient(90deg,#ff9900,#ffcc33);
-  color:#fff;
-  margin-top:40px;
-  border-top-left-radius:18px;
-  border-top-right-radius:18px;
-  box-shadow:0 -3px 15px rgba(255,140,0,0.3);
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-    padding:40px 28px;
-  }
-
-  .gallery-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:600px){
-  header{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:14px 18px;
-  }
-
-  nav{
-    margin-top:10px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-  }
-
-  nav a{
-    margin-left:0;
-  }
-
-  .hero{
-    padding:36px 20px;
-    text-align:left;
-    min-height:auto;
-  }
-
-  .hero-left h2{
-    font-size:30px;
-  }
-
-  .tag{
-    font-size:16px;
-  }
-
-  .section,
-  .service-tiles-section,
-  .products-slider-section,
-  .gallery-section{
-    padding:32px 20px;
-  }
-
-  .about{
-    flex-direction:column;
-  }
-
-  .about img{
-    width:100%;
-    max-height:300px;
-  }
-
-  .product-card{
-    min-width:145px;
-  }
-
-  .gallery-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer{
-    padding:22px 20px;
-  }
-}
-</style>
-<meta name="google-site-verification" content="9cTfQ8NYFnd94E-xoa5yw3ETiCNwT2lTH6BxArHUo9s" />
-<title>SS Online & Offline Computer Services — Hyderabad</title>
-<meta name="description" content="Expert computer repair, software & hardware services in Hyderabad. Call 9502608440 for professional support.">
-<meta name="keywords" content="computer repair Hyderabad, laptop service, computer maintenance, SS Computer Services Hyderabad">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  </style>
 </head>
-<body class="body">
+
+<body>
   <header>
     <div class="brand">
-      <!-- Logo: replace path with your logo filename if needed -->
-       <div>
-        <img src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg" loading="lazy" alt="">
-    </div>
-      
+      <img src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg" loading="lazy" alt="SS Online logo">
       <div>
         <h1>SS Online</h1>
-        <div style="font-size:12px;color:var(--muted);letter-spacing:0.6px">Computer Services — Hyderabad</div>
+        <div style="font-size:12px;color:var(--muted);letter-spacing:.6px">Computer Services — Hyderabad</div>
       </div>
     </div>
-    <div class="delivery-banner" onclick="homeDeliveryMsg()">
-  🚚 AP / TS Home Delivery Available – Click Here
-</div>
+
     <nav>
       <div class="nav-services">
-  <a href="javascript:void(0)">Services ▾</a>
-
-  <div class="dropdown-services">
-    <div onclick="openBookingPopup('Laptop Service')">💻 Laptop Service</div>
-    <div onclick="openBookingPopup('Desktop Service')">🖥 Desktop Service</div>
-    <div onclick="openBookingPopup('Printer Setup')">🖨 Printer Setup</div>
-    <div onclick="openBookingPopup('CCTV Installation')">📷 CCTV Installation</div>
-    <div onclick="openBookingPopup('Doorstep Inspection')">🚪 Doorstep Inspection</div>
-    <div onclick="openBookingPopup('Data Recovery')">💾 Data Recovery</div>
-    <div onclick="openBookingPopup('AMC (1 Year)')">📅 AMC (1 Year)</div>
-    <div onclick="openBookingPopup('Software Installation')">🪟 Software Installation</div>
-  </div>
-</div>
+        <a href="#" id="servicesMenuBtn">Services ▾</a>
+        <div class="dropdown-services" id="servicesDropdown">
+          <div onclick="openBookingPopup('Laptop Service')">💻 Laptop Service</div>
+          <div onclick="openBookingPopup('Desktop Service')">🖥 Desktop Service</div>
+          <div onclick="openBookingPopup('Printer Setup')">🖨 Printer Setup</div>
+          <div onclick="openBookingPopup('CCTV Installation')">📷 CCTV Installation</div>
+          <div onclick="openBookingPopup('Doorstep Inspection')">🚪 Doorstep Inspection</div>
+          <div onclick="openBookingPopup('Data Recovery')">💾 Data Recovery</div>
+          <div onclick="openBookingPopup('AMC (1 Year)')">📅 AMC (1 Year)</div>
+          <div onclick="openBookingPopup('Software Installation')">🪟 Software Installation</div>
+        </div>
+      </div>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
       <a href="#moving-products">Our Products</a>
       <a class="cta" href="tel:9502608440">Call Now 📞</a>
     </nav>
   </header>
+
+  <div class="delivery-marquee" onclick="homeDeliveryMsg()">
+    <div class="delivery-track">
+      🚚 AP / TS Home Delivery Available • Doorstep Pickup & Delivery • Laptop / Desktop / Printer / CCTV Service • Click Here to Enquire on WhatsApp
+    </div>
+  </div>
+
   <main>
     <section class="hero">
-  <div class="hero-left">
-    <span class="hero-badge">Trusted Computer Service in Hyderabad</span>
-
-    <h2>
-      Expert Computer Repair <br>
-      <span class="highlight"> & IT Solutions</span>
-    </h2>
-
-    <p class="tag">
-      Fast, reliable hardware and software support for laptops, desktops,
-      printers, CCTV, networking and data recovery.
-    </p>
-  </div>
-
-  <aside class="hero-right">
-    <div class="card-item">
-      <div class="step-box">1</div>
-      <div>
-        <h4>Free Diagnosis</h4>
-        <p>Quick checking and transparent quote before repair.</p>
+      <div class="hero-left">
+        <span class="hero-badge">Trusted Computer Service in Hyderabad</span>
+        <h2>Expert Computer Repair <br><span class="highlight">& IT Solutions</span></h2>
+        <p class="tag">Fast, reliable hardware and software support for laptops, desktops, printers, CCTV, networking and data recovery.</p>
       </div>
-    </div>
 
-    <div class="card-item">
-      <div class="step-box">2</div>
-      <div>
-        <h4>On-site & Remote Support</h4>
-        <p>Service at your home, office or via remote support.</p>
-      </div>
-    </div>
-
-    <div class="card-item">
-      <div class="step-box">3</div>
-      <div>
-        <h4>Genuine Parts & Warranty</h4>
-        <p>Quality parts with service warranty assurance.</p>
-      </div>
-    </div>
-  </aside>
-</section>
-<section id="service-tiles" class="service-tiles-section">
-  <h2>Quick Services</h2>
-  <p style="color:var(--muted);margin-top:6px;">
-    Select a service to book instantly
-  </p>
-
-  <div class="service-tiles-grid" id="serviceTiles"></div>
-</section>
-<section id="moving-products" class="products-slider-section">
-  <h2>Our Products</h2>
-  <p style="color:var(--muted);margin-top:6px;">
-    Browse available laptop & desktop parts
-  </p>
-
-  <div class="products-slider" id="productSlider"></div>
-</section><section id="about" class="section" style="padding-top:6px;">
-      <h2>About SS Online</h2>
-      <div class="about" style="margin-top:12px">
-        <div>
-          <p style="color:var(--muted);max-width:720px">SS Online & Offline Computer Services is a Hyderabad-based computer service shop offering end-to-end hardware and software solutions. With years of hands-on experience, we provide fast diagnostics, honest pricing, and both on-site and in-shop repairs. Our commitment is to get you back to work quickly — using genuine parts and offering support you can trust.</p>
-          <p style="color:var(--muted);margin-top:8px">Open to individuals and small businesses. Need a quick fix or a full system overhaul? We handle it all.</p>
-          <h3>Why Laptop General Cleaning Service?</h3>
-          <p style="color:var(--muted);margin-top:8px">After 1 Year Using your Laptop, your system will hang, generate heat inside. as of professional suggestion every 6 months need to do computer general service</p>
-          <h3>Why Choose Home Visit Computer Repair Services?</h3>
-          <p style="color:var(--muted);margin-top:8px">When you choose our home visit computer repair services, you get:</p>
-<p style="color:var(--muted);margin-top:8px">1. Hassle-doorstep support: No need to carry your system anywhere — we come to your location and handle everything for you.</p>
-<p style="color:var(--muted);margin-top:8px">2. Trusted experts: Our certified technicians have the knowledge and tools to fix any computer issue quickly and effectively.</p>
-<p style="color:var(--muted);margin-top:8px">3. Fair and open pricing: You’ll always know the cost upfront — no hidden charges or surprise bills.</p>
-<p style="color:var(--muted);margin-top:8px">4. Fast and efficient repairs: We value your time, so we aim to solve problems as quickly as possible without compromising on quality.</p>
-<p style="color:var(--muted);margin-top:8px">5. Dependable results: Every repair is done with care and attention, ensuring your computer runs smoothly and reliably.</p>
-        </div>
-        <div class="about img">
-          <img src="https://i.postimg.cc/jjy3x1XT/Chat-GPT-Image-Feb-14-2026-12-30-57-AM.png"  loading="lazy" alt=""/>
-        </div>
-      </div>
-      </section>
-    <section id="gallery" class="gallery">
-  <h2>Our Work Gallery</h2>
-  <div class="gallery-grid">
-    <img src="https://media.gettyimages.com/id/489081568/photo/computer-repair.jpg?s=612x612&w=0&k=20&c=lDWP5Ny7br8H_96lKdqESNNAjeMLlI21zYBsREoZ6XY=" loading="lazy">
-    <img src="https://plus.unsplash.com/premium_photo-1664301887532-328f07bb2c24?auto=format&fit=crop&w=1170&q=80" loading="lazy">
-    <img src="https://media.istockphoto.com/id/1066995748/photo/repair-of-computer-hard-drives.jpg?s=612x612&w=0&k=20&c=LxlSulxNxVR5aeYLGBoilDFF59jt355j2GkYr4MTQPU=" loading="lazy">
-    <!-- duplicate for better layout -->
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1170&q=80" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1170&q=80" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=1170&q=80" loading="lazy">
-    <img src="https://i.postimg.cc/Qx9zL3Jj/Whats-App-Image-2026-04-29-at-11-04-34-PM.jpg" loading="lazy">
-    <img src="https://i.postimg.cc/bND5Xh9r/Whats-App-Image-2026-04-29-at-11-05-36-PM.jpg" loading="lazy">
-
-  </div>
-</section>
-    <section id="contact" class="section" style="padding-bottom:40px">
-            <div class="contact-card" style="height:100%;padding:0;overflow:hidden">
-            <!-- Embedded map pointing to Hyderabad (you can replace with your exact address) -->
-            <iframe
-  width="100%"
-  height="300"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.4687245637774!2d78.5053358736931!3d17.53285669860108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb85664045a75d%3A0x418c5bce7fede503!2sPride%20enclave!5e0!3m2!1sen!2sin!4v1776618850785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>">
+      <aside class="hero-right">
+        <div class="card-item">
+          <div class="step-box">1</div>
+          <div>
+            <h4>Free Diagnosis</h4>
+            <p>Quick checking and transparent quote before repair.</p>
           </div>
+        </div>
+        <div class="card-item">
+          <div class="step-box">2</div>
+          <div>
+            <h4>On-site & Remote Support</h4>
+            <p>Service at your home, office or via remote support.</p>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="step-box">3</div>
+          <div>
+            <h4>Genuine Parts & Warranty</h4>
+            <p>Quality parts with service warranty assurance.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="trust-section">
+      <h2>Why Choose SS Computer Services?</h2>
+      <div class="trust-grid">
+        <div class="trust-card"><div class="trust-icon">⚡</div><h3>Fast Service</h3><p>Quick diagnosis and same-day repair for most issues.</p></div>
+        <div class="trust-card"><div class="trust-icon">🏠</div><h3>Doorstep Support</h3><p>We come to your home or office for repair.</p></div>
+        <div class="trust-card"><div class="trust-icon">🛡️</div><h3>Warranty Service</h3><p>Genuine parts with service warranty guarantee.</p></div>
+        <div class="trust-card"><div class="trust-icon">💰</div><h3>Affordable Price</h3><p>No hidden charges. Transparent pricing always.</p></div>
+      </div>
+    </section>
+
+    <section id="service-tiles" class="service-tiles-section">
+      <h2>Quick Services</h2>
+      <p style="color:var(--muted);margin-top:6px">Select a service to book instantly</p>
+      <div class="service-tiles-grid" id="serviceTiles"></div>
+    </section>
+
+    <section id="moving-products" class="products-slider-section">
+      <h2>Our Products</h2>
+      <p style="color:var(--muted);margin-top:6px">Browse available laptop & desktop parts</p>
+      <div class="products-slider" id="productSlider"></div>
+    </section>
+
+    <section id="about" class="section" style="padding-top:6px">
+      <h2>About SS Online</h2>
+      <div class="about">
+        <div>
+          <p>SS Online & Offline Computer Services is a Hyderabad-based computer service shop offering end-to-end hardware and software solutions. With years of hands-on experience, we provide fast diagnostics, honest pricing, and both on-site and in-shop repairs.</p>
+          <p>Open to individuals and small businesses. Need a quick fix or a full system overhaul? We handle it all.</p>
+          <h3>Why Laptop General Cleaning Service?</h3>
+          <p>After 1 year of using your laptop, your system may hang or generate heat. As a professional suggestion, every 6 months you should do laptop or computer general service.</p>
+          <h3>Why Choose Home Visit Computer Repair Services?</h3>
+          <p>When you choose our home visit computer repair services, you get doorstep support, trusted experts, fair pricing, fast repairs, and dependable results.</p>
+        </div>
+        <div>
+          <img src="https://i.postimg.cc/jjy3x1XT/Chat-GPT-Image-Feb-14-2026-12-30-57-AM.png" loading="lazy" alt="Computer service illustration">
         </div>
       </div>
     </section>
-  </main>
-<footer class="footer">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+
+    <section id="gallery" class="gallery-section">
+  <div class="section-title">
+    <h2>Our Work Gallery</h2>
+    <p>Real service work, repairs and computer solutions</p>
+  </div>
+
+  <div class="vertical-gallery">
+    <div class="vertical-gallery-track">
+
+      <div class="gallery-card"><img src="https://i.postimg.cc/3xsQ5vrT/work0-jpg.jpg" alt="Work 1"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/Kz56MpPv/work1-jpg.jpg" alt="Work 2"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg" alt="Work 3"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/90nNd6rX/work3-jpg.jpg" alt="Work 4"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/x1HFmFYX/work4-jpg.jpg" alt="Work 5"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg" alt="Work 6"></div>
+
+      <div class="gallery-card"><img src="https://i.postimg.cc/L8zN5YBX/work6-jpg.jpg" alt="Work 1"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/dtCzR0jY/work7-jpg.jpg" alt="Work 2"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/pTySmVLk/work8-jpg.jpg" alt="Work 3"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/qM25h5pn/work9-jpg.jpg" alt="Work 4"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg" alt="Work 5"></div>
+      <div class="gallery-card"><img src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg" alt="Work 6"></div>
+    </div>
+  </div>
+</section>  
+</main>
+  <footer class="footer">
+    <div class="footer-row">
       <div>
         <div style="font-weight:700">SS Online & Offline Computer Services</div>
-        <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px">Hyderabad • Phone: 9502608440 • sscomputerservices999@gmail.com</div>
+        <div style="color:rgba(255,255,255,.8);font-size:13px;margin-top:6px">Hyderabad • Phone: 9502608440 • sscomputerservices999@gmail.com</div>
       </div>
-      <div style="text-align:right;color:rgba(255,255,255,0.8);font-size:13px">© <span id="year"></span> SS Online. All rights reserved.</div>
+      <div style="text-align:right;color:rgba(255,255,255,.9);font-size:13px">© <span id="year"></span> SS Online. All rights reserved.</div>
     </div>
   </footer>
-<script>
-// ✅ Floating year
-document.getElementById('year').textContent = new Date().getFullYear();
 
-// ✅ WhatsApp main booking (hero button)
-function openCalendly() {
-  const phoneNumber = "919502608440";
-  const message = encodeURIComponent(
-    "Hi, I’d like to book a computer service. Please confirm an available date & time."
-  );
-  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-}
+  <a class="whatsapp-float" href="https://wa.me/919502608440" target="_blank" aria-label="WhatsApp">💬</a>
 
-// ✅ Quick pricing booking
-function bookService(serviceName, price){
-  const phone = "919502608440";
-
-  const message = encodeURIComponent(
-    "Hello SS Computer Services,\n\nI want to book:\nService: " 
-    + serviceName + "\nPrice: ₹" + price + "\n\nPlease confirm availability."
-  );
-
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-}
-
-// ✅ Service popup
-let currentService = "";
-
-function openService(title, desc){
-  currentService = title;
-  document.getElementById("serviceModal").style.display = "flex";
-  document.getElementById("serviceTitle").innerText = title;
-  document.getElementById("serviceDesc").innerText = desc;
-}
-
-function closeService(){
-  document.getElementById("serviceModal").style.display = "none";
-}
-
-function bookFromPopup(){
-  const phone = "919502608440";
-  const msg = encodeURIComponent("Hi, I want to book " + currentService + " service.");
-  window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
-}
-const serviceBtn = document.querySelector('.nav-services a');
-const dropdown = document.querySelector('.dropdown-services');
-
-// Toggle on click
-serviceBtn.addEventListener('click', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-
-  dropdown.style.display =
-    dropdown.style.display === 'block' ? 'none' : 'block';
-});
-
-// Prevent closing when clicking inside dropdown
-dropdown.addEventListener('click', function(e){
-  e.stopPropagation();
-});
-
-// Close when clicking outside
-document.addEventListener('click', function(){
-  dropdown.style.display = 'none';
-});
-document.addEventListener('click', function(){
-  dropdown.style.display = 'none';
-});
-
-function quickBook(service){
-  openBookingPopup(service);
-}
-
-function homeDeliveryMsg(){
-  const phone = "919502608440";
-
-  const msg = encodeURIComponent(
-    "Hello, I saw your website.\nI need Home Delivery service in AP/TS.\nPlease share details."
-  );
-
-  window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
-}
-</script>
-<script>
-function showLoader(url){
-  const bar = document.getElementById("loaderBar");
-
-  bar.style.width = "70%";
-
-  setTimeout(()=>{
-    bar.style.width = "100%";
-  },200);
-
-  setTimeout(()=>{
-    window.location.href = url;
-  },500);
-}
-</script>
-<script>
-function callNow(){
-  window.location.href = "tel:+919502608440";
-}
-</script>
-<!-- Details -->
-<script>
-let selectedBookingItem = "";
-function openBookingPopup(itemName){
-  selectedBookingItem = itemName;
-  document.getElementById("bookingTitle").innerText = itemName;
-  document.getElementById("bookingPopup").style.display = "flex";
-}
-function closeBookingPopup(){
-  document.getElementById("bookingPopup").style.display = "none";
-}
-function sendBookingToWhatsApp(){
-  const name = document.getElementById("customerName").value;
-  const model = document.getElementById("laptopModel").value;
-  const issue = document.getElementById("issueDesc").value;
-  if(name === ""){
-    alert("Please enter your name");
-    return;
-  }
-  const message = encodeURIComponent(
-    "New Enquiry from Website\n\n" +
-    "Service/Product: " + selectedBookingItem + "\n" +
-    "Name: " + name + "\n" +
-    "Laptop/Desktop Model: " + model + "\n" +
-    "Issue Description: " + issue
-  );
-  window.open("https://wa.me/919502608440?text=" + message, "_blank");
-}
-</script>
-<a href="https://wa.me/919502608440" target="_blank" 
-style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;
-padding:14px 16px;border-radius:50%;font-size:20px;text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:999;">
-💬
-</a>
-<div id="serviceModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:9999;">
-
-  <div style="background:#fff;padding:25px;width:340px;border-radius:14px;text-align:center;">
-    
-    <span onclick="closeService()" style="float:right;cursor:pointer;font-size:20px;">✖</span>
-    
-    <h3 id="serviceTitle"></h3>
-    <p id="serviceDesc"></p>
-
-    <button onclick="bookFromPopup()" 
-    style="margin-top:12px;padding:10px;width:100%;border:none;
-    background:#0ea5e9;color:#fff;border-radius:8px;">
-      Book Now
-    </button>
+  <div id="bookingPopup" class="booking-modal">
+    <div class="booking-box">
+      <button class="booking-close" onclick="closeBookingPopup()">✕</button>
+      <h2 id="bookingTitle">Book Service</h2>
+      <input type="text" id="customerName" placeholder="Your Name" required>
+      <input type="text" id="laptopModel" placeholder="Laptop / Desktop Model">
+      <textarea id="issueDesc" placeholder="Describe your issue" rows="4"></textarea>
+      <button class="send-btn" onclick="sendBookingToWhatsApp()">Send to WhatsApp</button>
+    </div>
   </div>
-</div>
-/*/ details page/*/
-<div id="bookingPopup" class="booking-modal">
-  <div class="booking-box">
-    <button class="booking-close" onclick="closeBookingPopup()">✕</button>
 
-    <h2 id="bookingTitle">Book Service</h2>
-
-    <input type="text" id="customerName" placeholder="Your Name" required>
-    <input type="text" id="laptopModel" placeholder="Laptop / Desktop Model">
-    <textarea id="issueDesc" placeholder="Describe your issue" rows="4"></textarea>
-
-    <button class="send-btn" onclick="sendBookingToWhatsApp()">Send to WhatsApp</button>
+  <div class="mobile-action-bar">
+    <a href="tel:9502608440">📞 Call</a>
+    <a href="https://wa.me/919502608440" target="_blank">💬 WhatsApp</a>
+    <button onclick="openBookingPopup('General Service')">🛠 Book</button>
   </div>
-</div>
-<script>
-const products = [
-  { name:"Laptop Screen", img:"laptop-screen.jpg" },
-  { name:"Laptop Keyboard", img:"keyboard.jpg" },
-  { name:"Laptop Charger", img:"laptop.jpg" },
-  { name:"MacBook Charger", img:"mac-charger.jpg" },
-  { name:"Laptop Battery", img:"battery.jpg" },
-  { name:"Laptop Memory", img:"ram.jpg" },
-  { name:"Motherboard Repair", img:"motherboard.jpg" },
-  { name:"Laptop Fan", img:"fan.jpg" },
-  { name:"Laptop Hard Disk", img:"hdd.jpg" },
-  { name:"Laptop Speaker", img:"speaker.jpg" },
-  { name:"Laptop Hinge", img:"hinge.jpg" },
-  { name:"Power Button Repair", img:"power.jpg" },
-  { name:"Liquid Spill Repair", img:"water.jpg" },
-  { name:"Battery Not Charging", img:"battery-issue.jpg" },
-  { name:"Charger Not Working", img:"charger-issue.jpg" },
-  { name:"Memory Upgrade", img:"ram-upgrade.jpg" },
-  { name:"HDD & SSD Upgrade", img:"hdd-upgrade.jpg" },
-  { name:"Not Powering On", img:"no-power.jpg" },
-  { name:"Base Repair", img:"base.jpg" },
-  { name:"Laptop Body Change", img:"body.jpg" },
-  { name:"General Service", img:"service.jpg" },
-  { name:"Hard Disk Failure", img:"hdd-fail.jpg" },
-  { name:"Overheating", img:"heat.jpg" },
-  { name:"Desktop CPU", img:"cpu.jpg" },
-  { name:"Desktop Monitor", img:"monitor.jpg" },
-  { name:"Desktop Keyboard", img:"keyboard1.jpg" },
-  { name:"Desktop Mouse", img:"mouse.jpg" },
-  { name:"SMPS (Power Supply)", img:"smps.jpg" },
-  { name:"Graphics Card", img:"gpu.jpg" },
-  { name:"Motherboard (Desktop)", img:"motherboard1.jpg" },
-  { name:"Desktop RAM", img:"ram1.jpg" },
-  { name:"Desktop Hard Disk", img:"hdd1.jpg" },
-  { name:"SSD for Desktop", img:"ssd1.jpg" },
-  { name:"Cabinet / Case", img:"cabinet.jpg" },
-  { name:"Cooling Fan", img:"fan1.jpg" },
-  { name:"Processor", img:"pro.jpg" }
-];
 
-const slider = document.getElementById("productSlider");
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-// 🔥 AUTO CREATE CARDS
-slider.innerHTML = products.map(p => `
-  <div class="product-card" onclick="productEnquiry('${p.name}')">
-    <img src="./images/${p.img}" onerror="this.src='./images/default.jpg'" alt="${p.name}">
-    <h3>${p.name}</h3>
-    <small>Click to enquire</small>
-  </div>
-`).join("");
+    const phoneNumber = "919502608440";
 
-function productEnquiry(productName){
-  const phone = "919502608440";
+    const serviceBtn = document.getElementById('servicesMenuBtn');
+    const dropdown = document.getElementById('servicesDropdown');
 
-  const message = encodeURIComponent(
-    "Hello SS Computer Services,\n\nI am interested in:\nProduct: " + productName + "\n\nPlease share availability and details."
-  );
+    serviceBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
 
-  window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
-}
+    dropdown.addEventListener('click', function(e){
+      e.stopPropagation();
+      dropdown.style.display = 'none';
+    });
 
-// 🔁 AUTO SLIDE
-let autoScroll;
+    document.addEventListener('click', function(){
+      dropdown.style.display = 'none';
+    });
 
-function startAutoScroll(){
-  autoScroll = setInterval(() => {
-    slider.scrollLeft += 1;
-
-    // loop back
-    if(slider.scrollLeft >= slider.scrollWidth - slider.clientWidth){
-      slider.scrollLeft = 0;
+    function homeDeliveryMsg(){
+      const msg = encodeURIComponent("Hello, I saw your website.\nI need Home Delivery service in AP/TS.\nPlease share details.");
+      window.open("https://wa.me/" + phoneNumber + "?text=" + msg, "_blank");
     }
-  }, 20);
+
+    let selectedBookingItem = "";
+
+    function openBookingPopup(itemName){
+      selectedBookingItem = itemName;
+      document.getElementById("bookingTitle").innerText = itemName;
+      document.getElementById("bookingPopup").style.display = "flex";
+    }
+
+    function closeBookingPopup(){
+      document.getElementById("bookingPopup").style.display = "none";
+    }
+
+    function sendBookingToWhatsApp(){
+      const name = document.getElementById("customerName").value.trim();
+      const model = document.getElementById("laptopModel").value.trim();
+      const issue = document.getElementById("issueDesc").value.trim();
+
+      if(name === ""){
+        alert("Please enter your name");
+        return;
+      }
+
+      const message = encodeURIComponent(
+        "New Enquiry from Website\n\n" +
+        "Service/Product: " + selectedBookingItem + "\n" +
+        "Name: " + name + "\n" +
+        "Laptop/Desktop Model: " + model + "\n" +
+        "Issue Description: " + issue
+      );
+
+      window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
+    }
+
+    const servicesList = [
+      {icon:"💻",name:"Laptop Service"},
+      {icon:"🖥️",name:"Desktop Service"},
+      {icon:"🖨️",name:"Printer Setup"},
+      {icon:"📷",name:"CCTV Installation"},
+      {icon:"🚪",name:"Doorstep Inspection"},
+      {icon:"💾",name:"Data Recovery"},
+      {icon:"📅",name:"AMC (1 Year)"},
+      {icon:"🪟",name:"Software Installation"}
+    ];
+
+    document.getElementById("serviceTiles").innerHTML = servicesList.map(s => `
+      <div class="service-tile" onclick="openBookingPopup('${s.name}')">
+        <div class="tile-icon">${s.icon}</div>
+        <h3>${s.name}</h3>
+        <span>Click to book</span>
+      </div>
+    `).join("");
+
+    const products = [
+      {name:"Laptop Screen",img:"laptop-screen.jpg"},
+      {name:"Laptop Keyboard",img:"keyboard.jpg"},
+      {name:"Laptop Charger",img:"laptop.jpg"},
+      {name:"MacBook Charger",img:"mac-charger.jpg"},
+      {name:"Laptop Battery",img:"battery.jpg"},
+      {name:"Laptop Memory",img:"ram.jpg"},
+      {name:"Motherboard Repair",img:"motherboard.jpg"},
+      {name:"Laptop Fan",img:"fan.jpg"},
+      {name:"Laptop Hard Disk",img:"hdd.jpg"},
+      {name:"Laptop Speaker",img:"speaker.jpg"},
+      {name:"Laptop Hinge",img:"hinge.jpg"},
+      {name:"Power Button Repair",img:"power.jpg"},
+      {name:"Liquid Spill Repair",img:"water.jpg"},
+      {name:"Battery Not Charging",img:"battery-issue.jpg"},
+      {name:"Charger Not Working",img:"charger-issue.jpg"},
+      {name:"Memory Upgrade",img:"ram-upgrade.jpg"},
+      {name:"HDD & SSD Upgrade",img:"hdd-upgrade.jpg"},
+      {name:"Not Powering On",img:"no-power.jpg"},
+      {name:"Base Repair",img:"base.jpg"},
+      {name:"Laptop Body Change",img:"body.jpg"},
+      {name:"General Service",img:"service.jpg"},
+      {name:"Hard Disk Failure",img:"hdd-fail.jpg"},
+      {name:"Overheating",img:"heat.jpg"},
+      {name:"Desktop CPU",img:"cpu.jpg"},
+      {name:"Desktop Monitor",img:"monitor.jpg"},
+      {name:"Desktop Keyboard",img:"keyboard1.jpg"},
+      {name:"Desktop Mouse",img:"mouse.jpg"},
+      {name:"SMPS (Power Supply)",img:"smps.jpg"},
+      {name:"Graphics Card",img:"gpu.jpg"},
+      {name:"Motherboard (Desktop)",img:"motherboard1.jpg"},
+      {name:"Desktop RAM",img:"ram1.jpg"},
+      {name:"Desktop Hard Disk",img:"hdd1.jpg"},
+      {name:"SSD for Desktop",img:"ssd1.jpg"},
+      {name:"Cabinet / Case",img:"cabinet.jpg"},
+      {name:"Cooling Fan",img:"fan1.jpg"},
+      {name:"Processor",img:"pro.jpg"}
+    ];
+
+    const productSlider = document.getElementById("productSlider");
+
+    productSlider.innerHTML = products.map(p => `
+      <div class="product-card" onclick="openProductPopup('${p.name}','./images/${p.img}')">
+        <img src="./images/${p.img}" onerror="this.src='./images/default.jpg'" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <small>Click to enquire</small>
+      </div>
+    `).join("");
+
+    function productEnquiry(productName){
+      const message = encodeURIComponent("Hello SS Computer Services,\n\nI am interested in:\nProduct: " + productName + "\n\nPlease share availability and details.");
+      window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
+    }
+
+    let productAutoScroll;
+
+    function startProductAutoScroll(){
+      productAutoScroll = setInterval(() => {
+        productSlider.scrollLeft += 1;
+        if(productSlider.scrollLeft >= productSlider.scrollWidth - productSlider.clientWidth){
+          productSlider.scrollLeft = 0;
+        }
+      }, 20);
+    }
+
+    function stopProductAutoScroll(){
+      clearInterval(productAutoScroll);
+    }
+
+    productSlider.addEventListener("mouseenter", stopProductAutoScroll);
+    productSlider.addEventListener("mouseleave", startProductAutoScroll);
+    productSlider.addEventListener("touchstart", stopProductAutoScroll);
+    productSlider.addEventListener("touchend", startProductAutoScroll);
+
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragScrollLeft = 0;
+
+    productSlider.addEventListener("mousedown", e => {
+      isDragging = true;
+      dragStartX = e.pageX - productSlider.offsetLeft;
+      dragScrollLeft = productSlider.scrollLeft;
+      stopProductAutoScroll();
+    });
+
+    productSlider.addEventListener("mouseup", () => {
+      isDragging = false;
+      startProductAutoScroll();
+    });
+
+    productSlider.addEventListener("mouseleave", () => {
+      isDragging = false;
+      startProductAutoScroll();
+    });
+
+    productSlider.addEventListener("mousemove", e => {
+      if(!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - productSlider.offsetLeft;
+      const walk = (x - dragStartX) * 2;
+      productSlider.scrollLeft = dragScrollLeft - walk;
+    });
+    let selectedProductName = "";
+
+function openProductPopup(name,img){
+  selectedProductName = name;
+  document.getElementById("popupProductName").innerText = name;
+  document.getElementById("popupProductImg").src = img;
+  document.getElementById("productPopup").style.display = "flex";
 }
 
-function stopAutoScroll(){
-  clearInterval(autoScroll);
+function closeProductPopup(){
+  document.getElementById("productPopup").style.display = "none";
 }
 
-// 🖱️ HOVER STOP
-slider.addEventListener("mouseenter", stopAutoScroll);
-slider.addEventListener("mouseleave", startAutoScroll);
+function sendProductToWhatsApp(){
+  const message = encodeURIComponent(
+    "Hello SS Computer Services,\n\n" +
+    "I am interested in this product/service:\n" +
+    selectedProductName + "\n\n" +
+    "Please share availability and details."
+  );
 
-// 📱 TOUCH STOP
-slider.addEventListener("touchstart", stopAutoScroll);
-slider.addEventListener("touchend", startAutoScroll);
-
-// 🖱️ DRAG SUPPORT
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-  stopAutoScroll();
-});
-
-slider.addEventListener("mouseup", () => {
-  isDown = false;
-  startAutoScroll();
-});
-
-slider.addEventListener("mousemove", (e) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2;
-  slider.scrollLeft = scrollLeft - walk;
-});
-
-// 🚀 START
-startAutoScroll();
-</script>
-<script>
-const servicesList = [
-  { icon:"💻", name:"Laptop Service" },
-  { icon:"🖥️", name:"Desktop Service" },
-  { icon:"🖨️", name:"Printer Setup" },
-  { icon:"📷", name:"CCTV Installation" },
-  { icon:"🚪", name:"Doorstep Inspection" },
-  { icon:"💾", name:"Data Recovery" },
-  { icon:"📅", name:"AMC (1 Year)" },
-  { icon:"🪟", name:"Software Installation" }
-];
-</script>
-<script>
-const container = document.getElementById("serviceTiles");
-
-container.innerHTML = servicesList.map(s => `
-  <div class="service-tile" onclick="openBookingPopup('${s.name}')">
-    <div class="tile-icon">${s.icon}</div>
-    <h3>${s.name}</h3>
-    <span>Click to book</span>
+  window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
+}
+  </script>
+  <div id="productPopup" class="product-popup">
+  <div class="product-popup-card">
+    <button class="product-close" onclick="closeProductPopup()">✕</button>
+    <img id="popupProductImg" src="" alt="">
+    <h2 id="popupProductName"></h2>
+    <p>Need this product or service? Send enquiry on WhatsApp.</p>
+    <button class="send-btn" onclick="sendProductToWhatsApp()">Send to WhatsApp</button>
   </div>
-`).join("");
-</script>
+</div>
 </body>
 </html>
