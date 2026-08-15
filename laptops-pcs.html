@@ -1,0 +1,2662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Second-hand laptops, refurbished laptops and custom assembled PCs from SS Online & Offline Computer Services.">
+
+<title>Laptops & PCs for Sale | SS Online & Offline Computer Services</title>
+
+    <link rel="icon" type="image/jpeg"
+href="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.sale-header{
+    background:#fff;
+    padding:15px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.sale-logo{
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+    color:#1769e0;
+}
+
+.back-home{
+    text-decoration:none;
+    background:#1769e0;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.back-home:hover{
+    background:#0d55bd;
+    transform:translateY(-1px);
+}
+
+
+/* =====================================================
+   HERO SECTION
+   NEW LAPTOP + PC BACKGROUND
+===================================================== */
+
+.sale-hero{
+    position:relative;
+    min-height:450px;
+    padding:70px 5%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:left;
+    overflow:hidden;
+
+    /*
+       MAIN BACKGROUND
+
+       IMPORTANT:
+       Keep this image here:
+       images/laptop-pc-hero-right.jpg
+    */
+
+    background-image:
+    linear-gradient(
+        90deg,
+        rgba(248,252,255,.98) 0%,
+        rgba(239,247,255,.94) 30%,
+        rgba(230,243,255,.70) 55%,
+        rgba(210,233,255,.30) 100%
+    ),
+    url("images/laptop-pc-hero-right.png");
+
+background-size: contain;
+background-position: right center;
+background-repeat: no-repeat;
+    background-color:#eef5ff;
+}
+
+
+/* Technology grid effect */
+
+.sale-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            rgba(23,105,224,.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(23,105,224,.07) 1px,
+            transparent 1px
+        );
+
+    background-size:40px 40px;
+
+    pointer-events:none;
+}
+
+
+/* Blue futuristic glow */
+
+.sale-hero::after{
+    content:"";
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    right:-180px;
+    top:-100px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,140,255,.25) 0%,
+            rgba(0,140,255,.12) 35%,
+            transparent 70%
+        );
+
+    filter:blur(15px);
+
+    pointer-events:none;
+}
+
+
+/* Keep hero content above background */
+
+.sale-hero > *{
+    position:relative;
+    z-index:5;
+}
+
+
+/* Hero badge */
+
+.sale-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    align-self:flex-start;
+
+    background:linear-gradient(
+        135deg,
+        #1769e0,
+        #0755c9
+    );
+
+    color:#fff;
+
+    padding:9px 18px;
+
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:800;
+
+    margin-bottom:18px;
+
+    box-shadow:
+        0 8px 20px rgba(23,105,224,.20);
+}
+
+
+/* Hero heading */
+
+.sale-hero h1{
+    font-size:48px;
+    line-height:1.15;
+
+    letter-spacing:-1px;
+
+    margin-bottom:16px;
+
+    max-width:680px;
+
+    color:#172b55;
+
+    text-shadow:
+        0 2px 10px rgba(255,255,255,.7);
+}
+
+
+/* Hero paragraph */
+
+.sale-hero p{
+    color:#526581;
+
+    font-size:17px;
+
+    max-width:700px;
+
+    margin:0;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+.category-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    padding:30px 20px;
+    background:#f7faff;
+}
+
+.category-btn{
+    border:1px solid #d9dee8;
+    background:#fff;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    color:#344054;
+
+    transition:.3s;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.04);
+}
+
+.category-btn:hover,
+.category-btn.active{
+    background:#1769e0;
+    color:#fff;
+    border-color:#1769e0;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(23,105,224,.20);
+}
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products-container{
+    max-width:1250px;
+    margin:auto;
+    padding:10px 20px 80px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+
+/* Product card */
+
+.product-card{
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 7px 25px rgba(0,0,0,.08);
+
+    border:1px solid #edf0f5;
+
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.13);
+}
+
+.product-card.hidden{
+    display:none;
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.product-image{
+    height:220px;
+
+    background:#eef1f5;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.05);
+}
+
+
+/* Product badge */
+
+.product-badge{
+    position:absolute;
+
+    top:13px;
+    left:13px;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    z-index:2;
+}
+
+.badge-used{
+    background:#667085;
+}
+
+.badge-refurbished{
+    background:#16a34a;
+}
+
+.badge-assembled{
+    background:#7c3aed;
+}
+
+
+/* =====================================================
+   PRODUCT CONTENT
+===================================================== */
+
+.product-content{
+    padding:22px;
+}
+
+.product-content h2{
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.product-description{
+    color:#667085;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+}
+
+
+/* Features */
+
+.features{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-bottom:18px;
+}
+
+.features span{
+    background:#f0fdf4;
+
+    color:#15803d;
+
+    padding:6px 8px;
+
+    border-radius:6px;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   CONFIGURATION BUTTON
+===================================================== */
+
+.select-config-btn{
+    width:100%;
+
+    border:0;
+
+    padding:13px 15px;
+
+    border-radius:9px;
+
+    background:#1769e0;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    transition:.3s;
+}
+
+.select-config-btn:hover{
+    background:#0d55bd;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(23,105,224,.20);
+}
+
+
+/* =====================================================
+   CONFIGURATION MODAL
+===================================================== */
+
+.config-modal{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.68);
+
+    z-index:9999;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.config-modal.show{
+    display:flex;
+}
+
+
+/* Modal box */
+
+.config-box{
+    width:100%;
+
+    max-width:700px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    position:relative;
+
+    max-height:94vh;
+
+    overflow-y:auto;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.3);
+}
+
+
+/* Close button */
+
+.config-close{
+    position:absolute;
+
+    right:18px;
+    top:15px;
+
+    width:36px;
+    height:36px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#f1f3f5;
+
+    color:#344054;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.config-close:hover{
+    background:#e2e5e9;
+    transform:rotate(90deg);
+}
+
+
+/* =====================================================
+   CONFIG TITLE
+===================================================== */
+
+.config-title{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:25px;
+
+    padding-right:40px;
+}
+
+.config-icon{
+    width:50px;
+    height:50px;
+
+    min-width:50px;
+
+    border-radius:12px;
+
+    background:#e8f1ff;
+
+    color:#1769e0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:21px;
+}
+
+.config-title h2{
+    font-size:22px;
+}
+
+.config-title p{
+    color:#667085;
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   CONFIG SECTIONS
+===================================================== */
+
+.config-section{
+    margin-top:20px;
+
+    margin-bottom:8px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid #eef0f4;
+}
+
+.config-section h3{
+    font-size:15px;
+
+    color:#1769e0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+
+/* =====================================================
+   FORM LABELS
+===================================================== */
+
+.config-box label{
+    display:block;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#344054;
+
+    margin:15px 0 7px;
+}
+
+
+/* =====================================================
+   FORM INPUTS
+===================================================== */
+
+.config-box select,
+.config-box input,
+.config-box textarea{
+    width:100%;
+
+    padding:12px 13px;
+
+    border:1px solid #d9dee8;
+
+    border-radius:9px;
+
+    background:#fff;
+
+    color:#172033;
+
+    font-size:14px;
+
+    outline:none;
+
+    font-family:inherit;
+
+    transition:.2s;
+}
+
+.config-box select:focus,
+.config-box input:focus,
+.config-box textarea:focus{
+    border-color:#1769e0;
+
+    box-shadow:
+        0 0 0 3px rgba(23,105,224,.1);
+}
+
+.config-box textarea{
+    resize:vertical;
+
+    min-height:85px;
+}
+
+
+/* Two columns */
+
+.config-two-column{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:0 15px;
+}
+
+
+/* =====================================================
+   WHATSAPP BUTTON
+===================================================== */
+
+.send-whatsapp-btn{
+    width:100%;
+
+    border:0;
+
+    margin-top:25px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    transition:.3s;
+
+    box-shadow:
+        0 8px 20px rgba(37,211,102,.18);
+}
+
+.send-whatsapp-btn:hover{
+    background:#1ebe5d;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.sale-footer{
+    background:#172033;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:35px 20px;
+}
+
+.sale-footer h3{
+    font-size:18px;
+}
+
+.sale-footer p{
+    color:#cbd5e1;
+
+    margin-top:6px;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:950px){
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .sale-hero{
+        min-height:420px;
+
+        background-position:center right;
+    }
+
+    .sale-hero h1{
+        font-size:42px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    /* Header */
+
+    .sale-header{
+        padding:12px 15px;
+    }
+
+    .sale-logo{
+        font-size:17px;
+    }
+
+    .back-home{
+        padding:8px 12px;
+        font-size:12px;
+    }
+
+
+    /* Hero */
+
+    .sale-hero{
+        min-height:520px;
+
+        padding:50px 20px 70px;
+
+        justify-content:flex-start;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(248,252,255,.98) 0%,
+                rgba(239,247,255,.94) 38%,
+                rgba(225,241,255,.70) 65%,
+                rgba(210,233,255,.30) 100%
+            ),
+            url("images/laptop-pc-hero-right.jpg");
+
+        background-size:cover;
+
+        /*
+           Move laptop / PC artwork lower on mobile
+        */
+
+        background-position:center bottom;
+    }
+
+
+    .sale-badge{
+        font-size:11px;
+
+        padding:8px 13px;
+
+        margin-bottom:15px;
+    }
+
+
+    .sale-hero h1{
+        font-size:31px;
+
+        line-height:1.2;
+
+        max-width:100%;
+
+        margin-bottom:12px;
+    }
+
+
+    .sale-hero p{
+        font-size:14px;
+
+        line-height:1.6;
+
+        max-width:100%;
+    }
+
+
+    /* Filters */
+
+    .category-buttons{
+        padding:22px 12px;
+
+        gap:8px;
+    }
+
+    .category-btn{
+        padding:10px 14px;
+
+        font-size:12px;
+    }
+
+
+    /* Products */
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .products-container{
+        padding:10px 15px 60px;
+    }
+
+
+    /* Modal */
+
+    .config-modal{
+        padding:10px;
+
+        align-items:flex-start;
+    }
+
+    .config-box{
+        margin-top:10px;
+
+        padding:22px 18px;
+
+        border-radius:16px;
+
+        max-height:96vh;
+    }
+
+
+    /* Form columns */
+
+    .config-two-column{
+        grid-template-columns:1fr;
+    }
+
+
+    /* Footer */
+
+    .sale-footer{
+        padding:30px 15px;
+    }
+
+    .sale-footer h3{
+        font-size:16px;
+    }
+
+    .sale-footer p{
+        font-size:12px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:380px){
+
+    .sale-logo{
+        font-size:15px;
+    }
+
+    .back-home{
+        padding:7px 9px;
+
+        font-size:11px;
+    }
+
+    .sale-hero{
+        min-height:500px;
+
+        padding:40px 15px 60px;
+    }
+
+    .sale-hero h1{
+        font-size:27px;
+    }
+
+    .sale-hero p{
+        font-size:13px;
+    }
+
+    .category-btn{
+        padding:9px 11px;
+
+        font-size:11px;
+    }
+}
+/* =====================================================
+   MOBILE BOTTOM NAVIGATION
+   HIDDEN ON PC / DESKTOP
+===================================================== */
+
+.mobile-bottom-nav {
+    display: none !important;
+}
+
+
+/* =====================================================
+   MOBILE ONLY
+===================================================== */
+
+@media only screen and (max-width:600px){
+
+    .mobile-bottom-nav{
+        display:grid !important;
+
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+
+        width:100%;
+        height:72px;
+
+        grid-template-columns:repeat(4,1fr);
+
+        background:#fff;
+
+        border-top:1px solid #d8dce3;
+
+        box-shadow:0 -4px 18px rgba(0,0,0,.15);
+
+        z-index:999999;
+
+        padding:5px 3px;
+    }
+
+    .mobile-nav-item{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        gap:4px;
+
+        background:transparent;
+        border:none;
+
+        text-decoration:none;
+
+        color:#172033;
+
+        font-family:inherit;
+        font-size:10px;
+        font-weight:700;
+    }
+
+    .mobile-nav-item i{
+        font-size:24px;
+    }
+
+    /* Laptops & PCs highlight */
+    .laptop-mobile-nav{
+        color:#1769e0 !important;
+        font-weight:900;
+    }
+
+    .laptop-mobile-nav i{
+        color:#1769e0;
+
+        background:#e8f2ff;
+
+        width:42px;
+        height:36px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border-radius:10px;
+    }
+
+    /* WhatsApp */
+    .whatsapp-mobile-nav i{
+        color:#25D366;
+    }
+
+    /* Hide normal desktop navigation on mobile */
+    header nav{
+        display:none !important;
+    }
+
+    body{
+        padding-bottom:85px !important;
+    }
+}
+</style>
+</head>
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="sale-header">
+
+    <a href="index.html" class="sale-logo">
+        SS Online & Offline
+    </a>
+
+    <a href="index.html" class="back-home">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Website
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="sale-hero">
+
+    <span class="sale-badge">
+        <i class="fa-solid fa-laptop"></i>
+        LAPTOPS & PCs FOR SALE
+    </span>
+
+    <h1>
+        Laptops & PCs for Sale
+    </h1>
+
+    <p>
+        Second-Hand Laptops, Refurbished Laptops
+        and Custom Assembled PCs.
+        Select a brand or PC and choose your
+        required configuration.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     FILTER
+===================================================== -->
+
+<div class="category-buttons">
+
+    <button class="category-btn active"
+            onclick="filterProducts('all',this)">
+        <i class="fa-solid fa-border-all"></i>
+        All
+    </button>
+
+    <button class="category-btn"
+            onclick="filterProducts('used',this)">
+        <i class="fa-solid fa-laptop"></i>
+        Second-Hand
+    </button>
+
+    <button class="category-btn"
+            onclick="filterProducts('refurbished',this)">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        Refurbished
+    </button>
+
+    <button class="category-btn"
+            onclick="filterProducts('assembled',this)">
+        <i class="fa-solid fa-desktop"></i>
+        Assembled PCs
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products-container">
+
+<div class="products-grid">
+
+
+<!-- =====================================================
+     DELL
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE DELL PHOTO HERE -->
+    <img src="images/dell-laptop.jpg"
+         alt="Dell Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Dell Laptops</h2>
+
+    <p class="product-description">
+        Quality checked second-hand Dell laptops
+        available in different configurations.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Configurations</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Dell Laptop"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HP
+===================================================== -->
+
+<div class="product-card" data-category="refurbished">
+
+<div class="product-image">
+
+    <!-- CHANGE HP PHOTO HERE -->
+    <img src="images/hp-laptop.jpg"
+         alt="HP Laptops">
+
+    <span class="product-badge badge-refurbished">
+        REFURBISHED
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>HP Laptops</h2>
+
+    <p class="product-description">
+        Professionally refurbished HP laptops
+        with multiple configurations available.
+    </p>
+
+    <div class="features">
+        <span>✓ Refurbished</span>
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="HP Laptop"
+            data-category="Refurbished Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     LENOVO
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE LENOVO PHOTO HERE -->
+    <img src="images/lenovo-laptop.jpg"
+         alt="Lenovo Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Lenovo Laptops</h2>
+
+    <p class="product-description">
+        Quality checked second-hand Lenovo laptops
+        available in different configurations.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Configurations</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Lenovo Laptop"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ACER
+===================================================== -->
+
+<div class="product-card" data-category="refurbished">
+
+<div class="product-image">
+
+    <!-- CHANGE ACER PHOTO HERE -->
+    <img src="images/acer-laptop.jpg"
+         alt="Acer Laptops">
+
+    <span class="product-badge badge-refurbished">
+        REFURBISHED
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Acer Laptops</h2>
+
+    <p class="product-description">
+        Refurbished Acer laptops with quality
+        checked hardware and multiple options.
+    </p>
+
+    <div class="features">
+        <span>✓ Refurbished</span>
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Acer Laptop"
+            data-category="Refurbished Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ASUS
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE ASUS PHOTO HERE -->
+    <img src="images/asus-laptop.jpg"
+         alt="ASUS Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>ASUS Laptops</h2>
+
+    <p class="product-description">
+        Quality checked ASUS laptops suitable
+        for home, office and professional use.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Configurations</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="ASUS Laptop"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     APPLE MACBOOK
+===================================================== -->
+
+<div class="product-card" data-category="refurbished">
+
+<div class="product-image">
+
+    <!-- CHANGE APPLE PHOTO HERE -->
+    <img src="images/apple-macbook.jpg"
+         alt="Apple MacBook">
+
+    <span class="product-badge badge-refurbished">
+        REFURBISHED
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Apple MacBooks</h2>
+
+    <p class="product-description">
+        Quality checked refurbished Apple MacBooks
+        available in selected configurations.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Refurbished</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Apple MacBook"
+            data-category="Refurbished Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     MICROSOFT SURFACE
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE MICROSOFT PHOTO HERE -->
+    <img src="images/microsoft-surface.jpg"
+         alt="Microsoft Surface Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Microsoft Surface</h2>
+
+    <p class="product-description">
+        Quality checked Microsoft Surface devices
+        with different configurations.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Options</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Microsoft Surface"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     MSI
+===================================================== -->
+
+<div class="product-card" data-category="refurbished">
+
+<div class="product-image">
+
+    <!-- CHANGE MSI PHOTO HERE -->
+    <img src="images/msi-laptop.jpg"
+         alt="MSI Laptops">
+
+    <span class="product-badge badge-refurbished">
+        REFURBISHED
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>MSI Laptops</h2>
+
+    <p class="product-description">
+        Refurbished MSI laptops suitable for
+        gaming, editing and professional work.
+    </p>
+
+    <div class="features">
+        <span>✓ Refurbished</span>
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="MSI Laptop"
+            data-category="Refurbished Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SAMSUNG
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE SAMSUNG PHOTO HERE -->
+    <img src="images/samsung-laptop.jpg"
+         alt="Samsung Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Samsung Laptops</h2>
+
+    <p class="product-description">
+        Quality checked Samsung laptops with
+        different configurations available.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Options</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Samsung Laptop"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     TOSHIBA
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE TOSHIBA PHOTO HERE -->
+    <img src="images/toshiba-laptop.jpg"
+         alt="Toshiba Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Toshiba Laptops</h2>
+
+    <p class="product-description">
+        Quality checked Toshiba laptops with
+        different configuration options.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Options</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Toshiba Laptop"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HUAWEI
+===================================================== -->
+
+<div class="product-card" data-category="refurbished">
+
+<div class="product-image">
+
+    <!-- CHANGE HUAWEI PHOTO HERE -->
+    <img src="images/huawei-laptop.jpg"
+         alt="Huawei Laptops">
+
+    <span class="product-badge badge-refurbished">
+        REFURBISHED
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Huawei Laptops</h2>
+
+    <p class="product-description">
+        Refurbished Huawei laptops with
+        quality checked hardware.
+    </p>
+
+    <div class="features">
+        <span>✓ Refurbished</span>
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Huawei Laptop"
+            data-category="Refurbished Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     LG
+===================================================== -->
+
+<div class="product-card" data-category="used">
+
+<div class="product-image">
+
+    <!-- CHANGE LG PHOTO HERE -->
+    <img src="images/lg-laptop.jpg"
+         alt="LG Laptops">
+
+    <span class="product-badge badge-used">
+        SECOND-HAND
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>LG Laptops</h2>
+
+    <p class="product-description">
+        Quality checked LG laptops available
+        in selected configurations.
+    </p>
+
+    <div class="features">
+        <span>✓ Tested</span>
+        <span>✓ Quality Checked</span>
+        <span>✓ Multiple Options</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="LG Laptop"
+            data-category="Second-Hand Laptop"
+            data-type="laptop">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CUSTOM ASSEMBLED PC
+===================================================== -->
+
+<div class="product-card" data-category="assembled">
+
+<div class="product-image">
+
+    <!-- CHANGE PC PHOTO HERE -->
+    <img src="images/custom-pc.jpg"
+         alt="Custom Assembled PCs">
+
+    <span class="product-badge badge-assembled">
+        CUSTOM PC
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h2>Custom Assembled PCs</h2>
+
+    <p class="product-description">
+        Build a PC according to your requirements
+        for office work, AutoCAD, editing, gaming
+        and professional use.
+    </p>
+
+    <div class="features">
+        <span>✓ Custom Build</span>
+        <span>✓ Tested</span>
+        <span>✓ Configurable</span>
+    </div>
+
+    <button class="select-config-btn"
+            onclick="openConfig(this)"
+            data-product="Custom Assembled PC"
+            data-category="Assembled PC"
+            data-type="pc">
+
+        <i class="fa-solid fa-sliders"></i>
+        Select Configuration
+
+    </button>
+
+</div>
+
+</div>
+
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     CONFIGURATION POPUP
+===================================================== -->
+
+<div id="configModal" class="config-modal">
+
+<div class="config-box">
+
+<button class="config-close"
+        onclick="closeConfig()">
+    ×
+</button>
+
+
+<div class="config-title">
+
+    <span class="config-icon" id="configIcon">
+        <i class="fa-solid fa-laptop"></i>
+    </span>
+
+    <div>
+        <h2>Select Configuration</h2>
+        <p id="selectedProduct">Product</p>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LAPTOP CONFIGURATION
+===================================================== -->
+
+<div id="laptopConfiguration">
+
+<div class="config-section">
+<h3>
+<i class="fa-solid fa-laptop"></i>
+Laptop Configuration
+</h3>
+</div>
+
+
+<label>Laptop Brand</label>
+
+<select id="laptopBrand">
+
+<option value="">Select Brand</option>
+<option>Dell</option>
+<option>HP</option>
+<option>Lenovo</option>
+<option>Acer</option>
+<option>ASUS</option>
+<option>Apple</option>
+<option>Microsoft Surface</option>
+<option>MSI</option>
+<option>Samsung</option>
+<option>Toshiba</option>
+<option>Huawei</option>
+<option>LG</option>
+<option>Other</option>
+
+</select>
+
+
+<label>Preferred Model</label>
+
+<input type="text"
+       id="laptopModel"
+       placeholder="Enter model if you have a preference">
+
+
+<label>Processor</label>
+
+<select id="laptopProcessor">
+
+<option value="">Select Processor</option>
+<option>Intel Core i3</option>
+<option>Intel Core i5</option>
+<option>Intel Core i7</option>
+<option>Intel Core i9</option>
+<option>AMD Ryzen 3</option>
+<option>AMD Ryzen 5</option>
+<option>AMD Ryzen 7</option>
+<option>AMD Ryzen 9</option>
+<option>Any / Recommended</option>
+
+</select>
+
+
+<label>RAM</label>
+
+<select id="laptopRAM">
+
+<option value="">Select RAM</option>
+<option>4 GB</option>
+<option>8 GB</option>
+<option>16 GB</option>
+<option>32 GB</option>
+<option>64 GB</option>
+<option>Any / Recommended</option>
+
+</select>
+
+
+<label>Storage</label>
+
+<select id="laptopStorage">
+
+<option value="">Select Storage</option>
+<option>128 GB SSD</option>
+<option>256 GB SSD</option>
+<option>512 GB SSD</option>
+<option>1 TB SSD</option>
+<option>1 TB HDD</option>
+<option>2 TB HDD</option>
+<option>SSD + HDD</option>
+<option>Any / Recommended</option>
+
+</select>
+
+
+<label>Display Size</label>
+
+<select id="laptopDisplay">
+
+<option value="">Select Display Size</option>
+<option>12.5 inch</option>
+<option>13.3 inch</option>
+<option>14 inch</option>
+<option>15.6 inch</option>
+<option>17.3 inch</option>
+<option>Any Size</option>
+
+</select>
+
+
+<label>Graphics</label>
+
+<select id="laptopGraphics">
+
+<option value="">Select Graphics</option>
+<option>Integrated Graphics</option>
+<option>NVIDIA Dedicated Graphics</option>
+<option>AMD Dedicated Graphics</option>
+<option>Any / Recommended</option>
+
+</select>
+
+
+<label>Battery</label>
+
+<select id="laptopBattery">
+
+<option value="">Select Battery Requirement</option>
+<option>Good Battery</option>
+<option>Normal Battery</option>
+<option>Battery Replacement Acceptable</option>
+<option>No Preference</option>
+
+</select>
+
+
+<label>Condition</label>
+
+<select id="laptopCondition">
+
+<option value="">Select Condition</option>
+<option>Second-Hand</option>
+<option>Refurbished</option>
+<option>No Preference</option>
+
+</select>
+
+
+<label>Operating System</label>
+
+<select id="laptopOS">
+
+<option value="">Select Operating System</option>
+<option>Windows 11</option>
+<option>Windows 11 Pro</option>
+<option>Windows 10</option>
+<option>Linux</option>
+<option>No Operating System</option>
+<option>No Preference</option>
+
+</select>
+
+</div>
+
+
+<!-- =====================================================
+     PC CONFIGURATION
+===================================================== -->
+
+<div id="pcConfiguration" style="display:none;">
+
+<div class="config-section">
+<h3>
+<i class="fa-solid fa-desktop"></i>
+Custom PC Configuration
+</h3>
+</div>
+
+
+<label>Main Use</label>
+
+<select id="pcUse">
+
+<option value="">Select Main Use</option>
+<option>Office Work</option>
+<option>Home / Education</option>
+<option>AutoCAD / Engineering</option>
+<option>Graphic Design</option>
+<option>Video Editing</option>
+<option>Gaming</option>
+<option>Business / Professional</option>
+<option>Other</option>
+
+</select>
+
+
+<div class="config-two-column">
+
+
+<div>
+<label>Processor</label>
+
+<select id="pcProcessor">
+<option value="">Select Processor</option>
+<option>Intel Core i3</option>
+<option>Intel Core i5</option>
+<option>Intel Core i7</option>
+<option>Intel Core i9</option>
+<option>AMD Ryzen 3</option>
+<option>AMD Ryzen 5</option>
+<option>AMD Ryzen 7</option>
+<option>AMD Ryzen 9</option>
+<option>Any / Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>Motherboard</label>
+
+<select id="pcMotherboard">
+<option value="">Select Motherboard</option>
+<option>Compatible Motherboard</option>
+<option>Business Motherboard</option>
+<option>Gaming Motherboard</option>
+<option>Professional Motherboard</option>
+<option>Any / Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>RAM</label>
+
+<select id="pcRAM">
+<option value="">Select RAM</option>
+<option>8 GB</option>
+<option>16 GB</option>
+<option>32 GB</option>
+<option>64 GB</option>
+<option>128 GB</option>
+<option>Any / Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>SSD</label>
+
+<select id="pcSSD">
+<option value="">Select SSD</option>
+<option>No SSD</option>
+<option>256 GB SSD</option>
+<option>512 GB SSD</option>
+<option>1 TB SSD</option>
+<option>2 TB SSD</option>
+</select>
+</div>
+
+
+<div>
+<label>HDD</label>
+
+<select id="pcHDD">
+<option value="">Select HDD</option>
+<option>No HDD</option>
+<option>1 TB HDD</option>
+<option>2 TB HDD</option>
+<option>4 TB HDD</option>
+<option>6 TB HDD</option>
+</select>
+</div>
+
+
+<div>
+<label>Graphics Card</label>
+
+<select id="pcGPU">
+<option value="">Select Graphics</option>
+<option>Integrated Graphics</option>
+<option>NVIDIA Entry Level</option>
+<option>NVIDIA Gaming GPU</option>
+<option>NVIDIA Professional GPU</option>
+<option>AMD Graphics Card</option>
+<option>No Dedicated GPU</option>
+<option>Any / Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>Cabinet</label>
+
+<select id="pcCabinet">
+<option value="">Select Cabinet</option>
+<option>Standard Cabinet</option>
+<option>Mid Tower</option>
+<option>Gaming Cabinet</option>
+<option>Professional Cabinet</option>
+<option>Any / Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>SMPS / Power Supply</label>
+
+<select id="pcSMPS">
+<option value="">Select SMPS</option>
+<option>450W</option>
+<option>550W</option>
+<option>650W</option>
+<option>750W</option>
+<option>850W</option>
+<option>1000W+</option>
+<option>Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>CPU Cooling</label>
+
+<select id="pcCooling">
+<option value="">Select Cooling</option>
+<option>Stock Cooler</option>
+<option>Air Cooler</option>
+<option>High Performance Air Cooler</option>
+<option>Liquid Cooling</option>
+<option>Recommended</option>
+</select>
+</div>
+
+
+<div>
+<label>Monitor</label>
+
+<select id="pcMonitor">
+<option value="">Select Monitor</option>
+<option>No Monitor</option>
+<option>19 inch</option>
+<option>21.5 inch</option>
+<option>22 inch</option>
+<option>24 inch</option>
+<option>27 inch</option>
+<option>Gaming Monitor</option>
+<option>Professional Monitor</option>
+</select>
+</div>
+
+
+<div>
+<label>Keyboard & Mouse</label>
+
+<select id="pcKeyboardMouse">
+<option value="">Select Option</option>
+<option>Not Required</option>
+<option>Basic Keyboard & Mouse</option>
+<option>Wireless Keyboard & Mouse</option>
+<option>Gaming Keyboard & Mouse</option>
+</select>
+</div>
+
+
+<div>
+<label>Operating System</label>
+
+<select id="pcOS">
+<option value="">Select Operating System</option>
+<option>Windows 11</option>
+<option>Windows 11 Pro</option>
+<option>Windows 10</option>
+<option>Linux</option>
+<option>No Operating System</option>
+</select>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CUSTOMER
+===================================================== -->
+
+<div class="config-section">
+<h3>
+<i class="fa-solid fa-user"></i>
+Your Details
+</h3>
+</div>
+
+
+<label>Your Name</label>
+
+<input type="text"
+       id="customerName"
+       placeholder="Enter your name">
+
+
+<label>Mobile Number</label>
+
+<input type="tel"
+       id="customerPhone"
+       placeholder="Enter your mobile number">
+
+
+<label>Additional Requirement</label>
+
+<textarea id="additionalRequirement"
+          placeholder="Tell us anything else you require..."></textarea>
+
+
+<button class="send-whatsapp-btn"
+        onclick="sendConfigurationToWhatsApp()">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Send Configuration on WhatsApp
+
+</button>
+
+
+</div>
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="sale-footer">
+
+<h3>
+SS Online & Offline Computer Services
+</h3>
+
+<p>
+Second-Hand Laptops • Refurbished Laptops • Custom Assembled PCs
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
+9502608440
+</p>
+
+</footer>
+
+
+<script>
+
+/* FILTER */
+
+function filterProducts(category,button){
+
+    const products=document.querySelectorAll(".product-card");
+    const buttons=document.querySelectorAll(".category-btn");
+
+    buttons.forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    products.forEach(product=>{
+
+        if(category==="all"){
+            product.classList.remove("hidden");
+        }
+        else if(product.dataset.category===category){
+            product.classList.remove("hidden");
+        }
+        else{
+            product.classList.add("hidden");
+        }
+
+    });
+}
+
+
+/* VARIABLES */
+
+let selectedProductName="";
+let selectedProductCategory="";
+let selectedProductType="";
+
+
+/* OPEN POPUP */
+
+function openConfig(button){
+
+    selectedProductName=button.getAttribute("data-product");
+
+    selectedProductCategory=button.getAttribute("data-category");
+
+    selectedProductType=button.getAttribute("data-type");
+
+    document.getElementById("selectedProduct").textContent=
+        selectedProductName+" • "+selectedProductCategory;
+
+
+    const laptop=document.getElementById("laptopConfiguration");
+    const pc=document.getElementById("pcConfiguration");
+    const icon=document.getElementById("configIcon");
+
+
+    if(selectedProductType==="laptop"){
+
+        laptop.style.display="block";
+        pc.style.display="none";
+
+        icon.innerHTML='<i class="fa-solid fa-laptop"></i>';
+
+        /* Automatically select the brand based on card */
+
+        const productBrand=selectedProductName
+            .replace(" Laptop","")
+            .replace(" MacBook","")
+            .replace("Microsoft Surface","Microsoft Surface");
+
+        const brandSelect=document.getElementById("laptopBrand");
+
+        for(let i=0;i<brandSelect.options.length;i++){
+
+            if(brandSelect.options[i].text===productBrand){
+
+                brandSelect.selectedIndex=i;
+                break;
+
+            }
+
+        }
+
+    }
+    else{
+
+        laptop.style.display="none";
+        pc.style.display="block";
+
+        icon.innerHTML='<i class="fa-solid fa-desktop"></i>';
+
+    }
+
+
+    document.getElementById("configModal").classList.add("show");
+
+    document.body.style.overflow="hidden";
+}
+
+
+/* CLOSE */
+
+function closeConfig(){
+
+    document.getElementById("configModal").classList.remove("show");
+
+    document.body.style.overflow="auto";
+}
+
+
+/* OUTSIDE CLICK */
+
+document.getElementById("configModal").addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeConfig();
+    }
+
+});
+
+
+/* WHATSAPP */
+
+function sendConfigurationToWhatsApp(){
+
+    const name=document.getElementById("customerName").value.trim();
+    const phone=document.getElementById("customerPhone").value.trim();
+    const additional=document.getElementById("additionalRequirement").value.trim();
+
+
+    if(!name){
+
+        alert("Please enter your name.");
+
+        document.getElementById("customerName").focus();
+
+        return;
+    }
+
+
+    if(!phone){
+
+        alert("Please enter your mobile number.");
+
+        document.getElementById("customerPhone").focus();
+
+        return;
+    }
+
+
+    let message="";
+
+
+    /* LAPTOP */
+
+    if(selectedProductType==="laptop"){
+
+        const brand=document.getElementById("laptopBrand").value;
+        const model=document.getElementById("laptopModel").value.trim();
+        const processor=document.getElementById("laptopProcessor").value;
+        const ram=document.getElementById("laptopRAM").value;
+        const storage=document.getElementById("laptopStorage").value;
+        const display=document.getElementById("laptopDisplay").value;
+        const graphics=document.getElementById("laptopGraphics").value;
+        const battery=document.getElementById("laptopBattery").value;
+        const condition=document.getElementById("laptopCondition").value;
+        const os=document.getElementById("laptopOS").value;
+
+
+        message=
+`Hello SS Online & Offline Computer Services,
+
+I would like to enquire about a laptop.
+
+━━━━━━━━━━━━━━━━━━
+PRODUCT
+━━━━━━━━━━━━━━━━━━
+
+Product: ${selectedProductName}
+Category: ${selectedProductCategory}
+
+━━━━━━━━━━━━━━━━━━
+LAPTOP CONFIGURATION
+━━━━━━━━━━━━━━━━━━
+
+Brand: ${brand || "Not specified"}
+Model: ${model || "Any / Not specified"}
+Processor: ${processor || "Not specified"}
+RAM: ${ram || "Not specified"}
+Storage: ${storage || "Not specified"}
+Display: ${display || "Not specified"}
+Graphics: ${graphics || "Not specified"}
+Battery: ${battery || "Not specified"}
+Condition: ${condition || "Not specified"}
+Operating System: ${os || "Not specified"}
+
+━━━━━━━━━━━━━━━━━━
+CUSTOMER DETAILS
+━━━━━━━━━━━━━━━━━━
+
+Name: ${name}
+Mobile: ${phone}
+
+Additional Requirement:
+${additional || "None"}
+
+Please let me know the available options and quotation.
+
+Thank you.`;
+
+    }
+
+
+    /* PC */
+
+    else{
+
+        const use=document.getElementById("pcUse").value;
+        const processor=document.getElementById("pcProcessor").value;
+        const motherboard=document.getElementById("pcMotherboard").value;
+        const ram=document.getElementById("pcRAM").value;
+        const ssd=document.getElementById("pcSSD").value;
+        const hdd=document.getElementById("pcHDD").value;
+        const gpu=document.getElementById("pcGPU").value;
+        const cabinet=document.getElementById("pcCabinet").value;
+        const smps=document.getElementById("pcSMPS").value;
+        const cooling=document.getElementById("pcCooling").value;
+        const monitor=document.getElementById("pcMonitor").value;
+        const keyboard=document.getElementById("pcKeyboardMouse").value;
+        const os=document.getElementById("pcOS").value;
+
+
+        message=
+`Hello SS Online & Offline Computer Services,
+
+I would like to enquire about a custom assembled PC.
+
+━━━━━━━━━━━━━━━━━━
+PRODUCT
+━━━━━━━━━━━━━━━━━━
+
+Product: ${selectedProductName}
+Category: ${selectedProductCategory}
+
+━━━━━━━━━━━━━━━━━━
+PC REQUIREMENT
+━━━━━━━━━━━━━━━━━━
+
+Main Use: ${use || "Not specified"}
+
+Processor: ${processor || "Not specified"}
+Motherboard: ${motherboard || "Not specified"}
+
+RAM: ${ram || "Not specified"}
+SSD: ${ssd || "Not specified"}
+HDD: ${hdd || "Not specified"}
+
+Graphics Card: ${gpu || "Not specified"}
+
+Cabinet: ${cabinet || "Not specified"}
+SMPS: ${smps || "Not specified"}
+CPU Cooling: ${cooling || "Not specified"}
+
+Monitor: ${monitor || "Not specified"}
+Keyboard & Mouse: ${keyboard || "Not specified"}
+
+Operating System: ${os || "Not specified"}
+
+━━━━━━━━━━━━━━━━━━
+CUSTOMER DETAILS
+━━━━━━━━━━━━━━━━━━
+
+Name: ${name}
+Mobile: ${phone}
+
+Additional Requirement:
+${additional || "None"}
+
+Please suggest the available configuration and quotation.
+
+Thank you.`;
+
+    }
+
+
+    /* OPEN WHATSAPP */
+
+    const whatsappURL=
+        "https://wa.me/919502608440?text="+
+        encodeURIComponent(message);
+
+    window.open(whatsappURL,"_blank");
+
+}
+
+</script>
+
+<script>
+/* IMAGE FALLBACK
+   If a local product image is missing, show a clean placeholder instead
+   of a broken-image icon.
+*/
+document.querySelectorAll(".product-image img").forEach(function(img) {
+    img.addEventListener("error", function() {
+        this.style.display = "none";
+        this.parentElement.style.background =
+            "linear-gradient(135deg,#eef4ff,#dbeafe)";
+        this.parentElement.setAttribute("data-image-error", "Image unavailable");
+    });
+});
+</script>
+<script>
+function toggleMobileMenu() {
+
+    const nav = document.querySelector("header nav");
+
+    if (!nav) return;
+
+    if (nav.classList.contains("mobile-menu-open")) {
+
+        nav.classList.remove("mobile-menu-open");
+
+    } else {
+
+        nav.classList.add("mobile-menu-open");
+
+    }
+}
+</script>
+<!-- MOBILE BOTTOM NAVIGATION -->
+<!-- MOBILE BOTTOM NAVIGATION -->
+<div class="mobile-bottom-nav">
+
+    <a href="index.html" class="mobile-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="index.html#services" class="mobile-nav-item">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <span>Services</span>
+    </a>
+
+    <a href="laptops-pcs.html" class="mobile-nav-item laptop-mobile-nav">
+        <i class="fa-solid fa-laptop"></i>
+        <span>Laptops & PCs</span>
+    </a>
+
+    <a href="https://wa.me/919502608440"
+       target="_blank"
+       class="mobile-nav-item whatsapp-mobile-nav">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+</div>
+</body>
+</html>
