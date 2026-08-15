@@ -11,7 +11,10 @@
   <meta name="description" content="Expert computer repair, software & hardware services in Hyderabad. Call 9502608440 for professional support.">
   <meta name="keywords" content="computer repair Hyderabad, laptop service, computer maintenance, SS Computer Services Hyderabad">
 
-  <title>SS Online & Offline Computer Services — Hyderabad</title>
+  <title>SS Online & Offline Computer Services — Hyderabad
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </title>
 
   <style>
     :root{
@@ -688,105 +691,201 @@
 
 }
 /* =====================================================
-   MOBILE BOTTOM NAVIGATION
-   HIDDEN ON PC / DESKTOP
+   FINAL MOBILE BOTTOM NAVIGATION
 ===================================================== */
 
 .mobile-bottom-nav {
     display: none !important;
 }
 
+@media only screen and (max-width:600px) {
 
-/* =====================================================
-   MOBILE ONLY
-===================================================== */
-
-@media only screen and (max-width:600px){
-
-    .mobile-bottom-nav{
-        display:grid !important;
-
-        position:fixed;
-        left:0;
-        right:0;
-        bottom:0;
-
-        width:100%;
-        height:72px;
-
-        grid-template-columns:repeat(4,1fr);
-
-        background:#fff;
-
-        border-top:1px solid #d8dce3;
-
-        box-shadow:0 -4px 18px rgba(0,0,0,.15);
-
-        z-index:999999;
-
-        padding:5px 3px;
+    html,
+    body {
+        overflow-x: hidden !important;
     }
 
-    .mobile-nav-item{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-
-        gap:4px;
-
-        background:transparent;
-        border:none;
-
-        text-decoration:none;
-
-        color:#172033;
-
-        font-family:inherit;
-        font-size:10px;
-        font-weight:700;
+    body {
+        padding-bottom: 100px !important;
     }
 
-    .mobile-nav-item i{
-        font-size:24px;
+    main {
+        padding-bottom: 35px !important;
     }
 
-    /* Laptops & PCs highlight */
-    .laptop-mobile-nav{
-        color:#1769e0 !important;
-        font-weight:900;
+    /* Hide old mobile action buttons */
+    .mobile-action-bar {
+        display: none !important;
     }
 
-    .laptop-mobile-nav i{
-        color:#1769e0;
+    /* Bottom navigation */
+    .mobile-bottom-nav {
+        display: grid !important;
 
-        background:#e8f2ff;
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
 
-        width:42px;
-        height:36px;
+        width: 100% !important;
+        height: 78px !important;
 
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        grid-template-columns: repeat(4, 1fr);
 
-        border-radius:10px;
+        background: rgba(255,255,255,0.98) !important;
+
+        border-top: 1px solid #d8dce3 !important;
+
+        box-shadow: 0 -6px 25px rgba(0,0,0,0.16) !important;
+
+        z-index: 2147483000 !important;
+
+        padding: 5px 4px calc(5px + env(safe-area-inset-bottom));
+
+        box-sizing: border-box;
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Navigation item */
+    .mobile-nav-item {
+        position: relative;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 3px !important;
+
+        min-width: 0;
+
+        background: transparent !important;
+        border: none !important;
+
+        text-decoration: none !important;
+
+        color: #172033 !important;
+
+        font-family: inherit;
+
+        font-size: 11px !important;
+        font-weight: 700 !important;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Font Awesome icons */
+    .mobile-nav-item i {
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 42px !important;
+        height: 36px !important;
+
+        font-size: 24px !important;
+
+        line-height: 1 !important;
+
+        color: #172033 !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Text */
+    .mobile-nav-item span {
+        display: block !important;
+
+        color: #172033 !important;
+
+        font-size: 11px !important;
+        line-height: 16px !important;
+
+        white-space: nowrap;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Laptops & PCs */
+    .laptop-mobile-nav i {
+        color: #1769e0 !important;
+
+        background: #e8f2ff !important;
+
+        width: 44px !important;
+        height: 38px !important;
+
+        border-radius: 11px;
+    }
+
+    .laptop-mobile-nav span {
+        color: #1769e0 !important;
+        font-weight: 800 !important;
     }
 
     /* WhatsApp */
-    .whatsapp-mobile-nav i{
-        color:#25D366;
+    .whatsapp-mobile-nav i {
+        color: #25D366 !important;
     }
 
-    /* Hide normal desktop navigation on mobile */
-    header nav{
-        display:none !important;
+    .whatsapp-mobile-nav span {
+        color: #172033 !important;
     }
 
-    body{
-        padding-bottom:85px !important;
+    /* Home */
+    .mobile-nav-item:first-child i {
+        color: #172033 !important;
+    }
+
+    /* Services */
+    .mobile-nav-item:nth-child(2) i {
+        color: #172033 !important;
+    }
+
+    /* Hide desktop navigation on mobile */
+    header nav {
+        display: none !important;
+    }
+
+    /* Header stays above animated background */
+    header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 9999 !important;
+    }
+
+    /* Keep bottom bar above background */
+    .mobile-bottom-nav,
+    .mobile-bottom-nav * {
+        isolation: isolate;
+    }
+
+    /* Floating WhatsApp stays above bottom navigation */
+    .whatsapp-float {
+        bottom: 92px !important;
+        right: 15px !important;
+        z-index: 1000 !important;
+    }
+
+    /* Give final content/buttons enough space */
+    .send-btn {
+        margin-bottom: 20px !important;
+    }
+
+    .footer {
+        margin-bottom: 20px !important;
+        padding-bottom: 35px !important;
     }
 }
-
 /* =====================================================
    NEW LAPTOP & PC PAGE TRANSITION LOADER
 ===================================================== */
@@ -968,11 +1067,9 @@
         font-size:19px;
     }
 }
-
 </style>
 </head>
 <body>
-
 <!-- =====================================================
      LAPTOP & PC PAGE TRANSITION LOADER
 ===================================================== -->
@@ -1225,15 +1322,17 @@
     }
 
     const servicesList = [
-      {icon:"💻",name:"Laptop Service"},
-      {icon:"🖥️",name:"Desktop Service"},
-      {icon:"🖨️",name:"Printer Setup"},
-      {icon:"📷",name:"CCTV Installation"},
-      {icon:"🚪",name:"Doorstep Inspection"},
-      {icon:"💾",name:"Data Recovery"},
-      {icon:"📅",name:"AMC (1 Year)"},
-      {icon:"🪟",name:"Software Installation"}
-    ];
+    {icon:"💻", name:"Laptop Service"},
+    {icon:"🖥️", name:"Desktop Service"},
+    {icon:"🖨️", name:"Printer Setup"},
+    {icon:"📷", name:"CCTV Installation"},
+    {icon:"🚪", name:"Doorstep Inspection"},
+    {icon:"💾", name:"Data Recovery"},
+    {icon:"🔐", name:"Laptop Password Recovery"},
+    {icon:"📱", name:"Mobile Password Recovery"},
+    {icon:"📅", name:"AMC (1 Year)"},
+    {icon:"🪟", name:"Software Installation"}
+];
 
     document.getElementById("serviceTiles").innerHTML = servicesList.map(s => `
       <div class="service-tile" onclick="openBookingPopup('${s.name}')">
@@ -1404,7 +1503,6 @@ function sendProductToWhatsApp(){
     </div>
 </div>
 <!-- MOBILE BOTTOM NAVIGATION -->
-<!-- MOBILE BOTTOM NAVIGATION -->
 <div class="mobile-bottom-nav">
 
     <a href="index.html" class="mobile-nav-item">
@@ -1412,27 +1510,30 @@ function sendProductToWhatsApp(){
         <span>Home</span>
     </a>
 
-    <a href="index.html#services" class="mobile-nav-item">
+    <a href="index.html#service-tiles" class="mobile-nav-item">
         <i class="fa-solid fa-screwdriver-wrench"></i>
         <span>Services</span>
     </a>
 
     <a href="laptops-pcs.html"
-   class="mobile-nav-item laptop-mobile-nav laptop-sale-link">
+       class="mobile-nav-item laptop-mobile-nav">
 
-    <i class="fa-solid fa-laptop"></i>
-    <span>Laptops & PCs</span>
-</a>
+        <i class="fa-solid fa-laptop"></i>
+        <span>Laptops &amp; PCs</span>
+
+    </a>
 
     <a href="https://wa.me/919502608440"
        target="_blank"
+       rel="noopener"
        class="mobile-nav-item whatsapp-mobile-nav">
+
         <i class="fa-brands fa-whatsapp"></i>
         <span>WhatsApp</span>
+
     </a>
 
 </div>
-
 <script>
 /* =====================================================
    LAPTOP & PC PAGE TRANSITION
