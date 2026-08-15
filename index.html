@@ -625,10 +625,379 @@
   height:32px;
   cursor:pointer;
 }
-  </style>
-</head>
+/* =====================================================
+   HIGHLIGHT LAPTOPS & PCs SALE NAV BUTTON
+===================================================== */
 
+.laptops-sale-nav{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+
+    margin-left:18px;
+    padding:9px 14px;
+
+    background:linear-gradient(135deg,#1769e0,#0ea5e9);
+    color:#fff !important;
+
+    border-radius:8px;
+
+    font-weight:800 !important;
+    text-decoration:none;
+
+    box-shadow:0 4px 12px rgba(23,105,224,.30);
+
+    transition:all .3s ease;
+
+    animation:laptopSalePulse 2.2s infinite;
+}
+
+.laptops-sale-nav:hover{
+    color:#fff !important;
+    transform:translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 6px 18px rgba(23,105,224,.45);
+}
+
+
+/* Attention animation */
+@keyframes laptopSalePulse{
+
+    0%,100%{
+        box-shadow:0 4px 12px rgba(23,105,224,.30);
+    }
+
+    50%{
+        box-shadow:
+            0 0 0 5px rgba(14,165,233,.15),
+            0 6px 20px rgba(23,105,224,.45);
+    }
+
+}
+
+
+/* Mobile */
+@media(max-width:600px){
+
+    .laptops-sale-nav{
+        margin-left:0;
+        padding:8px 11px;
+        font-size:13px;
+    }
+
+}
+/* =====================================================
+   MOBILE BOTTOM NAVIGATION
+   HIDDEN ON PC / DESKTOP
+===================================================== */
+
+.mobile-bottom-nav {
+    display: none !important;
+}
+
+
+/* =====================================================
+   MOBILE ONLY
+===================================================== */
+
+@media only screen and (max-width:600px){
+
+    .mobile-bottom-nav{
+        display:grid !important;
+
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+
+        width:100%;
+        height:72px;
+
+        grid-template-columns:repeat(4,1fr);
+
+        background:#fff;
+
+        border-top:1px solid #d8dce3;
+
+        box-shadow:0 -4px 18px rgba(0,0,0,.15);
+
+        z-index:999999;
+
+        padding:5px 3px;
+    }
+
+    .mobile-nav-item{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        gap:4px;
+
+        background:transparent;
+        border:none;
+
+        text-decoration:none;
+
+        color:#172033;
+
+        font-family:inherit;
+        font-size:10px;
+        font-weight:700;
+    }
+
+    .mobile-nav-item i{
+        font-size:24px;
+    }
+
+    /* Laptops & PCs highlight */
+    .laptop-mobile-nav{
+        color:#1769e0 !important;
+        font-weight:900;
+    }
+
+    .laptop-mobile-nav i{
+        color:#1769e0;
+
+        background:#e8f2ff;
+
+        width:42px;
+        height:36px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border-radius:10px;
+    }
+
+    /* WhatsApp */
+    .whatsapp-mobile-nav i{
+        color:#25D366;
+    }
+
+    /* Hide normal desktop navigation on mobile */
+    header nav{
+        display:none !important;
+    }
+
+    body{
+        padding-bottom:85px !important;
+    }
+}
+
+/* =====================================================
+   NEW LAPTOP & PC PAGE TRANSITION LOADER
+===================================================== */
+
+.laptop-page-loader{
+    position:fixed;
+    inset:0;
+    z-index:2147483647;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(circle at 50% 38%, rgba(37,99,235,.16), transparent 32%),
+        linear-gradient(135deg,#071426,#0b1d38 55%,#020812);
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:opacity .25s ease, visibility .25s ease;
+}
+
+.laptop-page-loader.show{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.laptop-loader-wrap{
+    width:min(420px,90vw);
+    text-align:center;
+    color:#fff;
+}
+
+.animated-laptop{
+    position:relative;
+    width:230px;
+    height:170px;
+    margin:0 auto 28px;
+    perspective:700px;
+    filter:drop-shadow(0 18px 28px rgba(0,0,0,.45));
+}
+
+.animated-laptop-screen{
+    position:absolute;
+    left:28px;
+    top:5px;
+    width:174px;
+    height:112px;
+    padding:7px;
+    border:5px solid #cbd5e1;
+    border-bottom-width:8px;
+    border-radius:10px 10px 5px 5px;
+    background:#0f172a;
+    transform-origin:bottom center;
+    animation:laptopScreenOpen 1.4s ease-in-out infinite alternate;
+}
+
+.animated-laptop-display{
+    width:100%;
+    height:100%;
+    border-radius:3px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:
+        radial-gradient(circle at center,#1d4ed8 0,#0b2454 45%,#020817 100%);
+    overflow:hidden;
+}
+
+.loader-ss{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:#fff;
+    font-weight:900;
+    font-size:17px;
+    box-shadow:0 0 22px rgba(37,99,235,.65);
+}
+
+.loader-bar{
+    width:78px;
+    height:4px;
+    border-radius:10px;
+    background:rgba(255,255,255,.2);
+    overflow:hidden;
+}
+
+.loader-bar span{
+    display:block;
+    width:40%;
+    height:100%;
+    border-radius:10px;
+    background:#38bdf8;
+    animation:loaderProgress 1.1s ease-in-out infinite;
+}
+
+.animated-laptop-hinge{
+    position:absolute;
+    left:23px;
+    top:112px;
+    width:184px;
+    height:7px;
+    border-radius:50%;
+    background:#94a3b8;
+}
+
+.animated-laptop-base{
+    position:absolute;
+    left:8px;
+    top:116px;
+    width:214px;
+    height:22px;
+    border-radius:4px 4px 15px 15px;
+    background:linear-gradient(#dbe4ef,#94a3b8);
+    transform:perspective(120px) rotateX(18deg);
+}
+
+.animated-laptop-trackpad{
+    position:absolute;
+    left:91px;
+    top:122px;
+    width:48px;
+    height:10px;
+    border-radius:4px;
+    background:#b7c3d1;
+}
+
+.laptop-loader-title{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:.2px;
+}
+
+.laptop-loader-subtitle{
+    margin-top:7px;
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+.loader-dots i{
+    font-style:normal;
+    animation:loaderDot 1.2s infinite;
+}
+
+.loader-dots i:nth-child(2){animation-delay:.15s}
+.loader-dots i:nth-child(3){animation-delay:.30s}
+
+@keyframes laptopScreenOpen{
+    0%{transform:rotateX(3deg)}
+    100%{transform:rotateX(-8deg)}
+}
+
+@keyframes loaderProgress{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(280%)}
+}
+
+@keyframes loaderDot{
+    0%,70%,100%{opacity:.25}
+    35%{opacity:1}
+}
+
+@media(max-width:600px){
+    .animated-laptop{
+        transform:scale(.88);
+        margin-bottom:12px;
+    }
+
+    .laptop-loader-title{
+        font-size:19px;
+    }
+}
+
+</style>
+</head>
 <body>
+
+<!-- =====================================================
+     LAPTOP & PC PAGE TRANSITION LOADER
+===================================================== -->
+<div id="laptopPageLoader" class="laptop-page-loader" aria-hidden="true">
+    <div class="laptop-loader-wrap">
+        <div class="animated-laptop">
+            <div class="animated-laptop-screen">
+                <div class="animated-laptop-display">
+                    <div class="loader-ss">SS</div>
+                    <div class="loader-bar"><span></span></div>
+                </div>
+            </div>
+            <div class="animated-laptop-hinge"></div>
+            <div class="animated-laptop-base"></div>
+            <div class="animated-laptop-trackpad"></div>
+        </div>
+
+        <div class="laptop-loader-title">Opening Laptops &amp; PCs</div>
+        <div class="laptop-loader-subtitle">
+            Please wait
+            <span class="loader-dots"><i>.</i><i>.</i><i>.</i></span>
+        </div>
+    </div>
+</div>
+
   <header>
     <div class="brand">
       <img src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg" loading="lazy" alt="SS Online logo">
@@ -655,6 +1024,10 @@
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
       <a href="#moving-products">Our Products</a>
+<a href="laptops-pcs.html" class="laptops-sale-nav">
+    💻 Laptops & PCs Sale
+</a>
+
       <a class="cta" href="tel:9502608440">Call Now 📞</a>
     </nav>
   </header>
@@ -736,13 +1109,11 @@
         </div>
       </div>
     </section>
-
     <section id="gallery" class="gallery-section">
   <div class="section-title">
     <h2>Our Work Gallery</h2>
     <p>Real service work, repairs and computer solutions</p>
   </div>
-
   <div class="vertical-gallery">
     <div class="vertical-gallery-track">
 
@@ -998,6 +1369,8 @@ function sendProductToWhatsApp(){
   window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
 }
   </script>
+
+
   <div id="productPopup" class="product-popup">
   <div class="product-popup-card">
     <button class="product-close" onclick="closeProductPopup()">✕</button>
@@ -1007,5 +1380,109 @@ function sendProductToWhatsApp(){
     <button class="send-btn" onclick="sendProductToWhatsApp()">Send to WhatsApp</button>
   </div>
 </div>
+<!-- =====================================================
+     LAPTOP OPENING LOADING SCREEN
+===================================================== -->
+
+
+
+        <!-- LAPTOP BASE -->
+
+        <div class="laptop-base"></div>
+
+    </div>
+
+    <div class="laptop-loading-text">
+
+        Opening Laptops & PCs
+
+        <span class="loading-dots">
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </span>
+    </div>
+</div>
+<!-- MOBILE BOTTOM NAVIGATION -->
+<!-- MOBILE BOTTOM NAVIGATION -->
+<div class="mobile-bottom-nav">
+
+    <a href="index.html" class="mobile-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="index.html#services" class="mobile-nav-item">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <span>Services</span>
+    </a>
+
+    <a href="laptops-pcs.html"
+   class="mobile-nav-item laptop-mobile-nav laptop-sale-link">
+
+    <i class="fa-solid fa-laptop"></i>
+    <span>Laptops & PCs</span>
+</a>
+
+    <a href="https://wa.me/919502608440"
+       target="_blank"
+       class="mobile-nav-item whatsapp-mobile-nav">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+</div>
+
+<script>
+/* =====================================================
+   LAPTOP & PC PAGE TRANSITION
+===================================================== */
+
+(function () {
+    const loader = document.getElementById("laptopPageLoader");
+
+    if (!loader) return;
+
+    function showLaptopLoader(url) {
+        loader.classList.add("show");
+        loader.setAttribute("aria-hidden", "false");
+
+        setTimeout(function () {
+            window.location.href = url;
+        }, 1000);
+    }
+
+    document.addEventListener("click", function (event) {
+        const link = event.target.closest("a");
+
+        if (!link) return;
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+
+        /* Only intercept the Laptops & PCs page link */
+        if (!href.toLowerCase().includes("laptops-pcs.html")) return;
+
+        /* Don't intercept a new-tab/external modifier click */
+        if (
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey ||
+            link.target === "_blank"
+        ) {
+            return;
+        }
+
+        event.preventDefault();
+
+        const destination = link.href;
+
+        showLaptopLoader(destination);
+    });
+})();
+</script>
+
 </body>
 </html>
