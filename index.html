@@ -1,1589 +1,4969 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="SS Computer Services">
-  <meta name="robots" content="index, follow">
-  <meta name="geo.region" content="IN-TG">
-  <meta name="geo.placename" content="Hyderabad">
-  <meta name="google-site-verification" content="9cTfQ8NYFnd94E-xoa5yw3ETiCNwT2lTH6BxArHUo9s">
-  <meta name="description" content="Expert computer repair, software & hardware services in Hyderabad. Call 9502608440 for professional support.">
-  <meta name="keywords" content="computer repair Hyderabad, laptop service, computer maintenance, SS Computer Services Hyderabad">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="SS Computer Services">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="IN-TG">
+<meta name="geo.placename" content="Hyderabad">
+<meta name="google-site-verification"
+content="9cTfQ8NYFnd94E-xoa5yw3ETiCNwT2lTH6BxArHUo9s">
+<meta name="description"
+content="Expert computer repair, software & hardware services in Hyderabad. Call 9502608440 for professional support.">
+<meta name="keywords"
+content="computer repair Hyderabad, laptop service, computer maintenance, SS Computer Services Hyderabad">
+<title>SS Online & Offline Computer Services — Hyderabad</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+/* =====================================================
+   ROOT
+===================================================== */
+:root{
 
-  <title>SS Online & Offline Computer Services — Hyderabad
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  </title>
+  --blue:#0ea5e9;
+  --blue-dark:#0284c7;
+  --dark:#111217;
+  --muted:#6b7280;
+  --gold:#ffd700;
+  --green:#25D366;
+  --white:#ffffff;
 
-  <style>
-    :root{
-      --blue:#0ea5e9;
-      --blue-dark:#0284c7;
-      --dark:#111217;
-      --muted:#6b7280;
-      --gold:#ffd700;
-      --green:#25D366;
-      --white:#ffffff;
-      --radius:16px;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-    }
+  --radius:16px;
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      color:var(--dark);
-      background:linear-gradient(-45deg,#dbeafe,#f0f9ff,#e0f2fe,#ffffff,#e6f3ff);
-      background-size:500% 500%;
-      animation:movingBg 28s linear infinite;
-      overflow-x:hidden;
-      font-size:16px;
-      padding-bottom:0;
-    }
-
-    @keyframes movingBg{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-
-    header,.section,.service-tiles-section,.products-slider-section,.trust-section,.gallery-section,footer{
-      position:relative;
-      z-index:2;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(8px);
-    }
-
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 32px;
-      box-shadow:0 6px 18px rgba(12,16,22,.06);
-      position:sticky;
-      top:0;
-      z-index:40;
-      border-bottom:3px solid var(--gold);
-    }
-
-    .brand{
-      display:flex;
-      gap:14px;
-      align-items:center;
-    }
-
-    .brand img{
-      height:64px;
-      width:64px;
-      object-fit:contain;
-      border-radius:8px;
-    }
-
-    .brand h1{
-      margin:0;
-      font-size:20px;
-      color:var(--blue);
-      letter-spacing:1px;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-weight:700;
-    }
-
-    .cta{
-      background:var(--blue);
-      color:#fff;
-      padding:10px 14px;
-      border-radius:10px;
-    }
-
-    .nav-services{
-      position:relative;
-      display:inline-block;
-    }
-
-    .dropdown-services{
-      display:none;
-      position:absolute;
-      top:36px;
-      left:0;
-      background:#fff;
-      border-radius:12px;
-      box-shadow:0 10px 25px rgba(0,0,0,.12);
-      padding:10px;
-      min-width:230px;
-      z-index:999;
-    }
-
-    .dropdown-services div{
-      padding:10px;
-      cursor:pointer;
-      border-radius:8px;
-      font-size:14px;
-    }
-
-    .dropdown-services div:hover{background:#f1f5f9}
-
-    .delivery-marquee{
-      width:100%;
-      background:linear-gradient(90deg,#fff3cd,#ffd700,#fff3cd);
-      color:#111;
-      font-size:13px;
-      font-weight:800;
-      overflow:hidden;
-      white-space:nowrap;
-      padding:7px 0;
-      cursor:pointer;
-      border-top:1px solid #facc15;
-      border-bottom:1px solid #facc15;
-    }
-
-    .delivery-track{
-      display:inline-block;
-      padding-left:100%;
-      animation:deliveryScroll 18s linear infinite;
-    }
-
-    .delivery-marquee:hover .delivery-track{animation-play-state:paused}
-
-    @keyframes deliveryScroll{
-      from{transform:translateX(0)}
-      to{transform:translateX(-100%)}
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns:1fr 420px;
-      gap:34px;
-      align-items:center;
-      padding:70px 64px;
-      min-height:520px;
-    }
-
-    .hero-left{max-width:680px}
-
-    .hero-badge{
-      display:inline-block;
-      background:#e0f2fe;
-      color:var(--blue-dark);
-      padding:8px 14px;
-      border-radius:30px;
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:16px;
-    }
-
-    .hero-left h2{
-      margin:0;
-      font-size:42px;
-      line-height:1.15;
-      color:var(--dark);
-    }
-
-    .highlight{color:var(--blue)}
-
-    .tag{
-      font-size:18px;
-      line-height:1.7;
-      color:var(--muted);
-      margin-top:16px;
-    }
-
-    .hero-right{
-      background:linear-gradient(180deg,#eef8ff,#ffffff);
-      padding:24px;
-      border-radius:24px;
-      box-shadow:0 18px 45px rgba(14,165,233,.16);
-    }
-
-    .card-item{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      padding:18px;
-      border-radius:18px;
-      background:#fff;
-      margin-bottom:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.05);
-    }
-
-    .card-item:last-child{margin-bottom:0}
-
-    .step-box{
-      min-width:56px;
-      height:56px;
-      border-radius:16px;
-      background:linear-gradient(180deg,var(--blue),var(--blue-dark));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-weight:800;
-      font-size:22px;
-    }
-
-    .card-item h4{margin:0 0 5px;font-size:16px}
-    .card-item p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
-
-    .section,.service-tiles-section,.products-slider-section,.trust-section,.gallery-section{
-      padding:48px 64px;
-      margin-top:20px;
-      border-radius:16px;
-    }
-
-    .trust-section h2{margin:0;text-align:center}
-
-    .trust-grid,.service-tiles-grid{
-      margin-top:24px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:18px;
-    }
-
-    .trust-card,.service-tile,.product-card,.contact-card{
-      background:#fff;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.06);
-      border:1px solid #eef2f7;
-    }
-
-    .trust-card,.service-tile{
-      padding:22px;
-      text-align:center;
-      transition:.3s;
-    }
-
-    .trust-card:hover,.service-tile:hover,.product-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 16px 30px rgba(14,165,233,.2);
-    }
-
-    .trust-icon,.tile-icon{font-size:34px;margin-bottom:10px}
-    .trust-card h3,.service-tile h3{margin:0;font-size:16px}
-    .trust-card p,.service-tile span{font-size:13px;color:var(--muted)}
-    .service-tile span{display:block;margin-top:10px;color:var(--green);font-weight:800}
-    .service-tile{cursor:pointer}
-
-    .products-slider{
-      display:flex;
-      gap:18px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      padding:12px 0;
-      cursor:grab;
-    }
-
-    .products-slider::-webkit-scrollbar{display:none}
-
-    .product-card{
-      min-width:170px;
-      padding:14px;
-      text-align:center;
-      flex-shrink:0;
-      cursor:pointer;
-      transition:.3s;
-    }
-
-    .product-card img{
-      width:100%;
-      height:100px;
-      object-fit:contain;
-      margin-bottom:10px;
-    }
-
-    .product-card h3{font-size:14px;margin:0}
-    .product-card small{display:block;margin-top:6px;font-size:12px;color:var(--green);font-weight:800}
-
-    .about{
-      display:flex;
-      gap:28px;
-      align-items:flex-start;
-      margin-top:12px;
-    }
-
-    .about p{color:var(--muted);line-height:1.7}
-
-    .about img{
-      width:360px;
-      border-radius:12px;
-      object-fit:cover;
-      box-shadow:0 8px 20px rgba(255,165,0,.25);
-    }
-
-    .section-title h2{margin:0;font-size:30px;color:var(--dark)}
-    .section-title p{color:var(--muted);margin-top:6px}
-/*/ Gallery/*/
-.gallery-section{
-  background:#0f172a;
-  border-radius:20px;
-  overflow:hidden;
+  font-family:
+  Inter,
+  system-ui,
+  -apple-system,
+  "Segoe UI",
+  Roboto,
+  Arial,
+  sans-serif;
 }
 
-.gallery-section .section-title{
-  text-align:center;
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+  box-sizing:border-box;
 }
 
-.gallery-section .section-title h2{
-  color:#fff;
-  font-size:34px;
-}
-
-.gallery-section .section-title p{
-  color:#cbd5e1;
-}
-
-.vertical-gallery{
-  height:650px;
-  overflow-y:auto;
-  overflow-x:hidden;
-  margin-top:30px;
+html{
   scroll-behavior:smooth;
-  scrollbar-width:none;
 }
 
-.vertical-gallery::-webkit-scrollbar{
-  display:none;
+body{
+
+  margin:0;
+
+  color:var(--dark);
+
+  background:
+  linear-gradient(
+    -45deg,
+    #dbeafe,
+    #f0f9ff,
+    #e0f2fe,
+    #ffffff,
+    #e6f3ff
+  );
+
+  background-size:500% 500%;
+
+  animation:movingBg 28s linear infinite;
+
+  overflow-x:hidden;
+
+  font-size:16px;
+
+  padding-bottom:0;
 }
 
-.vertical-gallery-track{
+
+@keyframes movingBg{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+
+/* =====================================================
+   COMMON GLASS SECTIONS
+===================================================== */
+
+header,
+.section,
+.service-tiles-section,
+.products-slider-section,
+.trust-section,
+.gallery-section,
+footer{
+
+  position:relative;
+
+  z-index:2;
+
+  background:
+  rgba(255,255,255,.92);
+
+  backdrop-filter:blur(8px);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
   display:flex;
-  flex-direction:column;
-  gap:18px;
-  padding:10px 0;
-  animation:verticalAutoScroll 80s linear infinite;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:18px 32px;
+
+  box-shadow:
+  0 6px 18px rgba(12,16,22,.06);
+
+  position:sticky;
+
+  top:0;
+
+  z-index:40;
+
+  border-bottom:
+  3px solid var(--gold);
 }
 
-.vertical-gallery:hover .vertical-gallery-track{
+
+.brand{
+
+  display:flex;
+
+  gap:14px;
+
+  align-items:center;
+}
+
+
+.brand img{
+
+  height:64px;
+
+  width:64px;
+
+  object-fit:contain;
+
+  border-radius:8px;
+}
+
+
+.brand h1{
+
+  margin:0;
+
+  font-size:20px;
+
+  color:var(--blue);
+
+  letter-spacing:1px;
+}
+
+
+nav{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  flex-wrap:wrap;
+}
+
+
+nav a{
+
+  text-decoration:none;
+
+  color:var(--muted);
+
+  font-weight:700;
+}
+
+
+.cta{
+
+  background:var(--blue);
+
+  color:#fff;
+
+  padding:10px 14px;
+
+  border-radius:10px;
+}
+
+
+/* =====================================================
+   SERVICES DROPDOWN
+===================================================== */
+
+.nav-services{
+
+  position:relative;
+
+  display:inline-block;
+}
+
+
+.dropdown-services{
+
+  display:none;
+
+  position:absolute;
+
+  top:36px;
+
+  left:0;
+
+  background:#fff;
+
+  border-radius:12px;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.12);
+
+  padding:10px;
+
+  min-width:230px;
+
+  z-index:999;
+}
+
+
+.dropdown-services div{
+
+  padding:10px;
+
+  cursor:pointer;
+
+  border-radius:8px;
+
+  font-size:14px;
+}
+
+
+.dropdown-services div:hover{
+
+  background:#f1f5f9;
+}
+
+
+/* =====================================================
+   DELIVERY MARQUEE
+===================================================== */
+
+.delivery-marquee{
+
+  width:100%;
+
+  background:
+  linear-gradient(
+    90deg,
+    #fff3cd,
+    #ffd700,
+    #fff3cd
+  );
+
+  color:#111;
+
+  font-size:13px;
+
+  font-weight:800;
+
+  overflow:hidden;
+
+  white-space:nowrap;
+
+  padding:7px 0;
+
+  cursor:pointer;
+
+  border-top:
+  1px solid #facc15;
+
+  border-bottom:
+  1px solid #facc15;
+}
+
+
+.delivery-track{
+
+  display:inline-block;
+
+  padding-left:100%;
+
+  animation:
+  deliveryScroll 18s linear infinite;
+}
+
+
+.delivery-marquee:hover .delivery-track{
+
   animation-play-state:paused;
 }
 
-.gallery-card{
-  width:78%;
-  margin:auto;
-  border-radius:20px;
-  overflow:hidden;
-  background:#111827;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
 
-.gallery-card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  display:block;
-  transition:.4s ease;
-}
+@keyframes deliveryScroll{
 
-.gallery-card:hover img{
-  transform:scale(1.03);
-}
-
-@keyframes verticalAutoScroll{
   from{
-    transform:translateY(0);
+    transform:translateX(0);
   }
+
   to{
-    transform:translateY(-50%);
+    transform:translateX(-100%);
   }
+
 }
 
-@media(max-width:600px){
 
-  .vertical-gallery{
-    height:500px;
-  }
+/* =====================================================
+   3D HERO
+===================================================== */
 
-  .gallery-card{
-    width:95%;
-  }
+.hero{
 
-  .gallery-card img{
-    height:180px;
-  }
-}
-/* Tablet */
-@media(max-width:900px){
-  .gallery-grid-fixed{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-/* Mobile */
-@media(max-width:600px){
-  .gallery-grid-fixed{
-    grid-template-columns:1fr;
-  }
-
-  .gallery-card img{
-    height:260px;
-  }
-}
-
-    .contact-card{
-      padding:0;
-      overflow:hidden;
-    }
-
-    .booking-modal{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.65);
-      backdrop-filter:blur(8px);
-      z-index:999999;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-    }
-
-    .booking-box{
-      width:100%;
-      max-width:380px;
-      background:#fff;
-      border-radius:18px;
-      padding:22px;
-      position:relative;
-      box-shadow:0 20px 50px rgba(0,0,0,.3);
-    }
-
-    .booking-box h2{margin-top:0;color:var(--blue);text-align:center}
-
-    .booking-box input,.booking-box textarea{
-      width:100%;
-      padding:11px;
-      margin-bottom:10px;
-      border:1px solid #ddd;
-      border-radius:10px;
-      font-size:14px;
-    }
-
-    .booking-close{
-      position:absolute;
-      right:12px;
-      top:10px;
-      border:none;
-      background:#fee2e2;
-      color:#dc2626;
-      border-radius:50%;
-      width:30px;
-      height:30px;
-      cursor:pointer;
-    }
-
-    .send-btn{
-      width:100%;
-      padding:12px;
-      border:none;
-      border-radius:10px;
-      background:var(--green);
-      color:#fff;
-      font-weight:800;
-      cursor:pointer;
-    }
-
-    .whatsapp-float{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:var(--green);
-      color:#fff;
-      padding:14px 16px;
-      border-radius:50%;
-      font-size:20px;
-      text-decoration:none;
-      box-shadow:0 4px 10px rgba(0,0,0,.3);
-      z-index:999;
-    }
-
-    .footer{
-      padding:22px 64px;
-      background:linear-gradient(90deg,#ff9900,#ffcc33);
-      color:#fff;
-      margin-top:40px;
-      border-top-left-radius:18px;
-      border-top-right-radius:18px;
-      box-shadow:0 -3px 15px rgba(255,140,0,.3);
-    }
-
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-
-    .mobile-action-bar{display:none}
-
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;padding:40px 28px}
-      .about{flex-direction:column}
-      .about img{width:100%;max-height:320px}
-    }
-
-    @media(max-width:600px){
-      header{flex-direction:column;align-items:flex-start;padding:14px 18px}
-      nav{margin-top:10px;gap:10px}
-      .hero{padding:36px 20px;text-align:left;min-height:auto}
-      .hero-left h2{font-size:30px}
-      .tag{font-size:16px}
-      .section,.service-tiles-section,.products-slider-section,.trust-section,.gallery-section{padding:32px 20px}
-      .product-card{min-width:145px}
-      .gallery-slider{height:300px;border-radius:18px}
-      .gallery-btn{width:38px;height:38px;font-size:20px}
-      .footer{padding:22px 20px;margin-bottom:80px}
-      .footer-row{flex-direction:column;align-items:flex-start}
-      body{padding-bottom:80px}
-      .mobile-action-bar{
-        position:fixed;
-        left:10px;
-        right:10px;
-        bottom:12px;
-        z-index:999999;
-        display:grid;
-        grid-template-columns:1fr 1fr 1fr;
-        gap:8px;
-        background:#fff;
-        padding:10px;
-        border-radius:18px;
-        box-shadow:0 10px 30px rgba(0,0,0,.25);
-      }
-      .mobile-action-bar a,.mobile-action-bar button{
-        border:none;
-        text-decoration:none;
-        text-align:center;
-        padding:11px 8px;
-        border-radius:12px;
-        font-size:13px;
-        font-weight:800;
-        color:#fff;
-        cursor:pointer;
-      }
-      .mobile-action-bar a:nth-child(1){background:var(--blue)}
-      .mobile-action-bar a:nth-child(2){background:var(--green)}
-      .mobile-action-bar button{background:#f59e0b}
-    }
-    /*/Product/*/
-    .product-popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  backdrop-filter:blur(8px);
-  z-index:999999;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.product-popup-card{
-  width:100%;
-  max-width:420px;
-  background:#fff;
-  border-radius:22px;
-  padding:20px;
-  text-align:center;
   position:relative;
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+  display:grid;
+
+  grid-template-columns:
+  minmax(0,1fr)
+  minmax(450px,600px);
+
+  gap:20px;
+
+  align-items:center;
+
+  padding:50px 55px;
+
+  min-height:590px;
+
+  overflow:hidden;
+
+  background:
+  radial-gradient(
+    circle at 75% 45%,
+    rgba(14,165,233,.16),
+    transparent 34%
+  ),
+
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.97),
+    rgba(239,248,255,.94)
+  );
 }
 
-.product-popup-card img{
-  width:100%;
-  height:230px;
-  object-fit:contain;
-  border-radius:16px;
-  background:#f8fafc;
-  margin-bottom:14px;
+
+/* blue atmosphere */
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:600px;
+
+  height:600px;
+
+  right:-80px;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(14,165,233,.20),
+    transparent 68%
+  );
+
+  filter:blur(20px);
+
+  pointer-events:none;
 }
 
-.product-popup-card h2{
-  margin:8px 0;
+
+.hero-left{
+
+  max-width:680px;
+
+  position:relative;
+
+  z-index:10;
+}
+
+
+.hero-badge{
+
+  display:inline-block;
+
+  background:#e0f2fe;
+
+  color:var(--blue-dark);
+
+  padding:8px 14px;
+
+  border-radius:30px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  margin-bottom:16px;
+}
+
+
+.hero-left h2{
+
+  margin:0;
+
+  font-size:42px;
+
+  line-height:1.15;
+
+  color:var(--dark);
+}
+
+
+.highlight{
+
   color:var(--blue);
 }
 
-.product-popup-card p{
+
+.tag{
+
+  font-size:18px;
+
+  line-height:1.7;
+
   color:var(--muted);
+
+  margin-top:16px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+
+  display:flex;
+
+  gap:12px;
+
+  margin-top:24px;
+}
+
+
+.hero-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  padding:12px 18px;
+
+  border-radius:11px;
+
+  text-decoration:none;
+
+  font-weight:800;
+
+  transition:.3s;
+}
+
+
+.hero-btn:hover{
+
+  transform:translateY(-3px);
+}
+
+
+.primary-btn{
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--blue),
+    var(--blue-dark)
+  );
+
+  color:white;
+
+  box-shadow:
+  0 8px 20px rgba(14,165,233,.25);
+}
+
+
+.whatsapp-btn{
+
+  background:var(--green);
+
+  color:white;
+
+  box-shadow:
+  0 8px 20px rgba(37,211,102,.22);
+}
+
+
+/* =====================================================
+   3D LAPTOP AREA
+===================================================== */
+
+.hero-laptop-area{
+
+  position:relative;
+
+  width:100%;
+
+  height:510px;
+
+  z-index:5;
+}
+
+
+#laptop3d{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+
+  height:100%;
+
+  z-index:5;
+}
+
+
+#laptop3d canvas{
+
+  display:block;
+
+  width:100%!important;
+
+  height:100%!important;
+}
+
+
+/* LAPTOP GLOW */
+
+.laptop-glow{
+
+  position:absolute;
+
+  width:380px;
+
+  height:230px;
+
+  left:50%;
+
+  top:50%;
+
+  transform:
+  translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:
+  rgba(14,165,233,.24);
+
+  filter:blur(70px);
+
+  animation:
+  laptopGlow 4s ease-in-out infinite;
+
+  pointer-events:none;
+}
+
+
+@keyframes laptopGlow{
+
+  0%,100%{
+
+    opacity:.4;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.9);
+  }
+
+  50%{
+
+    opacity:.8;
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.08);
+  }
+
+}
+
+
+/* SHADOW */
+
+.laptop-shadow{
+
+  position:absolute;
+
+  left:50%;
+
+  bottom:60px;
+
+  width:310px;
+
+  height:32px;
+
+  transform:
+  translateX(-50%);
+
+  background:
+  rgba(0,0,0,.22);
+
+  filter:blur(18px);
+
+  border-radius:50%;
+
+  z-index:1;
+
+  animation:
+  laptopShadow 3s ease-in-out infinite;
+}
+
+
+@keyframes laptopShadow{
+
+  0%,100%{
+
+    transform:
+    translateX(-50%)
+    scale(.85);
+
+    opacity:.4;
+  }
+
+  50%{
+
+    transform:
+    translateX(-50%)
+    scale(1.08);
+
+    opacity:.7;
+  }
+
+}
+
+
+/* LABEL */
+
+.laptop-floating-text{
+
+  position:absolute;
+
+  right:10px;
+
+  bottom:28px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:9px 14px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,.9);
+
+  backdrop-filter:blur(10px);
+
+  color:#075985;
+
+  font-size:12px;
+
+  font-weight:800;
+
+  box-shadow:
+  0 8px 25px rgba(0,0,0,.10);
+
+  z-index:20;
+
+  animation:
+  floatingLabel 3s ease-in-out infinite;
+}
+
+
+@keyframes floatingLabel{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-7px);
+  }
+
+}
+
+
+/* =====================================================
+   GET DIRECTION BUTTON
+===================================================== */
+
+.direction-btn{
+  background:#16a34a;
+  color:#fff;
+}
+
+.direction-btn:hover{
+  background:#15803d;
+  transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section,
+.service-tiles-section,
+.products-slider-section,
+.trust-section,
+.gallery-section{
+
+  padding:48px 64px;
+
+  margin-top:20px;
+
+  border-radius:16px;
+}
+
+
+.trust-section h2{
+
+  margin:0;
+
+  text-align:center;
+}
+
+
+.trust-grid,
+.service-tiles-grid{
+
+  margin-top:24px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(200px,1fr));
+
+  gap:18px;
+}
+
+
+.trust-card,
+.service-tile,
+.product-card,
+.contact-card{
+
+  background:#fff;
+
+  border-radius:16px;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,.06);
+
+  border:
+  1px solid #eef2f7;
+}
+
+
+.trust-card,
+.service-tile{
+
+  padding:22px;
+
+  text-align:center;
+
+  transition:.3s;
+}
+
+
+.trust-card:hover,
+.service-tile:hover,
+.product-card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 16px 30px rgba(14,165,233,.2);
+}
+
+
+.trust-icon,
+.tile-icon{
+
+  font-size:34px;
+
+  margin-bottom:10px;
+}
+
+
+.trust-card h3,
+.service-tile h3{
+
+  margin:0;
+
+  font-size:16px;
+}
+
+
+.trust-card p,
+.service-tile span{
+
+  font-size:13px;
+
+  color:var(--muted);
+}
+
+
+.service-tile span{
+
+  display:block;
+
+  margin-top:10px;
+
+  color:var(--green);
+
+  font-weight:800;
+}
+
+
+.service-tile{
+
+  cursor:pointer;
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products-slider{
+
+  display:flex;
+
+  gap:18px;
+
+  overflow-x:auto;
+
+  scroll-behavior:smooth;
+
+  padding:12px 0;
+
+  cursor:grab;
+}
+
+
+.products-slider::-webkit-scrollbar{
+
+  display:none;
+}
+
+
+.product-card{
+
+  min-width:170px;
+
+  padding:14px;
+
+  text-align:center;
+
+  flex-shrink:0;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+
+.product-card img{
+
+  width:100%;
+
+  height:100px;
+
+  object-fit:contain;
+
+  margin-bottom:10px;
+}
+
+
+.product-card h3{
+
+  font-size:14px;
+
+  margin:0;
+}
+
+
+.product-card small{
+
+  display:block;
+
+  margin-top:6px;
+
+  font-size:12px;
+
+  color:var(--green);
+
+  font-weight:800;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+
+  display:flex;
+
+  gap:28px;
+
+  align-items:flex-start;
+
+  margin-top:12px;
+}
+
+
+.about p{
+
+  color:var(--muted);
+
+  line-height:1.7;
+}
+
+
+.about img{
+
+  width:360px;
+
+  border-radius:12px;
+
+  object-fit:cover;
+
+  box-shadow:
+  0 8px 20px rgba(255,165,0,.25);
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery-section{
+
+  background:#0f172a;
+
+  border-radius:20px;
+
+  overflow:hidden;
+}
+
+
+.gallery-section .section-title{
+
+  text-align:center;
+}
+
+
+.gallery-section .section-title h2{
+
+  color:#fff;
+
+  font-size:34px;
+}
+
+
+.gallery-section .section-title p{
+
+  color:#cbd5e1;
+}
+
+
+.vertical-gallery{
+
+  height:650px;
+
+  overflow-y:auto;
+
+  overflow-x:hidden;
+
+  margin-top:30px;
+
+  scroll-behavior:smooth;
+
+  scrollbar-width:none;
+}
+
+
+.vertical-gallery::-webkit-scrollbar{
+
+  display:none;
+}
+
+
+.vertical-gallery-track{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+  padding:10px 0;
+
+  animation:
+  verticalAutoScroll 80s linear infinite;
+}
+
+
+.vertical-gallery:hover
+.vertical-gallery-track{
+
+  animation-play-state:paused;
+}
+
+
+.gallery-card{
+
+  width:78%;
+
+  margin:auto;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  background:#111827;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.25);
+}
+
+
+.gallery-card img{
+
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:.4s ease;
+}
+
+
+.gallery-card:hover img{
+
+  transform:scale(1.03);
+}
+
+
+@keyframes verticalAutoScroll{
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-50%);
+  }
+
+}
+
+
+/* =====================================================
+   BOOKING POPUP
+===================================================== */
+
+.booking-modal{
+
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  rgba(0,0,0,.65);
+
+  backdrop-filter:blur(8px);
+
+  z-index:999999;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+}
+
+
+.booking-box{
+
+  width:100%;
+
+  max-width:380px;
+
+  background:#fff;
+
+  border-radius:18px;
+
+  padding:22px;
+
+  position:relative;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.3);
+}
+
+
+.booking-box h2{
+
+  margin-top:0;
+
+  color:var(--blue);
+
+  text-align:center;
+}
+
+
+.booking-box input,
+.booking-box textarea{
+
+  width:100%;
+
+  padding:11px;
+
+  margin-bottom:10px;
+
+  border:1px solid #ddd;
+
+  border-radius:10px;
+
+  font-size:14px;
+}
+
+
+.booking-close{
+
+  position:absolute;
+
+  right:12px;
+
+  top:10px;
+
+  border:none;
+
+  background:#fee2e2;
+
+  color:#dc2626;
+
+  border-radius:50%;
+
+  width:30px;
+
+  height:30px;
+
+  cursor:pointer;
+}
+
+
+.send-btn{
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:var(--green);
+
+  color:#fff;
+
+  font-weight:800;
+
+  cursor:pointer;
+}
+
+
+/* =====================================================
+   PRODUCT POPUP
+===================================================== */
+
+.product-popup{
+
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  rgba(0,0,0,.65);
+
+  backdrop-filter:blur(8px);
+
+  z-index:999999;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+}
+
+
+.product-popup-card{
+
+  width:100%;
+
+  max-width:420px;
+
+  background:#fff;
+
+  border-radius:22px;
+
+  padding:20px;
+
+  text-align:center;
+
+  position:relative;
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,.35);
+}
+
+
+.product-popup-card img{
+
+  width:100%;
+
+  height:230px;
+
+  object-fit:contain;
+
+  border-radius:16px;
+
+  background:#f8fafc;
+
+  margin-bottom:14px;
+}
+
+
+.product-popup-card h2{
+
+  margin:8px 0;
+
+  color:var(--blue);
+}
+
+
+.product-popup-card p{
+
+  color:var(--muted);
+
   line-height:1.5;
 }
 
+
 .product-close{
+
   position:absolute;
+
   right:12px;
+
   top:10px;
+
   border:none;
+
   background:#fee2e2;
+
   color:#dc2626;
+
   border-radius:50%;
+
   width:32px;
+
   height:32px;
+
   cursor:pointer;
 }
+
+
 /* =====================================================
-   HIGHLIGHT LAPTOPS & PCs SALE NAV BUTTON
+   LAPTOP SALE NAV
 ===================================================== */
 
 .laptops-sale-nav{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
 
-    margin-left:18px;
-    padding:9px 14px;
+  display:inline-flex;
 
-    background:linear-gradient(135deg,#1769e0,#0ea5e9);
-    color:#fff !important;
+  align-items:center;
 
-    border-radius:8px;
+  gap:6px;
 
-    font-weight:800 !important;
-    text-decoration:none;
+  margin-left:18px;
 
-    box-shadow:0 4px 12px rgba(23,105,224,.30);
+  padding:9px 14px;
 
-    transition:all .3s ease;
+  background:
+  linear-gradient(
+    135deg,
+    #1769e0,
+    #0ea5e9
+  );
 
-    animation:laptopSalePulse 2.2s infinite;
+  color:#fff!important;
+
+  border-radius:8px;
+
+  font-weight:800!important;
+
+  text-decoration:none;
+
+  box-shadow:
+  0 4px 12px rgba(23,105,224,.30);
+
+  transition:.3s;
+
+  animation:
+  laptopSalePulse 2.2s infinite;
 }
+
 
 .laptops-sale-nav:hover{
-    color:#fff !important;
-    transform:translateY(-2px) scale(1.03);
 
-    box-shadow:
-        0 6px 18px rgba(23,105,224,.45);
+  transform:
+  translateY(-2px)
+  scale(1.03);
+
+  box-shadow:
+  0 6px 18px rgba(23,105,224,.45);
 }
 
 
-/* Attention animation */
 @keyframes laptopSalePulse{
 
-    0%,100%{
-        box-shadow:0 4px 12px rgba(23,105,224,.30);
-    }
+  0%,100%{
 
-    50%{
-        box-shadow:
-            0 0 0 5px rgba(14,165,233,.15),
-            0 6px 20px rgba(23,105,224,.45);
-    }
+    box-shadow:
+    0 4px 12px rgba(23,105,224,.30);
+  }
 
-}
+  50%{
 
-
-/* Mobile */
-@media(max-width:600px){
-
-    .laptops-sale-nav{
-        margin-left:0;
-        padding:8px 11px;
-        font-size:13px;
-    }
+    box-shadow:
+    0 0 0 5px rgba(14,165,233,.15),
+    0 6px 20px rgba(23,105,224,.45);
+  }
 
 }
+
+
 /* =====================================================
-   FINAL MOBILE BOTTOM NAVIGATION
+   WHATSAPP
 ===================================================== */
 
-.mobile-bottom-nav {
-    display: none !important;
+.whatsapp-float{
+
+  position:fixed;
+
+  bottom:20px;
+
+  right:20px;
+
+  background:var(--green);
+
+  color:#fff;
+
+  padding:14px 16px;
+
+  border-radius:50%;
+
+  font-size:20px;
+
+  text-decoration:none;
+
+  box-shadow:
+  0 4px 10px rgba(0,0,0,.3);
+
+  z-index:999;
 }
 
-@media only screen and (max-width:600px) {
 
-    html,
-    body {
-        overflow-x: hidden !important;
-    }
-
-    body {
-        padding-bottom: 100px !important;
-    }
-
-    main {
-        padding-bottom: 35px !important;
-    }
-
-    /* Hide old mobile action buttons */
-    .mobile-action-bar {
-        display: none !important;
-    }
-
-    /* Bottom navigation */
-    .mobile-bottom-nav {
-        display: grid !important;
-
-        position: fixed !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-
-        width: 100% !important;
-        height: 78px !important;
-
-        grid-template-columns: repeat(4, 1fr);
-
-        background: rgba(255,255,255,0.98) !important;
-
-        border-top: 1px solid #d8dce3 !important;
-
-        box-shadow: 0 -6px 25px rgba(0,0,0,0.16) !important;
-
-        z-index: 2147483000 !important;
-
-        padding: 5px 4px calc(5px + env(safe-area-inset-bottom));
-
-        box-sizing: border-box;
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-
-    /* Navigation item */
-    .mobile-nav-item {
-        position: relative;
-
-        display: flex !important;
-        flex-direction: column !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
-        gap: 3px !important;
-
-        min-width: 0;
-
-        background: transparent !important;
-        border: none !important;
-
-        text-decoration: none !important;
-
-        color: #172033 !important;
-
-        font-family: inherit;
-
-        font-size: 11px !important;
-        font-weight: 700 !important;
-
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Font Awesome icons */
-    .mobile-nav-item i {
-        display: flex !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
-        width: 42px !important;
-        height: 36px !important;
-
-        font-size: 24px !important;
-
-        line-height: 1 !important;
-
-        color: #172033 !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Text */
-    .mobile-nav-item span {
-        display: block !important;
-
-        color: #172033 !important;
-
-        font-size: 11px !important;
-        line-height: 16px !important;
-
-        white-space: nowrap;
-
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Laptops & PCs */
-    .laptop-mobile-nav i {
-        color: #1769e0 !important;
-
-        background: #e8f2ff !important;
-
-        width: 44px !important;
-        height: 38px !important;
-
-        border-radius: 11px;
-    }
-
-    .laptop-mobile-nav span {
-        color: #1769e0 !important;
-        font-weight: 800 !important;
-    }
-
-    /* WhatsApp */
-    .whatsapp-mobile-nav i {
-        color: #25D366 !important;
-    }
-
-    .whatsapp-mobile-nav span {
-        color: #172033 !important;
-    }
-
-    /* Home */
-    .mobile-nav-item:first-child i {
-        color: #172033 !important;
-    }
-
-    /* Services */
-    .mobile-nav-item:nth-child(2) i {
-        color: #172033 !important;
-    }
-
-    /* Hide desktop navigation on mobile */
-    header nav {
-        display: none !important;
-    }
-
-    /* Header stays above animated background */
-    header {
-        position: sticky !important;
-        top: 0 !important;
-        z-index: 9999 !important;
-    }
-
-    /* Keep bottom bar above background */
-    .mobile-bottom-nav,
-    .mobile-bottom-nav * {
-        isolation: isolate;
-    }
-
-    /* Floating WhatsApp stays above bottom navigation */
-    .whatsapp-float {
-        bottom: 92px !important;
-        right: 15px !important;
-        z-index: 1000 !important;
-    }
-
-    /* Give final content/buttons enough space */
-    .send-btn {
-        margin-bottom: 20px !important;
-    }
-
-    .footer {
-        margin-bottom: 20px !important;
-        padding-bottom: 35px !important;
-    }
-}
 /* =====================================================
-   NEW LAPTOP & PC PAGE TRANSITION LOADER
+   FOOTER
+===================================================== */
+
+.footer{
+
+  padding:22px 64px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #ff9900,
+    #ffcc33
+  );
+
+  color:#fff;
+
+  margin-top:40px;
+
+  border-top-left-radius:18px;
+
+  border-top-right-radius:18px;
+
+  box-shadow:
+  0 -3px 15px rgba(255,140,0,.3);
+}
+
+
+.footer-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:12px;
+}
+
+
+/* =====================================================
+   LAPTOP PAGE LOADER
 ===================================================== */
 
 .laptop-page-loader{
-    position:fixed;
-    inset:0;
-    z-index:2147483647;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  position:fixed;
 
-    background:
-        radial-gradient(circle at 50% 38%, rgba(37,99,235,.16), transparent 32%),
-        linear-gradient(135deg,#071426,#0b1d38 55%,#020812);
+  inset:0;
 
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+  z-index:2147483647;
 
-    transition:opacity .25s ease, visibility .25s ease;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+  radial-gradient(
+    circle at 50% 38%,
+    rgba(37,99,235,.16),
+    transparent 32%
+  ),
+
+  linear-gradient(
+    135deg,
+    #071426,
+    #0b1d38 55%,
+    #020812
+  );
+
+  opacity:0;
+
+  visibility:hidden;
+
+  pointer-events:none;
+
+  transition:
+  opacity .25s ease,
+  visibility .25s ease;
 }
+
 
 .laptop-page-loader.show{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
+
+  opacity:1;
+
+  visibility:visible;
+
+  pointer-events:auto;
 }
+
 
 .laptop-loader-wrap{
-    width:min(420px,90vw);
-    text-align:center;
-    color:#fff;
+
+  width:min(420px,90vw);
+
+  text-align:center;
+
+  color:#fff;
 }
+
 
 .animated-laptop{
-    position:relative;
-    width:230px;
-    height:170px;
-    margin:0 auto 28px;
-    perspective:700px;
-    filter:drop-shadow(0 18px 28px rgba(0,0,0,.45));
+
+  position:relative;
+
+  width:230px;
+
+  height:170px;
+
+  margin:0 auto 28px;
+
+  perspective:700px;
+
+  filter:
+  drop-shadow(
+    0 18px 28px rgba(0,0,0,.45)
+  );
 }
+
 
 .animated-laptop-screen{
-    position:absolute;
-    left:28px;
-    top:5px;
-    width:174px;
-    height:112px;
-    padding:7px;
-    border:5px solid #cbd5e1;
-    border-bottom-width:8px;
-    border-radius:10px 10px 5px 5px;
-    background:#0f172a;
-    transform-origin:bottom center;
-    animation:laptopScreenOpen 1.4s ease-in-out infinite alternate;
+
+  position:absolute;
+
+  left:28px;
+
+  top:5px;
+
+  width:174px;
+
+  height:112px;
+
+  padding:7px;
+
+  border:5px solid #cbd5e1;
+
+  border-bottom-width:8px;
+
+  border-radius:10px 10px 5px 5px;
+
+  background:#0f172a;
+
+  transform-origin:bottom center;
+
+  animation:
+  laptopScreenOpen 1.4s ease-in-out infinite alternate;
 }
+
 
 .animated-laptop-display{
-    width:100%;
-    height:100%;
-    border-radius:3px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    background:
-        radial-gradient(circle at center,#1d4ed8 0,#0b2454 45%,#020817 100%);
-    overflow:hidden;
+
+  width:100%;
+
+  height:100%;
+
+  border-radius:3px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+  background:
+  radial-gradient(
+    circle at center,
+    #1d4ed8 0,
+    #0b2454 45%,
+    #020817 100%
+  );
+
+  overflow:hidden;
 }
+
 
 .loader-ss{
-    width:42px;
-    height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    background:linear-gradient(135deg,#2563eb,#06b6d4);
-    color:#fff;
-    font-weight:900;
-    font-size:17px;
-    box-shadow:0 0 22px rgba(37,99,235,.65);
+
+  width:42px;
+
+  height:42px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:12px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  color:#fff;
+
+  font-weight:900;
+
+  font-size:17px;
+
+  box-shadow:
+  0 0 22px rgba(37,99,235,.65);
 }
+
 
 .loader-bar{
-    width:78px;
-    height:4px;
-    border-radius:10px;
-    background:rgba(255,255,255,.2);
-    overflow:hidden;
+
+  width:78px;
+
+  height:4px;
+
+  border-radius:10px;
+
+  background:
+  rgba(255,255,255,.2);
+
+  overflow:hidden;
 }
+
 
 .loader-bar span{
-    display:block;
-    width:40%;
-    height:100%;
-    border-radius:10px;
-    background:#38bdf8;
-    animation:loaderProgress 1.1s ease-in-out infinite;
+
+  display:block;
+
+  width:40%;
+
+  height:100%;
+
+  border-radius:10px;
+
+  background:#38bdf8;
+
+  animation:
+  loaderProgress 1.1s ease-in-out infinite;
 }
+
 
 .animated-laptop-hinge{
-    position:absolute;
-    left:23px;
-    top:112px;
-    width:184px;
-    height:7px;
-    border-radius:50%;
-    background:#94a3b8;
+
+  position:absolute;
+
+  left:23px;
+
+  top:112px;
+
+  width:184px;
+
+  height:7px;
+
+  border-radius:50%;
+
+  background:#94a3b8;
 }
+
 
 .animated-laptop-base{
-    position:absolute;
-    left:8px;
-    top:116px;
-    width:214px;
-    height:22px;
-    border-radius:4px 4px 15px 15px;
-    background:linear-gradient(#dbe4ef,#94a3b8);
-    transform:perspective(120px) rotateX(18deg);
+
+  position:absolute;
+
+  left:8px;
+
+  top:116px;
+
+  width:214px;
+
+  height:22px;
+
+  border-radius:4px 4px 15px 15px;
+
+  background:
+  linear-gradient(
+    #dbe4ef,
+    #94a3b8
+  );
+
+  transform:
+  perspective(120px)
+  rotateX(18deg);
 }
+
 
 .animated-laptop-trackpad{
-    position:absolute;
-    left:91px;
-    top:122px;
-    width:48px;
-    height:10px;
-    border-radius:4px;
-    background:#b7c3d1;
+
+  position:absolute;
+
+  left:91px;
+
+  top:122px;
+
+  width:48px;
+
+  height:10px;
+
+  border-radius:4px;
+
+  background:#b7c3d1;
 }
+
 
 .laptop-loader-title{
-    font-size:22px;
-    font-weight:900;
-    letter-spacing:.2px;
+
+  font-size:22px;
+
+  font-weight:900;
 }
+
 
 .laptop-loader-subtitle{
-    margin-top:7px;
-    font-size:13px;
-    color:#cbd5e1;
+
+  margin-top:7px;
+
+  font-size:13px;
+
+  color:#cbd5e1;
 }
+
 
 .loader-dots i{
-    font-style:normal;
-    animation:loaderDot 1.2s infinite;
+
+  font-style:normal;
+
+  animation:
+  loaderDot 1.2s infinite;
 }
 
-.loader-dots i:nth-child(2){animation-delay:.15s}
-.loader-dots i:nth-child(3){animation-delay:.30s}
+
+.loader-dots i:nth-child(2){
+
+  animation-delay:.15s;
+}
+
+
+.loader-dots i:nth-child(3){
+
+  animation-delay:.30s;
+}
+
 
 @keyframes laptopScreenOpen{
-    0%{transform:rotateX(3deg)}
-    100%{transform:rotateX(-8deg)}
+
+  0%{
+    transform:rotateX(3deg);
+  }
+
+  100%{
+    transform:rotateX(-8deg);
+  }
+
 }
+
 
 @keyframes loaderProgress{
-    0%{transform:translateX(-100%)}
-    100%{transform:translateX(280%)}
+
+  0%{
+    transform:translateX(-100%);
+  }
+
+  100%{
+    transform:translateX(280%);
+  }
+
 }
+
 
 @keyframes loaderDot{
-    0%,70%,100%{opacity:.25}
-    35%{opacity:1}
+
+  0%,70%,100%{
+    opacity:.25;
+  }
+
+  35%{
+    opacity:1;
+  }
+
 }
 
-@media(max-width:600px){
-    .animated-laptop{
-        transform:scale(.88);
-        margin-bottom:12px;
-    }
 
-    .laptop-loader-title{
-        font-size:19px;
-    }
+/* =====================================================
+   MOBILE BOTTOM NAV
+===================================================== */
+
+.mobile-bottom-nav{
+
+  display:none!important;
 }
+
+
+@media only screen and (max-width:600px){
+
+  html,
+  body{
+
+    overflow-x:hidden!important;
+  }
+
+
+  body{
+
+    padding-bottom:100px!important;
+  }
+
+
+  header nav{
+
+    display:none!important;
+  }
+
+
+  header{
+
+    position:sticky!important;
+
+    top:0!important;
+
+    z-index:9999!important;
+  }
+
+
+  .mobile-bottom-nav{
+
+    display:grid!important;
+
+    position:fixed!important;
+
+    left:0!important;
+
+    right:0!important;
+
+    bottom:0!important;
+
+    width:100%!important;
+
+    height:78px!important;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    background:
+    rgba(255,255,255,.98)!important;
+
+    border-top:
+    1px solid #d8dce3!important;
+
+    box-shadow:
+    0 -6px 25px rgba(0,0,0,.16)!important;
+
+    z-index:2147483000!important;
+
+    padding:
+    5px 4px
+    calc(5px + env(safe-area-inset-bottom));
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+  }
+
+
+  .mobile-nav-item{
+
+    position:relative;
+
+    display:flex!important;
+
+    flex-direction:column!important;
+
+    align-items:center!important;
+
+    justify-content:center!important;
+
+    gap:3px!important;
+
+    min-width:0;
+
+    background:transparent!important;
+
+    border:none!important;
+
+    text-decoration:none!important;
+
+    color:#172033!important;
+
+    font-family:inherit;
+
+    font-size:11px!important;
+
+    font-weight:700!important;
+  }
+
+
+  .mobile-nav-item i{
+
+    display:flex!important;
+
+    align-items:center!important;
+
+    justify-content:center!important;
+
+    width:42px!important;
+
+    height:36px!important;
+
+    font-size:24px!important;
+
+    color:#172033!important;
+  }
+
+
+  .mobile-nav-item span{
+
+    display:block!important;
+
+    color:#172033!important;
+
+    font-size:11px!important;
+
+    line-height:16px!important;
+
+    white-space:nowrap;
+  }
+
+
+  .laptop-mobile-nav i{
+
+    color:#1769e0!important;
+
+    background:#e8f2ff!important;
+
+    width:44px!important;
+
+    height:38px!important;
+
+    border-radius:11px;
+  }
+
+
+  .laptop-mobile-nav span{
+
+    color:#1769e0!important;
+
+    font-weight:800!important;
+  }
+
+
+  .whatsapp-mobile-nav i{
+
+    color:#25D366!important;
+  }
+
+
+  .whatsapp-float{
+
+    bottom:92px!important;
+
+    right:15px!important;
+
+  }
+
+
+  .hero{
+
+    grid-template-columns:1fr;
+
+    padding:
+    34px 18px
+    5px;
+
+    min-height:680px;
+
+    text-align:center;
+  }
+
+
+  .hero-left{
+
+    max-width:100%;
+  }
+
+
+  .hero-left h2{
+
+    font-size:30px;
+  }
+
+
+  .tag{
+
+    font-size:16px;
+  }
+
+
+  .hero-buttons{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+  }
+
+
+  .hero-laptop-area{
+
+    height:390px;
+
+    width:100%;
+  }
+
+
+  .laptop-floating-text{
+
+    right:50%;
+
+    bottom:8px;
+
+    transform:
+    translateX(50%);
+
+    white-space:nowrap;
+  }
+
+
+  .laptop-glow{
+
+    width:280px;
+
+    height:180px;
+  }
+
+
+  .laptop-shadow{
+
+    width:220px;
+
+    bottom:40px;
+  }
+
+
+  .section,
+  .service-tiles-section,
+  .products-slider-section,
+  .trust-section,
+  .gallery-section{
+
+    padding:
+    32px 20px;
+  }
+
+
+  .about{
+
+    flex-direction:column;
+  }
+
+
+  .about img{
+
+    width:100%;
+
+    max-height:320px;
+  }
+
+
+  .product-card{
+
+    min-width:145px;
+  }
+
+
+  .vertical-gallery{
+
+    height:500px;
+  }
+
+
+  .gallery-card{
+
+    width:95%;
+  }
+
+
+  .gallery-card img{
+
+    height:180px;
+  }
+
+
+  .footer{
+
+    padding:
+    22px 20px;
+
+    margin-bottom:20px;
+
+    padding-bottom:35px;
+  }
+
+
+  .footer-row{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+
+  .animated-laptop{
+
+    transform:scale(.88);
+
+    margin-bottom:12px;
+  }
+
+
+  .laptop-loader-title{
+
+    font-size:19px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px) and (min-width:601px){
+
+  .hero{
+
+    grid-template-columns:1fr;
+
+    padding:40px 28px;
+  }
+
+
+  .hero-left{
+
+    max-width:700px;
+  }
+
+
+  .hero-laptop-area{
+
+    height:460px;
+  }
+
+
+  .about{
+
+    flex-direction:column;
+  }
+
+
+  .about img{
+
+    width:100%;
+
+    max-height:320px;
+  }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+
 <!-- =====================================================
      LAPTOP & PC PAGE TRANSITION LOADER
 ===================================================== -->
-<div id="laptopPageLoader" class="laptop-page-loader" aria-hidden="true">
-    <div class="laptop-loader-wrap">
-        <div class="animated-laptop">
-            <div class="animated-laptop-screen">
-                <div class="animated-laptop-display">
-                    <div class="loader-ss">SS</div>
-                    <div class="loader-bar"><span></span></div>
-                </div>
-            </div>
-            <div class="animated-laptop-hinge"></div>
-            <div class="animated-laptop-base"></div>
-            <div class="animated-laptop-trackpad"></div>
+
+<div id="laptopPageLoader"
+     class="laptop-page-loader"
+     aria-hidden="true">
+
+  <div class="laptop-loader-wrap">
+
+    <div class="animated-laptop">
+
+      <div class="animated-laptop-screen">
+
+        <div class="animated-laptop-display">
+
+          <div class="loader-ss">
+            SS
+          </div>
+
+          <div class="loader-bar">
+            <span></span>
+          </div>
+
         </div>
 
-        <div class="laptop-loader-title">Opening Laptops &amp; PCs</div>
-        <div class="laptop-loader-subtitle">
-            Please wait
-            <span class="loader-dots"><i>.</i><i>.</i><i>.</i></span>
-        </div>
+      </div>
+
+      <div class="animated-laptop-hinge"></div>
+
+      <div class="animated-laptop-base"></div>
+
+      <div class="animated-laptop-trackpad"></div>
+
     </div>
+
+    <div class="laptop-loader-title">
+      Opening Laptops &amp; PCs
+    </div>
+
+    <div class="laptop-loader-subtitle">
+
+      Please wait
+
+      <span class="loader-dots">
+        <i>.</i>
+        <i>.</i>
+        <i>.</i>
+      </span>
+
+    </div>
+
+  </div>
+
 </div>
 
-  <header>
-    <div class="brand">
-      <img src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg" loading="lazy" alt="SS Online logo">
-      <div>
-        <h1>SS Online</h1>
-        <div style="font-size:12px;color:var(--muted);letter-spacing:.6px">Computer Services — Hyderabad</div>
-      </div>
-    </div>
 
-    <nav>
-      <div class="nav-services">
-        <a href="#" id="servicesMenuBtn">Services ▾</a>
-        <div class="dropdown-services" id="servicesDropdown">
-          <div onclick="openBookingPopup('Laptop Service')">💻 Laptop Service</div>
-          <div onclick="openBookingPopup('Desktop Service')">🖥 Desktop Service</div>
-          <div onclick="openBookingPopup('Printer Setup')">🖨 Printer Setup</div>
-          <div onclick="openBookingPopup('CCTV Installation')">📷 CCTV Installation</div>
-          <div onclick="openBookingPopup('Doorstep Inspection')">🚪 Doorstep Inspection</div>
-          <div onclick="openBookingPopup('Data Recovery')">💾 Data Recovery</div>
-          <div onclick="openBookingPopup('AMC (1 Year)')">📅 AMC (1 Year)</div>
-          <div onclick="openBookingPopup('Software Installation')">🪟 Software Installation</div>
-        </div>
-      </div>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#moving-products">Our Products</a>
-<a href="laptops-pcs.html" class="laptops-sale-nav">
-    💻 Laptops & PCs Sale
-</a>
-
-      <a class="cta" href="tel:9502608440">Call Now 📞</a>
-    </nav>
-  </header>
-
-  <div class="delivery-marquee" onclick="homeDeliveryMsg()">
-    <div class="delivery-track">
-      🚚 AP / TS Home Delivery Available • Doorstep Pickup & Delivery • Laptop / Desktop / Printer / CCTV Service • Click Here to Enquire on WhatsApp
-    </div>
-  </div>
-
-  <main>
-    <section class="hero">
-      <div class="hero-left">
-        <span class="hero-badge">Trusted Computer Service in Hyderabad</span>
-        <h2>Expert Computer Repair <br><span class="highlight">& IT Solutions</span></h2>
-        <p class="tag">Fast, reliable hardware and software support for laptops, desktops, printers, CCTV, networking and data recovery.</p>
-      </div>
-
-      <aside class="hero-right">
-        <div class="card-item">
-          <div class="step-box">1</div>
-          <div>
-            <h4>Free Diagnosis</h4>
-            <p>Quick checking and transparent quote before repair.</p>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="step-box">2</div>
-          <div>
-            <h4>On-site & Remote Support</h4>
-            <p>Service at your home, office or via remote support.</p>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="step-box">3</div>
-          <div>
-            <h4>Genuine Parts & Warranty</h4>
-            <p>Quality parts with service warranty assurance.</p>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="trust-section">
-      <h2>Why Choose SS Computer Services?</h2>
-      <div class="trust-grid">
-        <div class="trust-card"><div class="trust-icon">⚡</div><h3>Fast Service</h3><p>Quick diagnosis and same-day repair for most issues.</p></div>
-        <div class="trust-card"><div class="trust-icon">🏠</div><h3>Doorstep Support</h3><p>We come to your home or office for repair.</p></div>
-        <div class="trust-card"><div class="trust-icon">🛡️</div><h3>Warranty Service</h3><p>Genuine parts with service warranty guarantee.</p></div>
-        <div class="trust-card"><div class="trust-icon">💰</div><h3>Affordable Price</h3><p>No hidden charges. Transparent pricing always.</p></div>
-      </div>
-    </section>
-
-    <section id="service-tiles" class="service-tiles-section">
-      <h2>Quick Services</h2>
-      <p style="color:var(--muted);margin-top:6px">Select a service to book instantly</p>
-      <div class="service-tiles-grid" id="serviceTiles"></div>
-    </section>
-
-    <section id="moving-products" class="products-slider-section">
-      <h2>Our Products</h2>
-      <p style="color:var(--muted);margin-top:6px">Browse available laptop & desktop parts</p>
-      <div class="products-slider" id="productSlider"></div>
-    </section>
-
-    <section id="about" class="section" style="padding-top:6px">
-      <h2>About SS Online</h2>
-      <div class="about">
-        <div>
-          <p>SS Online & Offline Computer Services is a Hyderabad-based computer service shop offering end-to-end hardware and software solutions. With years of hands-on experience, we provide fast diagnostics, honest pricing, and both on-site and in-shop repairs.</p>
-          <p>Open to individuals and small businesses. Need a quick fix or a full system overhaul? We handle it all.</p>
-          <h3>Why Laptop General Cleaning Service?</h3>
-          <p>After 1 year of using your laptop, your system may hang or generate heat. As a professional suggestion, every 6 months you should do laptop or computer general service.</p>
-          <h3>Why Choose Home Visit Computer Repair Services?</h3>
-          <p>When you choose our home visit computer repair services, you get doorstep support, trusted experts, fair pricing, fast repairs, and dependable results.</p>
-        </div>
-        <div>
-          <img src="https://i.postimg.cc/jjy3x1XT/Chat-GPT-Image-Feb-14-2026-12-30-57-AM.png" loading="lazy" alt="Computer service illustration">
-        </div>
-      </div>
-    </section>
-    <section id="gallery" class="gallery-section">
-  <div class="section-title">
-    <h2>Our Work Gallery</h2>
-    <p>Real service work, repairs and computer solutions</p>
-  </div>
-  <div class="vertical-gallery">
-    <div class="vertical-gallery-track">
-
-      <div class="gallery-card"><img src="https://i.postimg.cc/3xsQ5vrT/work0-jpg.jpg" alt="Work 1"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/Kz56MpPv/work1-jpg.jpg" alt="Work 2"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg" alt="Work 3"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/90nNd6rX/work3-jpg.jpg" alt="Work 4"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/x1HFmFYX/work4-jpg.jpg" alt="Work 5"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg" alt="Work 6"></div>
-
-      <div class="gallery-card"><img src="https://i.postimg.cc/L8zN5YBX/work6-jpg.jpg" alt="Work 1"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/dtCzR0jY/work7-jpg.jpg" alt="Work 2"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/pTySmVLk/work8-jpg.jpg" alt="Work 3"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/qM25h5pn/work9-jpg.jpg" alt="Work 4"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg" alt="Work 5"></div>
-      <div class="gallery-card"><img src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg" alt="Work 6"></div>
-    </div>
-  </div>
-</section>  
-</main>
-  <footer class="footer">
-    <div class="footer-row">
-      <div>
-        <div style="font-weight:700">SS Online & Offline Computer Services</div>
-        <div style="color:rgba(255,255,255,.8);font-size:13px;margin-top:6px">Hyderabad • Phone: 9502608440 • sscomputerservices999@gmail.com</div>
-      </div>
-      <div style="text-align:right;color:rgba(255,255,255,.9);font-size:13px">© <span id="year"></span> SS Online. All rights reserved.</div>
-    </div>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/919502608440" target="_blank" aria-label="WhatsApp">💬</a>
-
-  <div id="bookingPopup" class="booking-modal">
-    <div class="booking-box">
-      <button class="booking-close" onclick="closeBookingPopup()">✕</button>
-      <h2 id="bookingTitle">Book Service</h2>
-      <input type="text" id="customerName" placeholder="Your Name" required>
-      <input type="text" id="laptopModel" placeholder="Laptop / Desktop Model">
-      <textarea id="issueDesc" placeholder="Describe your issue" rows="4"></textarea>
-      <button class="send-btn" onclick="sendBookingToWhatsApp()">Send to WhatsApp</button>
-    </div>
-  </div>
-
-  <div class="mobile-action-bar">
-    <a href="tel:9502608440">📞 Call</a>
-    <a href="https://wa.me/919502608440" target="_blank">💬 WhatsApp</a>
-    <button onclick="openBookingPopup('General Service')">🛠 Book</button>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const phoneNumber = "919502608440";
-
-    const serviceBtn = document.getElementById('servicesMenuBtn');
-    const dropdown = document.getElementById('servicesDropdown');
-
-    serviceBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    });
-
-    dropdown.addEventListener('click', function(e){
-      e.stopPropagation();
-      dropdown.style.display = 'none';
-    });
-
-    document.addEventListener('click', function(){
-      dropdown.style.display = 'none';
-    });
-
-    function homeDeliveryMsg(){
-      const msg = encodeURIComponent("Hello, I saw your website.\nI need Home Delivery service in AP/TS.\nPlease share details.");
-      window.open("https://wa.me/" + phoneNumber + "?text=" + msg, "_blank");
-    }
-
-    let selectedBookingItem = "";
-
-    function openBookingPopup(itemName){
-      selectedBookingItem = itemName;
-      document.getElementById("bookingTitle").innerText = itemName;
-      document.getElementById("bookingPopup").style.display = "flex";
-    }
-
-    function closeBookingPopup(){
-      document.getElementById("bookingPopup").style.display = "none";
-    }
-
-    function sendBookingToWhatsApp(){
-      const name = document.getElementById("customerName").value.trim();
-      const model = document.getElementById("laptopModel").value.trim();
-      const issue = document.getElementById("issueDesc").value.trim();
-
-      if(name === ""){
-        alert("Please enter your name");
-        return;
-      }
-
-      const message = encodeURIComponent(
-        "New Enquiry from Website\n\n" +
-        "Service/Product: " + selectedBookingItem + "\n" +
-        "Name: " + name + "\n" +
-        "Laptop/Desktop Model: " + model + "\n" +
-        "Issue Description: " + issue
-      );
-
-      window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
-    }
-
-    const servicesList = [
-    {icon:"💻", name:"Laptop Service"},
-    {icon:"🖥️", name:"Desktop Service"},
-    {icon:"🖨️", name:"Printer Setup"},
-    {icon:"📷", name:"CCTV Installation"},
-    {icon:"🚪", name:"Doorstep Inspection"},
-    {icon:"💾", name:"Data Recovery"},
-    {icon:"🔐", name:"Laptop Password Recovery"},
-    {icon:"📱", name:"Mobile Password Recovery"},
-    {icon:"📅", name:"AMC (1 Year)"},
-    {icon:"🪟", name:"Software Installation"}
-];
-
-    document.getElementById("serviceTiles").innerHTML = servicesList.map(s => `
-      <div class="service-tile" onclick="openBookingPopup('${s.name}')">
-        <div class="tile-icon">${s.icon}</div>
-        <h3>${s.name}</h3>
-        <span>Click to book</span>
-      </div>
-    `).join("");
-
-    const products = [
-      {name:"Laptop Screen",img:"laptop-screen.jpg"},
-      {name:"Laptop Keyboard",img:"keyboard.jpg"},
-      {name:"Laptop Charger",img:"laptop.jpg"},
-      {name:"MacBook Charger",img:"mac-charger.jpg"},
-      {name:"Laptop Battery",img:"battery.jpg"},
-      {name:"Laptop Memory",img:"ram.jpg"},
-      {name:"Motherboard Repair",img:"motherboard.jpg"},
-      {name:"Laptop Fan",img:"fan.jpg"},
-      {name:"Laptop Hard Disk",img:"hdd.jpg"},
-      {name:"Laptop Speaker",img:"speaker.jpg"},
-      {name:"Laptop Hinge",img:"hinge.jpg"},
-      {name:"Power Button Repair",img:"power.jpg"},
-      {name:"Liquid Spill Repair",img:"water.jpg"},
-      {name:"Battery Not Charging",img:"battery-issue.jpg"},
-      {name:"Charger Not Working",img:"charger-issue.jpg"},
-      {name:"Memory Upgrade",img:"ram-upgrade.jpg"},
-      {name:"HDD & SSD Upgrade",img:"hdd-upgrade.jpg"},
-      {name:"Not Powering On",img:"no-power.jpg"},
-      {name:"Base Repair",img:"base.jpg"},
-      {name:"Laptop Body Change",img:"body.jpg"},
-      {name:"General Service",img:"service.jpg"},
-      {name:"Hard Disk Failure",img:"hdd-fail.jpg"},
-      {name:"Overheating",img:"heat.jpg"},
-      {name:"Desktop CPU",img:"cpu.jpg"},
-      {name:"Desktop Monitor",img:"monitor.jpg"},
-      {name:"Desktop Keyboard",img:"keyboard1.jpg"},
-      {name:"Desktop Mouse",img:"mouse.jpg"},
-      {name:"SMPS (Power Supply)",img:"smps.jpg"},
-      {name:"Graphics Card",img:"gpu.jpg"},
-      {name:"Motherboard (Desktop)",img:"motherboard1.jpg"},
-      {name:"Desktop RAM",img:"ram1.jpg"},
-      {name:"Desktop Hard Disk",img:"hdd1.jpg"},
-      {name:"SSD for Desktop",img:"ssd1.jpg"},
-      {name:"Cabinet / Case",img:"cabinet.jpg"},
-      {name:"Cooling Fan",img:"fan1.jpg"},
-      {name:"Processor",img:"pro.jpg"}
-    ];
-
-    const productSlider = document.getElementById("productSlider");
-
-    productSlider.innerHTML = products.map(p => `
-      <div class="product-card" onclick="openProductPopup('${p.name}','./images/${p.img}')">
-        <img src="./images/${p.img}" onerror="this.src='./images/default.jpg'" alt="${p.name}">
-        <h3>${p.name}</h3>
-        <small>Click to enquire</small>
-      </div>
-    `).join("");
-
-    function productEnquiry(productName){
-      const message = encodeURIComponent("Hello SS Computer Services,\n\nI am interested in:\nProduct: " + productName + "\n\nPlease share availability and details.");
-      window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
-    }
-
-    let productAutoScroll;
-
-    function startProductAutoScroll(){
-      productAutoScroll = setInterval(() => {
-        productSlider.scrollLeft += 1;
-        if(productSlider.scrollLeft >= productSlider.scrollWidth - productSlider.clientWidth){
-          productSlider.scrollLeft = 0;
-        }
-      }, 20);
-    }
-
-    function stopProductAutoScroll(){
-      clearInterval(productAutoScroll);
-    }
-
-    productSlider.addEventListener("mouseenter", stopProductAutoScroll);
-    productSlider.addEventListener("mouseleave", startProductAutoScroll);
-    productSlider.addEventListener("touchstart", stopProductAutoScroll);
-    productSlider.addEventListener("touchend", startProductAutoScroll);
-
-    let isDragging = false;
-    let dragStartX = 0;
-    let dragScrollLeft = 0;
-
-    productSlider.addEventListener("mousedown", e => {
-      isDragging = true;
-      dragStartX = e.pageX - productSlider.offsetLeft;
-      dragScrollLeft = productSlider.scrollLeft;
-      stopProductAutoScroll();
-    });
-
-    productSlider.addEventListener("mouseup", () => {
-      isDragging = false;
-      startProductAutoScroll();
-    });
-
-    productSlider.addEventListener("mouseleave", () => {
-      isDragging = false;
-      startProductAutoScroll();
-    });
-
-    productSlider.addEventListener("mousemove", e => {
-      if(!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - productSlider.offsetLeft;
-      const walk = (x - dragStartX) * 2;
-      productSlider.scrollLeft = dragScrollLeft - walk;
-    });
-    let selectedProductName = "";
-
-function openProductPopup(name,img){
-  selectedProductName = name;
-  document.getElementById("popupProductName").innerText = name;
-  document.getElementById("popupProductImg").src = img;
-  document.getElementById("productPopup").style.display = "flex";
-}
-
-function closeProductPopup(){
-  document.getElementById("productPopup").style.display = "none";
-}
-
-function sendProductToWhatsApp(){
-  const message = encodeURIComponent(
-    "Hello SS Computer Services,\n\n" +
-    "I am interested in this product/service:\n" +
-    selectedProductName + "\n\n" +
-    "Please share availability and details."
-  );
-
-  window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
-}
-  </script>
-
-
-  <div id="productPopup" class="product-popup">
-  <div class="product-popup-card">
-    <button class="product-close" onclick="closeProductPopup()">✕</button>
-    <img id="popupProductImg" src="" alt="">
-    <h2 id="popupProductName"></h2>
-    <p>Need this product or service? Send enquiry on WhatsApp.</p>
-    <button class="send-btn" onclick="sendProductToWhatsApp()">Send to WhatsApp</button>
-  </div>
-</div>
 <!-- =====================================================
-     LAPTOP OPENING LOADING SCREEN
+     HEADER
 ===================================================== -->
 
+<header>
 
+  <div class="brand">
 
-        <!-- LAPTOP BASE -->
+    <img
+      src="https://i.postimg.cc/5tgMGC3M/Whats-App-Image-2025-10-20-at-1-40-50-PM.jpg"
+      loading="lazy"
+      alt="SS Online logo">
 
-        <div class="laptop-base"></div>
+    <div>
+
+      <h1>SS Online</h1>
+
+      <div style="
+        font-size:12px;
+        color:var(--muted);
+        letter-spacing:.6px">
+
+        Computer Services — Hyderabad
+
+      </div>
 
     </div>
 
-    <div class="laptop-loading-text">
+  </div>
 
-        Opening Laptops & PCs
 
-        <span class="loading-dots">
-            <span>.</span>
-            <span>.</span>
-            <span>.</span>
-        </span>
+  <nav>
+
+    <div class="nav-services">
+
+      <a href="#" id="servicesMenuBtn">
+        Services ▾
+      </a>
+
+      <div
+        class="dropdown-services"
+        id="servicesDropdown">
+
+        <div onclick="openBookingPopup('Laptop Service')">
+          💻 Laptop Service
+        </div>
+
+        <div onclick="openBookingPopup('Desktop Service')">
+          🖥 Desktop Service
+        </div>
+
+        <div onclick="openBookingPopup('Printer Setup')">
+          🖨 Printer Setup
+        </div>
+
+        <div onclick="openBookingPopup('CCTV Installation')">
+          📷 CCTV Installation
+        </div>
+
+        <div onclick="openBookingPopup('Doorstep Inspection')">
+          🚪 Doorstep Inspection
+        </div>
+
+        <div onclick="openBookingPopup('Data Recovery')">
+          💾 Data Recovery
+        </div>
+
+        <div onclick="openBookingPopup('AMC (1 Year)')">
+          📅 AMC (1 Year)
+        </div>
+
+        <div onclick="openBookingPopup('Software Installation')">
+          🪟 Software Installation
+        </div>
+
+      </div>
+
     </div>
-</div>
-<!-- MOBILE BOTTOM NAVIGATION -->
-<div class="mobile-bottom-nav">
 
-    <a href="index.html" class="mobile-nav-item">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
+
+    <a href="#about">
+      About
     </a>
 
-    <a href="index.html#service-tiles" class="mobile-nav-item">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
-        <span>Services</span>
+    <a href="#gallery">
+      Gallery
     </a>
+
+    <a href="#moving-products">
+      Our Products
+    </a>
+
 
     <a href="laptops-pcs.html"
-       class="mobile-nav-item laptop-mobile-nav">
+       class="laptops-sale-nav">
 
-        <i class="fa-solid fa-laptop"></i>
-        <span>Laptops &amp; PCs</span>
+      💻 Laptops & PCs Sale
+
+    </a>
+
+
+    <a class="cta"
+       href="tel:9502608440">
+
+      Call Now 📞
 
     </a>
 
-    <a href="https://wa.me/919502608440"
-       target="_blank"
-       rel="noopener"
-       class="mobile-nav-item whatsapp-mobile-nav">
+  </nav>
 
-        <i class="fa-brands fa-whatsapp"></i>
-        <span>WhatsApp</span>
+</header>
 
-    </a>
+
+<!-- =====================================================
+     DELIVERY MARQUEE
+===================================================== -->
+
+<div
+  class="delivery-marquee"
+  onclick="homeDeliveryMsg()">
+
+  <div class="delivery-track">
+
+    🚚 AP / TS Home Delivery Available •
+    Doorstep Pickup & Delivery •
+    Laptop / Desktop / Printer / CCTV Service •
+    Click Here to Enquire on WhatsApp
+
+  </div>
 
 </div>
-<script>
-/* =====================================================
-   LAPTOP & PC PAGE TRANSITION
-===================================================== */
 
-(function () {
-    const loader = document.getElementById("laptopPageLoader");
 
-    if (!loader) return;
+<main>
 
-    function showLaptopLoader(url) {
-        loader.classList.add("show");
-        loader.setAttribute("aria-hidden", "false");
 
-        setTimeout(function () {
-            window.location.href = url;
-        }, 1000);
+<!-- =====================================================
+     3D HERO
+===================================================== -->
+
+<section class="hero">
+
+
+  <div class="hero-left">
+
+    <span class="hero-badge">
+
+      Trusted Computer Service in Hyderabad
+
+    </span>
+
+
+    <h2>
+
+      Expert Computer Repair
+
+      <br>
+
+      <span class="highlight">
+        & IT Solutions
+      </span>
+
+    </h2>
+
+
+    <p class="tag">
+
+      Fast, reliable hardware and software support for
+      laptops, desktops, printers, networking and data recovery.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+      <a
+        href="#service-tiles"
+        class="hero-btn primary-btn">
+
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+        Our Services
+
+      </a>
+
+
+      <a
+        href="https://wa.me/919502608440"
+        target="_blank"
+        rel="noopener"
+        class="hero-btn whatsapp-btn">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        WhatsApp
+
+      </a>
+
+
+      <a
+        href="https://www.google.com/maps/dir/?api=1&destination=17.532583%2C78.507672&travelmode=driving"
+        target="_blank"
+        rel="noopener"
+        class="hero-btn direction-btn">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        Get Direction
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       3D LAPTOP
+  ================================================= -->
+
+  <div class="hero-laptop-area">
+
+    <div class="laptop-glow"></div>
+
+    <div id="laptop3d"></div>
+
+    <div class="laptop-shadow"></div>
+
+    <div class="laptop-floating-text">
+
+      <i class="fa-solid fa-laptop"></i>
+
+      Professional Laptop Service
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     TRUST
+===================================================== -->
+
+<section class="trust-section">
+
+  <h2>
+    Why Choose SS Computer Services?
+  </h2>
+
+
+  <div class="trust-grid">
+
+    <div class="trust-card">
+
+      <div class="trust-icon">⚡</div>
+
+      <h3>Fast Service</h3>
+
+      <p>
+        Quick diagnosis and same-day repair for most issues.
+      </p>
+
+    </div>
+
+
+    <div class="trust-card">
+
+      <div class="trust-icon">🏠</div>
+
+      <h3>Doorstep Support</h3>
+
+      <p>
+        We come to your home or office for repair.
+      </p>
+
+    </div>
+
+
+    <div class="trust-card">
+
+      <div class="trust-icon">🛡️</div>
+
+      <h3>Warranty Service</h3>
+
+      <p>
+        Genuine parts with service warranty guarantee.
+      </p>
+
+    </div>
+
+
+    <div class="trust-card">
+
+      <div class="trust-icon">💰</div>
+
+      <h3>Affordable Price</h3>
+
+      <p>
+        No hidden charges. Transparent pricing always.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+  id="service-tiles"
+  class="service-tiles-section">
+
+  <h2>
+    Quick Services
+  </h2>
+
+  <p style="
+    color:var(--muted);
+    margin-top:6px">
+
+    Select a service to book instantly
+
+  </p>
+
+
+  <div
+    class="service-tiles-grid"
+    id="serviceTiles">
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section
+  id="moving-products"
+  class="products-slider-section">
+
+  <h2>
+    Our Products
+  </h2>
+
+  <p style="
+    color:var(--muted);
+    margin-top:6px">
+
+    Browse available laptop & desktop parts
+
+  </p>
+
+
+  <div
+    class="products-slider"
+    id="productSlider">
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+  id="about"
+  class="section"
+  style="padding-top:6px">
+
+  <h2>
+    About SS Online
+  </h2>
+
+
+  <div class="about">
+
+    <div>
+
+      <p>
+
+        SS Online & Offline Computer Services is a
+        Hyderabad-based computer service shop offering
+        end-to-end hardware and software solutions.
+        With years of hands-on experience, we provide
+        fast diagnostics, honest pricing, and both
+        on-site and in-shop repairs.
+
+      </p>
+
+
+      <p>
+
+        Open to individuals and small businesses.
+        Need a quick fix or a full system overhaul?
+        We handle it all.
+
+      </p>
+
+
+      <h3>
+        Why Laptop General Cleaning Service?
+      </h3>
+
+
+      <p>
+
+        After 1 year of using your laptop, your system
+        may hang or generate heat. As a professional
+        suggestion, every 6 months you should do laptop
+        or computer general service.
+
+      </p>
+
+
+      <h3>
+        Why Choose Home Visit Computer Repair Services?
+      </h3>
+
+
+      <p>
+
+        When you choose our home visit computer repair
+        services, you get doorstep support, trusted
+        experts, fair pricing, fast repairs, and
+        dependable results.
+
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <img
+        src="https://i.postimg.cc/jjy3x1XT/Chat-GPT-Image-Feb-14-2026-12-30-57-AM.png"
+        loading="lazy"
+        alt="Computer service illustration">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section
+  id="gallery"
+  class="gallery-section">
+
+  <div class="section-title">
+
+    <h2>
+      Our Work Gallery
+    </h2>
+
+    <p>
+      Real service work, repairs and computer solutions
+    </p>
+
+  </div>
+
+
+  <div class="vertical-gallery">
+
+    <div class="vertical-gallery-track">
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/3xsQ5vrT/work0-jpg.jpg"
+          alt="Work 1">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/Kz56MpPv/work1-jpg.jpg"
+          alt="Work 2">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg"
+          alt="Work 3">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/90nNd6rX/work3-jpg.jpg"
+          alt="Work 4">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/x1HFmFYX/work4-jpg.jpg"
+          alt="Work 5">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg"
+          alt="Work 6">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/L8zN5YBX/work6-jpg.jpg"
+          alt="Work 7">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/dtCzR0jY/work7-jpg.jpg"
+          alt="Work 8">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/pTySmVLk/work8-jpg.jpg"
+          alt="Work 9">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/qM25h5pn/work9-jpg.jpg"
+          alt="Work 10">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg"
+          alt="Work 11">
+      </div>
+
+
+      <div class="gallery-card">
+        <img
+          src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg"
+          alt="Work 12">
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <div class="footer-row">
+
+    <div>
+
+      <div style="font-weight:700">
+
+        SS Online & Offline Computer Services
+
+      </div>
+
+
+      <div style="
+        color:rgba(255,255,255,.8);
+        font-size:13px;
+        margin-top:6px">
+
+        Hyderabad • Phone: 9502608440 •
+        sscomputerservices999@gmail.com
+
+      </div>
+
+    </div>
+
+
+    <div style="
+      text-align:right;
+      color:rgba(255,255,255,.9);
+      font-size:13px">
+
+      © <span id="year"></span>
+      SS Online. All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP FLOAT
+===================================================== -->
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/919502608440"
+  target="_blank"
+  rel="noopener"
+  aria-label="WhatsApp">
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =====================================================
+     BOOKING POPUP
+===================================================== -->
+
+<div
+  id="bookingPopup"
+  class="booking-modal">
+
+  <div class="booking-box">
+
+    <button
+      class="booking-close"
+      onclick="closeBookingPopup()">
+
+      ✕
+
+    </button>
+
+
+    <h2 id="bookingTitle">
+      Book Service
+    </h2>
+
+
+    <input
+      type="text"
+      id="customerName"
+      placeholder="Your Name"
+      required>
+
+
+    <input
+      type="text"
+      id="laptopModel"
+      placeholder="Laptop / Desktop Model">
+
+
+    <textarea
+      id="issueDesc"
+      placeholder="Describe your issue"
+      rows="4">
+    </textarea>
+
+
+    <button
+      class="send-btn"
+      onclick="sendBookingToWhatsApp()">
+
+      Send to WhatsApp
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     PRODUCT POPUP
+===================================================== -->
+
+<div
+  id="productPopup"
+  class="product-popup">
+
+  <div class="product-popup-card">
+
+    <button
+      class="product-close"
+      onclick="closeProductPopup()">
+
+      ✕
+
+    </button>
+
+
+    <img
+      id="popupProductImg"
+      src=""
+      alt="">
+
+
+    <h2 id="popupProductName"></h2>
+
+
+    <p>
+      Need this product or service?
+      Send enquiry on WhatsApp.
+    </p>
+
+
+    <button
+      class="send-btn"
+      onclick="sendProductToWhatsApp()">
+
+      Send to WhatsApp
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAVIGATION
+===================================================== -->
+
+<div class="mobile-bottom-nav">
+
+
+  <a
+    href="index.html"
+    class="mobile-nav-item">
+
+    <i class="fa-solid fa-house"></i>
+
+    <span>
+      Home
+    </span>
+
+  </a>
+
+
+  <a
+    href="index.html#service-tiles"
+    class="mobile-nav-item">
+
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+    <span>
+      Services
+    </span>
+
+  </a>
+
+
+  <a
+    href="laptops-pcs.html"
+    class="mobile-nav-item laptop-mobile-nav">
+
+    <i class="fa-solid fa-laptop"></i>
+
+    <span>
+      Laptops &amp; PCs
+    </span>
+
+  </a>
+
+
+  <a
+    href="https://wa.me/919502608440"
+    target="_blank"
+    rel="noopener"
+    class="mobile-nav-item whatsapp-mobile-nav">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    <span>
+      WhatsApp
+    </span>
+
+  </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     THREE.JS 3D LAPTOP
+===================================================== -->
+
+<script type="module">
+
+import * as THREE from
+"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js";
+
+
+const container =
+document.getElementById("laptop3d");
+
+
+if(container){
+
+  /* =================================================
+     SCENE
+  ================================================= */
+
+  const scene =
+  new THREE.Scene();
+
+
+  /* =================================================
+     CAMERA
+  ================================================= */
+
+  const camera =
+  new THREE.PerspectiveCamera(
+    35,
+    container.clientWidth /
+    container.clientHeight,
+    0.1,
+    100
+  );
+
+
+  camera.position.set(
+    0,
+    2.0,
+    7
+  );
+
+
+  /* =================================================
+     RENDERER
+  ================================================= */
+
+  const renderer =
+  new THREE.WebGLRenderer({
+
+    antialias:true,
+
+    alpha:true,
+
+    powerPreference:
+    "high-performance"
+
+  });
+
+
+  renderer.setPixelRatio(
+    Math.min(
+      window.devicePixelRatio,
+      2
+    )
+  );
+
+
+  renderer.setSize(
+    container.clientWidth,
+    container.clientHeight
+  );
+
+
+  renderer.outputColorSpace =
+  THREE.SRGBColorSpace;
+
+
+  renderer.shadowMap.enabled =
+  true;
+
+
+  renderer.shadowMap.type =
+  THREE.PCFSoftShadowMap;
+
+
+  container.appendChild(
+    renderer.domElement
+  );
+
+
+  /* =================================================
+     LIGHTS
+  ================================================= */
+
+  const ambient =
+  new THREE.AmbientLight(
+    0xffffff,
+    2.2
+  );
+
+
+  scene.add(ambient);
+
+
+  const keyLight =
+  new THREE.DirectionalLight(
+    0xffffff,
+    4.5
+  );
+
+
+  keyLight.position.set(
+    4,
+    7,
+    6
+  );
+
+
+  keyLight.castShadow =
+  true;
+
+
+  scene.add(keyLight);
+
+
+  const blueLight =
+  new THREE.PointLight(
+    0x0ea5e9,
+    25,
+    12
+  );
+
+
+  blueLight.position.set(
+    -4,
+    2,
+    4
+  );
+
+
+  scene.add(blueLight);
+
+
+  const rimLight =
+  new THREE.PointLight(
+    0x38bdf8,
+    22,
+    12
+  );
+
+
+  rimLight.position.set(
+    4,
+    3,
+    -4
+  );
+
+
+  scene.add(rimLight);
+
+
+  /* =================================================
+     LAPTOP GROUP
+  ================================================= */
+
+  const laptop =
+  new THREE.Group();
+
+
+  laptop.position.y =
+  -0.25;
+
+
+  scene.add(laptop);
+
+
+  /* =================================================
+     MATERIALS
+  ================================================= */
+
+  const silverMaterial =
+  new THREE.MeshStandardMaterial({
+
+    color:0xc7d0da,
+
+    metalness:.85,
+
+    roughness:.23
+
+  });
+
+
+  const darkMaterial =
+  new THREE.MeshStandardMaterial({
+
+    color:0x111827,
+
+    metalness:.55,
+
+    roughness:.28
+
+  });
+
+
+  const blackMaterial =
+  new THREE.MeshStandardMaterial({
+
+    color:0x05070a,
+
+    metalness:.3,
+
+    roughness:.35
+
+  });
+
+
+  const screenMaterial =
+  new THREE.MeshStandardMaterial({
+
+    color:0x06152d,
+
+    emissive:0x0757b8,
+
+    emissiveIntensity:.55,
+
+    metalness:.2,
+
+    roughness:.12
+
+  });
+
+
+  const blueMaterial =
+  new THREE.MeshStandardMaterial({
+
+    color:0x0ea5e9,
+
+    emissive:0x0284c7,
+
+    emissiveIntensity:.35,
+
+    metalness:.4,
+
+    roughness:.25
+
+  });
+
+
+  /* =================================================
+     BASE
+  ================================================= */
+
+  const baseGroup =
+  new THREE.Group();
+
+
+  laptop.add(baseGroup);
+
+
+  const baseGeometry =
+  new THREE.BoxGeometry(
+    4.4,
+    .22,
+    2.75
+  );
+
+
+  const base =
+  new THREE.Mesh(
+    baseGeometry,
+    silverMaterial
+  );
+
+
+  base.position.y =
+  0;
+
+
+  base.castShadow =
+  true;
+
+
+  base.receiveShadow =
+  true;
+
+
+  baseGroup.add(base);
+
+
+  /* =================================================
+     KEYBOARD SURFACE
+  ================================================= */
+
+  const keyboardSurface =
+  new THREE.Mesh(
+
+    new THREE.BoxGeometry(
+      4.05,
+      .045,
+      2.15
+    ),
+
+    darkMaterial
+
+  );
+
+
+  keyboardSurface.position.y =
+  .135;
+
+
+  keyboardSurface.position.z =
+  .08;
+
+
+  baseGroup.add(
+    keyboardSurface
+  );
+
+
+  /* =================================================
+     KEYBOARD KEYS
+  ================================================= */
+
+  const keyGeometry =
+  new THREE.BoxGeometry(
+    .22,
+    .035,
+    .16
+  );
+
+
+  const keyMaterial =
+  new THREE.MeshStandardMaterial({
+
+    color:0x303946,
+
+    metalness:.2,
+
+    roughness:.5
+
+  });
+
+
+  for(let row=0;row<6;row++){
+
+    for(let col=0;col<14;col++){
+
+      const key =
+      new THREE.Mesh(
+        keyGeometry,
+        keyMaterial
+      );
+
+
+      key.position.x =
+      -1.72 +
+      col*.265;
+
+
+      key.position.y =
+      .18;
+
+
+      key.position.z =
+      -.65 +
+      row*.29;
+
+
+      key.scale.x =
+      col===13 ? .75 : 1;
+
+
+      baseGroup.add(key);
+
     }
 
-    document.addEventListener("click", function (event) {
-        const link = event.target.closest("a");
+  }
 
-        if (!link) return;
 
-        const href = link.getAttribute("href");
+  /* =================================================
+     TRACKPAD
+  ================================================= */
 
-        if (!href) return;
+  const trackpad =
+  new THREE.Mesh(
 
-        /* Only intercept the Laptops & PCs page link */
-        if (!href.toLowerCase().includes("laptops-pcs.html")) return;
+    new THREE.BoxGeometry(
+      1.35,
+      .025,
+      .75
+    ),
 
-        /* Don't intercept a new-tab/external modifier click */
-        if (
-            event.ctrlKey ||
-            event.metaKey ||
-            event.shiftKey ||
-            event.altKey ||
-            link.target === "_blank"
-        ) {
-            return;
-        }
+    new THREE.MeshStandardMaterial({
 
-        event.preventDefault();
+      color:0x9aa6b2,
 
-        const destination = link.href;
+      metalness:.35,
 
-        showLaptopLoader(destination);
-    });
-})();
+      roughness:.35
+
+    })
+
+  );
+
+
+  trackpad.position.set(
+    0,
+    .17,
+    .78
+  );
+
+
+  baseGroup.add(
+    trackpad
+  );
+
+
+  /* =================================================
+     FRONT EDGE
+  ================================================= */
+
+  const frontEdge =
+  new THREE.Mesh(
+
+    new THREE.BoxGeometry(
+      4.35,
+      .12,
+      .10
+    ),
+
+    silverMaterial
+
+  );
+
+
+  frontEdge.position.set(
+    0,
+    -.05,
+    1.38
+  );
+
+
+  baseGroup.add(
+    frontEdge
+  );
+
+
+  /* =================================================
+     SCREEN GROUP
+  ================================================= */
+
+  const screenGroup =
+  new THREE.Group();
+
+
+  screenGroup.position.set(
+    0,
+    .12,
+    -1.30
+  );
+
+
+  screenGroup.rotation.x =
+  -0.20;
+
+
+  laptop.add(
+    screenGroup
+  );
+
+
+  /* =================================================
+     SCREEN BACK
+  ================================================= */
+
+  const screenBack =
+  new THREE.Mesh(
+
+    new THREE.BoxGeometry(
+      4.35,
+      2.55,
+      .16
+    ),
+
+    silverMaterial
+
+  );
+
+
+  screenBack.position.y =
+  1.27;
+
+
+  screenBack.castShadow =
+  true;
+
+
+  screenGroup.add(
+    screenBack
+  );
+
+
+ /* =================================================
+   DISPLAY — SS COMPUTER SERVICE SCREEN
+===================================================== */
+
+/* Create a high-resolution screen canvas */
+const screenCanvas = document.createElement("canvas");
+
+screenCanvas.width = 1024;
+screenCanvas.height = 560;
+
+const screenCtx = screenCanvas.getContext("2d");
+
+
+/* ---------- BACKGROUND ---------- */
+
+const screenGradient =
+screenCtx.createLinearGradient(
+  0,
+  0,
+  1024,
+  560
+);
+
+screenGradient.addColorStop(
+  0,
+  "#020817"
+);
+
+screenGradient.addColorStop(
+  0.45,
+  "#071f42"
+);
+
+screenGradient.addColorStop(
+  1,
+  "#03111f"
+);
+
+screenCtx.fillStyle =
+screenGradient;
+
+screenCtx.fillRect(
+  0,
+  0,
+  1024,
+  560
+);
+
+
+/* ---------- BLUE GLOW ---------- */
+
+const glow =
+screenCtx.createRadialGradient(
+  512,
+  280,
+  30,
+  512,
+  280,
+  430
+);
+
+glow.addColorStop(
+  0,
+  "rgba(14,165,233,.35)"
+);
+
+glow.addColorStop(
+  .45,
+  "rgba(14,165,233,.12)"
+);
+
+glow.addColorStop(
+  1,
+  "rgba(14,165,233,0)"
+);
+
+screenCtx.fillStyle =
+glow;
+
+screenCtx.fillRect(
+  0,
+  0,
+  1024,
+  560
+);
+
+
+/* ---------- TECH GRID ---------- */
+
+screenCtx.strokeStyle =
+"rgba(56,189,248,.10)";
+
+screenCtx.lineWidth = 1;
+
+for(let x = 0; x < 1024; x += 42){
+
+  screenCtx.beginPath();
+
+  screenCtx.moveTo(
+    x,
+    0
+  );
+
+  screenCtx.lineTo(
+    x,
+    560
+  );
+
+  screenCtx.stroke();
+
+}
+
+for(let y = 0; y < 560; y += 42){
+
+  screenCtx.beginPath();
+
+  screenCtx.moveTo(
+    0,
+    y
+  );
+
+  screenCtx.lineTo(
+    1024,
+    y
+  );
+
+  screenCtx.stroke();
+
+}
+
+
+/* ---------- CENTRAL LOGO ---------- */
+
+const logoX = 512;
+const logoY = 205;
+
+
+/* glowing circle */
+
+screenCtx.beginPath();
+
+screenCtx.arc(
+  logoX,
+  logoY,
+  58,
+  0,
+  Math.PI * 2
+);
+
+screenCtx.fillStyle =
+"rgba(14,165,233,.15)";
+
+screenCtx.shadowColor =
+"#0ea5e9";
+
+screenCtx.shadowBlur =
+35;
+
+screenCtx.fill();
+
+screenCtx.shadowBlur = 0;
+
+
+/* SS */
+
+screenCtx.font =
+"900 48px Arial";
+
+screenCtx.textAlign =
+"center";
+
+screenCtx.textBaseline =
+"middle";
+
+screenCtx.fillStyle =
+"#ffffff";
+
+screenCtx.fillText(
+  "SS",
+  logoX,
+  logoY
+);
+
+
+/* ---------- MAIN BRAND NAME ---------- */
+
+screenCtx.font =
+"900 55px Arial";
+
+screenCtx.fillStyle =
+"#ffffff";
+
+screenCtx.shadowColor =
+"#0ea5e9";
+
+screenCtx.shadowBlur =
+18;
+
+screenCtx.fillText(
+  "SS COMPUTER SERVICE",
+  512,
+  320
+);
+
+screenCtx.shadowBlur = 0;
+
+
+/* ---------- TAGLINE ---------- */
+
+screenCtx.font =
+"700 30px Arial";
+
+screenCtx.fillStyle =
+"#38bdf8";
+
+screenCtx.fillText(
+  "ONLINE & OFFLINE",
+  512,
+  370
+);
+
+
+/* ---------- TECH STATUS ---------- */
+
+screenCtx.font =
+"600 17px Arial";
+
+screenCtx.fillStyle =
+"#94a3b8";
+
+screenCtx.fillText(
+  "COMPUTER  •  LAPTOP  •  SOFTWARE  •  HARDWARE",
+  512,
+  420
+);
+
+
+/* ---------- STATUS LINE ---------- */
+
+screenCtx.fillStyle =
+"#22c55e";
+
+screenCtx.beginPath();
+
+screenCtx.arc(
+  430,
+  468,
+  6,
+  0,
+  Math.PI * 2
+);
+
+screenCtx.fill();
+
+
+screenCtx.font =
+"600 16px Arial";
+
+screenCtx.fillText(
+  "SYSTEM SUPPORT ONLINE",
+  450,
+  474
+);
+
+
+/* ---------- BOTTOM TECH LINE ---------- */
+
+screenCtx.strokeStyle =
+"rgba(56,189,248,.65)";
+
+screenCtx.lineWidth = 2;
+
+screenCtx.beginPath();
+
+screenCtx.moveTo(
+  220,
+  505
+);
+
+screenCtx.lineTo(
+  804,
+  505
+);
+
+screenCtx.stroke();
+
+
+/* ---------- TEXTURE ---------- */
+
+const screenTexture =
+new THREE.CanvasTexture(
+  screenCanvas
+);
+
+screenTexture.colorSpace =
+THREE.SRGBColorSpace;
+
+screenTexture.anisotropy =
+renderer.capabilities.getMaxAnisotropy();
+
+
+/* ---------- DISPLAY MATERIAL ---------- */
+
+const displayMaterial =
+new THREE.MeshStandardMaterial({
+
+  map:screenTexture,
+
+  emissiveMap:screenTexture,
+
+  emissive:0x0ea5e9,
+
+  emissiveIntensity:.38,
+
+  metalness:.1,
+
+  roughness:.18
+
+});
+
+
+/* ---------- DISPLAY MESH ---------- */
+
+const display =
+new THREE.Mesh(
+
+  new THREE.BoxGeometry(
+    3.92,
+    2.13,
+    .035
+  ),
+
+  displayMaterial
+
+);
+
+
+display.position.set(
+  0,
+  1.27,
+  .10
+);
+
+
+screenGroup.add(
+  display
+);
+
+  /* =================================================
+     SCREEN INNER GLOW
+  ================================================= */
+
+  const screenGlow =
+  new THREE.Mesh(
+
+    new THREE.PlaneGeometry(
+      3.65,
+      1.85
+    ),
+
+    new THREE.MeshBasicMaterial({
+
+      color:0x0ea5e9,
+
+      transparent:true,
+
+      opacity:.12
+
+    })
+
+  );
+
+
+  screenGlow.position.set(
+    0,
+    1.27,
+    .125
+  );
+
+
+  screenGroup.add(
+    screenGlow
+  );
+
+
+  /* =================================================
+     SCREEN LINE EFFECTS
+  ================================================= */
+
+  for(let i=0;i<4;i++){
+
+    const line =
+    new THREE.Mesh(
+
+      new THREE.BoxGeometry(
+        1.5 - i*.15,
+        .035,
+        .01
+      ),
+
+      new THREE.MeshBasicMaterial({
+
+        color:0x7dd3fc,
+
+        transparent:true,
+
+        opacity:.55
+
+      })
+
+    );
+
+
+    line.position.set(
+      0,
+      .72 - i*.18,
+      .15
+    );
+
+
+    screenGroup.add(
+      line
+    );
+
+  }
+
+
+  /* =================================================
+     HINGES
+  ================================================= */
+
+  const hingeGeometry =
+  new THREE.CylinderGeometry(
+    .10,
+    .10,
+    .65,
+    20
+  );
+
+
+  for(const x of [-1.55,1.55]){
+
+    const hinge =
+    new THREE.Mesh(
+      hingeGeometry,
+      darkMaterial
+    );
+
+
+    hinge.rotation.z =
+    Math.PI/2;
+
+
+    hinge.position.set(
+      x,
+      .25,
+      -1.27
+    );
+
+
+    laptop.add(
+      hinge
+    );
+
+  }
+
+
+  /* =================================================
+     ANIMATION
+  ================================================= */
+
+  const clock =
+  new THREE.Clock();
+
+
+  let mouseX = 0;
+
+  let mouseY = 0;
+
+
+  window.addEventListener(
+    "mousemove",
+    function(event){
+
+      mouseX =
+      event.clientX /
+      window.innerWidth -
+      .5;
+
+
+      mouseY =
+      event.clientY /
+      window.innerHeight -
+      .5;
+
+    }
+  );
+
+
+  window.addEventListener(
+    "touchmove",
+    function(event){
+
+      if(
+        !event.touches.length
+      ) return;
+
+
+      const touch =
+      event.touches[0];
+
+
+      mouseX =
+      touch.clientX /
+      window.innerWidth -
+      .5;
+
+
+      mouseY =
+      touch.clientY /
+      window.innerHeight -
+      .5;
+
+    },
+    {
+      passive:true
+    }
+  );
+
+
+  function animate(){
+
+    requestAnimationFrame(
+      animate
+    );
+
+
+    const time =
+    clock.getElapsedTime();
+
+
+    /* FLOAT */
+
+    laptop.position.y =
+    -0.25 +
+    Math.sin(
+      time * 1.15
+    ) * .08;
+
+
+    /* CINEMATIC ROTATION */
+
+    const automaticRotation =
+    Math.sin(
+      time * .42
+    ) * .20;
+
+
+    laptop.rotation.y +=
+    (
+      automaticRotation +
+      mouseX * .22 -
+      laptop.rotation.y
+    ) * .035;
+
+
+    /* MOUSE TILT */
+
+    laptop.rotation.x +=
+    (
+      mouseY * .10 -
+      laptop.rotation.x
+    ) * .025;
+
+
+    /* SCREEN GLOW */
+
+    screenGlow.material.opacity =
+    .10 +
+    Math.sin(
+      time * 2
+    ) * .035;
+
+
+    renderer.render(
+      scene,
+      camera
+    );
+
+  }
+
+
+  animate();
+
+
+  /* =================================================
+     RESPONSIVE
+  ================================================= */
+
+  function resize(){
+
+    const width =
+    container.clientWidth;
+
+
+    const height =
+    container.clientHeight;
+
+
+    camera.aspect =
+    width / height;
+
+
+    camera.updateProjectionMatrix();
+
+
+    renderer.setSize(
+      width,
+      height
+    );
+
+  }
+
+
+  window.addEventListener(
+    "resize",
+    resize
+  );
+
+  resize();
+
+}
+
 </script>
 
+
+<!-- =====================================================
+     NORMAL WEBSITE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.getElementById(
+  "year"
+).textContent =
+new Date().getFullYear();
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+const phoneNumber =
+"919502608440";
+
+
+function homeDeliveryMsg(){
+
+  const msg =
+  encodeURIComponent(
+    "Hello, I saw your website.\n" +
+    "I need Home Delivery service in AP/TS.\n" +
+    "Please share details."
+  );
+
+
+  window.open(
+    "https://wa.me/" +
+    phoneNumber +
+    "?text=" +
+    msg,
+    "_blank"
+  );
+
+}
+
+
+/* =====================================================
+   SERVICES MENU
+===================================================== */
+
+const serviceBtn =
+document.getElementById(
+  "servicesMenuBtn"
+);
+
+
+const dropdown =
+document.getElementById(
+  "servicesDropdown"
+);
+
+
+serviceBtn.addEventListener(
+  "click",
+  function(e){
+
+    e.preventDefault();
+
+    e.stopPropagation();
+
+    dropdown.style.display =
+    dropdown.style.display ===
+    "block"
+    ? "none"
+    : "block";
+
+  }
+);
+
+
+dropdown.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    dropdown.style.display =
+    "none";
+
+  }
+);
+
+
+document.addEventListener(
+  "click",
+  function(){
+
+    dropdown.style.display =
+    "none";
+
+  }
+);
+
+
+/* =====================================================
+   BOOKING
+===================================================== */
+
+let selectedBookingItem =
+"";
+
+
+function openBookingPopup(
+  itemName
+){
+
+  selectedBookingItem =
+  itemName;
+
+
+  document.getElementById(
+    "bookingTitle"
+  ).innerText =
+  itemName;
+
+
+  document.getElementById(
+    "bookingPopup"
+  ).style.display =
+  "flex";
+
+}
+
+
+function closeBookingPopup(){
+
+  document.getElementById(
+    "bookingPopup"
+  ).style.display =
+  "none";
+
+}
+
+
+function sendBookingToWhatsApp(){
+
+  const name =
+  document.getElementById(
+    "customerName"
+  ).value.trim();
+
+
+  const model =
+  document.getElementById(
+    "laptopModel"
+  ).value.trim();
+
+
+  const issue =
+  document.getElementById(
+    "issueDesc"
+  ).value.trim();
+
+
+  if(name === ""){
+
+    alert(
+      "Please enter your name"
+    );
+
+    return;
+
+  }
+
+
+  const message =
+  encodeURIComponent(
+
+    "New Enquiry from Website\n\n" +
+
+    "Service/Product: " +
+    selectedBookingItem +
+    "\n" +
+
+    "Name: " +
+    name +
+    "\n" +
+
+    "Laptop/Desktop Model: " +
+    model +
+    "\n" +
+
+    "Issue Description: " +
+    issue
+
+  );
+
+
+  window.open(
+
+    "https://wa.me/" +
+    phoneNumber +
+    "?text=" +
+    message,
+
+    "_blank"
+
+  );
+
+}
+
+
+/* =====================================================
+   SERVICES LIST
+===================================================== */
+
+const servicesList = [
+
+  {
+    icon:"💻",
+    name:"Laptop Service"
+  },
+
+  {
+    icon:"🖥️",
+    name:"Desktop Service"
+  },
+
+  {
+    icon:"🖨️",
+    name:"Printer Setup"
+  },
+
+  {
+    icon:"📷",
+    name:"CCTV Installation"
+  },
+
+  {
+    icon:"🚪",
+    name:"Doorstep Inspection"
+  },
+
+  {
+    icon:"💾",
+    name:"Data Recovery"
+  },
+
+  {
+    icon:"🔐",
+    name:"Laptop Password Recovery"
+  },
+
+  {
+    icon:"📱",
+    name:"Mobile Password Recovery"
+  },
+
+  {
+    icon:"📅",
+    name:"AMC (1 Year)"
+  },
+
+  {
+    icon:"🪟",
+    name:"Software Installation"
+  }
+
+];
+
+
+document.getElementById(
+  "serviceTiles"
+).innerHTML =
+
+servicesList.map(
+  s => `
+
+  <div
+    class="service-tile"
+    onclick="openBookingPopup('${s.name}')">
+
+    <div class="tile-icon">
+      ${s.icon}
+    </div>
+
+    <h3>
+      ${s.name}
+    </h3>
+
+    <span>
+      Click to book
+    </span>
+
+  </div>
+
+  `
+).join("");
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+const products = [
+
+  {name:"Laptop Screen",img:"laptop-screen.jpg"},
+  {name:"Laptop Keyboard",img:"keyboard.jpg"},
+  {name:"Laptop Charger",img:"laptop.jpg"},
+  {name:"MacBook Charger",img:"mac-charger.jpg"},
+  {name:"Laptop Battery",img:"battery.jpg"},
+  {name:"Laptop Memory",img:"ram.jpg"},
+  {name:"Motherboard Repair",img:"motherboard.jpg"},
+  {name:"Laptop Fan",img:"fan.jpg"},
+  {name:"Laptop Hard Disk",img:"hdd.jpg"},
+  {name:"Laptop Speaker",img:"speaker.jpg"},
+  {name:"Laptop Hinge",img:"hinge.jpg"},
+  {name:"Power Button Repair",img:"power.jpg"},
+  {name:"Liquid Spill Repair",img:"water.jpg"},
+  {name:"Battery Not Charging",img:"battery-issue.jpg"},
+  {name:"Charger Not Working",img:"charger-issue.jpg"},
+  {name:"Memory Upgrade",img:"ram-upgrade.jpg"},
+  {name:"HDD & SSD Upgrade",img:"hdd-upgrade.jpg"},
+  {name:"Not Powering On",img:"no-power.jpg"},
+  {name:"Base Repair",img:"base.jpg"},
+  {name:"Laptop Body Change",img:"body.jpg"},
+  {name:"General Service",img:"service.jpg"},
+  {name:"Hard Disk Failure",img:"hdd-fail.jpg"},
+  {name:"Overheating",img:"heat.jpg"},
+  {name:"Desktop CPU",img:"cpu.jpg"},
+  {name:"Desktop Monitor",img:"monitor.jpg"},
+  {name:"Desktop Keyboard",img:"keyboard1.jpg"},
+  {name:"Desktop Mouse",img:"mouse.jpg"},
+  {name:"SMPS (Power Supply)",img:"smps.jpg"},
+  {name:"Graphics Card",img:"gpu.jpg"},
+  {name:"Motherboard (Desktop)",img:"motherboard1.jpg"},
+  {name:"Desktop RAM",img:"ram1.jpg"},
+  {name:"Desktop Hard Disk",img:"hdd1.jpg"},
+  {name:"SSD for Desktop",img:"ssd1.jpg"},
+  {name:"Cabinet / Case",img:"cabinet.jpg"},
+  {name:"Cooling Fan",img:"fan1.jpg"},
+  {name:"Processor",img:"pro.jpg"}
+
+];
+
+
+const productSlider =
+document.getElementById(
+  "productSlider"
+);
+
+
+productSlider.innerHTML =
+
+products.map(
+  p => `
+
+  <div
+    class="product-card"
+    onclick="openProductPopup(
+      '${p.name}',
+      './images/${p.img}'
+    )">
+
+    <img
+      src="./images/${p.img}"
+      onerror="
+        this.src='./images/default.jpg'
+      "
+      alt="${p.name}">
+
+    <h3>
+      ${p.name}
+    </h3>
+
+    <small>
+      Click to enquire
+    </small>
+
+  </div>
+
+  `
+).join("");
+
+
+/* =====================================================
+   PRODUCT AUTO SCROLL
+===================================================== */
+
+let productAutoScroll;
+
+
+function startProductAutoScroll(){
+
+  clearInterval(
+    productAutoScroll
+  );
+
+
+  productAutoScroll =
+  setInterval(
+
+    () => {
+
+      productSlider.scrollLeft += 1;
+
+
+      if(
+        productSlider.scrollLeft >=
+        productSlider.scrollWidth -
+        productSlider.clientWidth
+      ){
+
+        productSlider.scrollLeft = 0;
+
+      }
+
+    },
+
+    20
+
+  );
+
+}
+
+
+function stopProductAutoScroll(){
+
+  clearInterval(
+    productAutoScroll
+  );
+
+}
+
+
+productSlider.addEventListener(
+  "mouseenter",
+  stopProductAutoScroll
+);
+
+
+productSlider.addEventListener(
+  "mouseleave",
+  startProductAutoScroll
+);
+
+
+productSlider.addEventListener(
+  "touchstart",
+  stopProductAutoScroll
+);
+
+
+productSlider.addEventListener(
+  "touchend",
+  startProductAutoScroll
+);
+
+
+startProductAutoScroll();
+
+
+/* =====================================================
+   PRODUCT DRAG
+===================================================== */
+
+let isDragging =
+false;
+
+
+let dragStartX =
+0;
+
+
+let dragScrollLeft =
+0;
+
+
+productSlider.addEventListener(
+  "mousedown",
+  e => {
+
+    isDragging =
+    true;
+
+
+    dragStartX =
+    e.pageX -
+    productSlider.offsetLeft;
+
+
+    dragScrollLeft =
+    productSlider.scrollLeft;
+
+
+    stopProductAutoScroll();
+
+  }
+);
+
+
+productSlider.addEventListener(
+  "mouseup",
+  () => {
+
+    isDragging =
+    false;
+
+    startProductAutoScroll();
+
+  }
+);
+
+
+productSlider.addEventListener(
+  "mouseleave",
+  () => {
+
+    isDragging =
+    false;
+
+    startProductAutoScroll();
+
+  }
+);
+
+
+productSlider.addEventListener(
+  "mousemove",
+  e => {
+
+    if(!isDragging)
+      return;
+
+
+    e.preventDefault();
+
+
+    const x =
+    e.pageX -
+    productSlider.offsetLeft;
+
+
+    const walk =
+    (x - dragStartX) * 2;
+
+
+    productSlider.scrollLeft =
+    dragScrollLeft -
+    walk;
+
+  }
+);
+
+
+/* =====================================================
+   PRODUCT POPUP
+===================================================== */
+
+let selectedProductName =
+"";
+
+
+function openProductPopup(
+  name,
+  img
+){
+
+  selectedProductName =
+  name;
+
+
+  document.getElementById(
+    "popupProductName"
+  ).innerText =
+  name;
+
+
+  document.getElementById(
+    "popupProductImg"
+  ).src =
+  img;
+
+
+  document.getElementById(
+    "productPopup"
+  ).style.display =
+  "flex";
+
+}
+
+
+function closeProductPopup(){
+
+  document.getElementById(
+    "productPopup"
+  ).style.display =
+  "none";
+
+}
+
+
+function sendProductToWhatsApp(){
+
+  const message =
+  encodeURIComponent(
+
+    "Hello SS Computer Services,\n\n" +
+
+    "I am interested in this product/service:\n" +
+
+    selectedProductName +
+
+    "\n\nPlease share availability and details."
+
+  );
+
+
+  window.open(
+
+    "https://wa.me/" +
+    phoneNumber +
+    "?text=" +
+    message,
+
+    "_blank"
+
+  );
+
+}
+
+
+/* =====================================================
+   LAPTOPS & PCs PAGE TRANSITION
+===================================================== */
+
+(function(){
+
+  const loader =
+  document.getElementById(
+    "laptopPageLoader"
+  );
+
+
+  if(!loader)
+    return;
+
+
+  function showLaptopLoader(
+    url
+  ){
+
+    loader.classList.add(
+      "show"
+    );
+
+
+    loader.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    setTimeout(
+      function(){
+
+        window.location.href =
+        url;
+
+      },
+      1000
+    );
+
+  }
+
+
+  document.addEventListener(
+    "click",
+    function(event){
+
+      const link =
+      event.target.closest(
+        "a"
+      );
+
+
+      if(!link)
+        return;
+
+
+      const href =
+      link.getAttribute(
+        "href"
+      );
+
+
+      if(!href)
+        return;
+
+
+      if(
+        !href
+        .toLowerCase()
+        .includes(
+          "laptops-pcs.html"
+        )
+      )
+        return;
+
+
+      if(
+
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        event.altKey ||
+        link.target === "_blank"
+
+      ){
+
+        return;
+
+      }
+
+
+      event.preventDefault();
+
+
+      const destination =
+      link.href;
+
+
+      showLaptopLoader(
+        destination
+      );
+
+    }
+  );
+
+})();
+
+</script>
+
+
 </body>
+
 </html>
