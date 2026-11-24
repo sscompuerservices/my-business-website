@@ -683,109 +683,7 @@ nav a{
 }
 
 .product-popup-card p{
-  color:var(--muted);
-  line-height:1.5;
-}
 
-.product-close{
-  position:absolute;
-  right:12px;
-  top:10px;
-  border:none;
-  background:#fee2e2;
-  color:#dc2626;
-  border-radius:50%;
-  width:32px;
-  height:32px;
-  cursor:pointer;
-}
-
-/* LAPTOP SALE */
-
-.laptops-sale-nav{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-left:18px;
-  padding:9px 14px;
-  background:linear-gradient(135deg,#1769e0,#0ea5e9);
-  color:#fff!important;
-  border-radius:8px;
-  font-weight:800!important;
-  text-decoration:none;
-  box-shadow:0 4px 12px rgba(23,105,224,.30);
-  transition:.3s;
-  animation:laptopSalePulse 2.2s infinite;
-}
-
-.laptops-sale-nav:hover{
-  transform:translateY(-2px) scale(1.03);
-  box-shadow:0 6px 18px rgba(23,105,224,.45);
-}
-
-@keyframes laptopSalePulse{
-  0%,100%{
-    box-shadow:0 4px 12px rgba(23,105,224,.30);
-  }
-  50%{
-    box-shadow:
-      0 0 0 5px rgba(14,165,233,.15),
-      0 6px 20px rgba(23,105,224,.45);
-  }
-}
-
-/* FOOTER */
-
-.footer{
-  padding:22px 64px;
-  background:linear-gradient(90deg,#ff9900,#ffcc33);
-  color:#fff;
-  margin-top:40px;
-  border-top-left-radius:18px;
-  border-top-right-radius:18px;
-  box-shadow:0 -3px 15px rgba(255,140,0,.3);
-}
-
-.footer-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-}
-
-/* LAPTOP PAGE LOADER */
-
-.laptop-page-loader{
-  position:fixed;
-  inset:0;
-  z-index:2147483647;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle at 50% 38%,rgba(37,99,235,.16),transparent 32%),
-    linear-gradient(135deg,#071426,#0b1d38 55%,#020812);
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-  transition:opacity .25s ease,visibility .25s ease;
-}
-
-.laptop-page-loader.show{
-  opacity:1;
-  visibility:visible;
-  pointer-events:auto;
-}
-
-.laptop-loader-wrap{
-  width:min(420px,90vw);
-  text-align:center;
-  color:#fff;
-}
-
-.animated-laptop{
-  position:relative;
-  width:230px;
   height:170px;
   margin:0 auto 28px;
   perspective:700px;
@@ -1113,6 +1011,84 @@ nav a{
     width:100%;
     max-height:320px;
   }
+}.gallery-section {
+    padding: 35px 20px;
+}
+
+.gallery-owner-login {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.gallery-owner-login button,
+#galleryOwnerControls button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #0284c7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#galleryLoginForm {
+    max-width: 350px;
+    margin: 15px auto;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 12px;
+}
+
+#galleryLoginForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#galleryOwnerControls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#galleryUploadStatus {
+    color: #0284c7;
+    font-size: 14px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -1453,76 +1429,51 @@ nav a{
 
 </section>
 
-<!-- GALLERY -->
 <section id="gallery" class="gallery-section">
 
   <div class="section-title">
-
     <h2>Our Work Gallery</h2>
-
-    <p>
-      Real service work, repairs and computer solutions
-    </p>
-
+    <p>Our computer repair and service work</p>
   </div>
 
-  <div class="vertical-gallery">
+  <!-- OWNER LOGIN -->
+  <div class="gallery-owner-login">
+    <button type="button" id="galleryLoginToggle">
+      Owner Login
+    </button>
 
-    <div class="vertical-gallery-track">
+    <form id="galleryLoginForm" style="display:none;">
+      <input type="email" id="galleryEmail"
+             placeholder="Owner email" required>
 
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/3xsQ5vrT/work0-jpg.jpg" alt="Work 1">
-      </div>
+      <input type="password" id="galleryPassword"
+             placeholder="Password" required>
 
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/Kz56MpPv/work1-jpg.jpg" alt="Work 2">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg" alt="Work 3">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/90nNd6rX/work3-jpg.jpg" alt="Work 4">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/x1HFmFYX/work4-jpg.jpg" alt="Work 5">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg" alt="Work 6">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/L8zN5YBX/work6-jpg.jpg" alt="Work 7">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/dtCzR0jY/work7-jpg.jpg" alt="Work 8">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/pTySmVLk/work8-jpg.jpg" alt="Work 9">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/qM25h5pn/work9-jpg.jpg" alt="Work 10">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/NF5djdbS/work5-jpg.jpg" alt="Work 11">
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/024LDwwh/work2-jpg.jpg" alt="Work 12">
-      </div>
-
-    </div>
+      <button type="submit">Login</button>
+      <button type="button" id="galleryLogout"
+              style="display:none;">Logout</button>
+    </form>
   </div>
+
+  <!-- OWNER-ONLY UPLOAD CONTROLS -->
+  <div id="galleryOwnerControls" style="display:none;">
+    <input type="file"
+           id="galleryPhotoInput"
+           accept="image/jpeg,image/png,image/webp"
+           multiple
+           hidden>
+
+    <button type="button" id="galleryAddPhotos">
+      + Add Photos
+    </button>
+
+    <p id="galleryUploadStatus"></p>
+  </div>
+
+  <!-- ALL VISITORS CAN SEE THIS GALLERY -->
+  <div id="galleryGrid" class="gallery-grid"></div>
 
 </section>
-
 </main>
 
 <!-- FOOTER -->
@@ -2683,8 +2634,248 @@ showLaptopLoader(destination);
 );
 
 })();
+</script>
+<script type="module">
+import { createClient } from
+"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+/* YOUR SUPABASE DETAILS */
+const SUPABASE_URL = "https://exhmdkcxmlnpmalzzmfj.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_KgCl5JFODMKCfLG8Jp1r6A_2643iAhC";
+
+/* YOUR OWNER USER ID */
+const OWNER_UID = "f6b2e560-f767-4034-9fd0-1f5f7565b405";
+
+const BUCKET = "gallery";
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+/* ORIGINAL 12 PHOTOS - PRESERVED */
+const originalPhotos = [
+"https://i.postimg.cc/3xsQ5vrT/work0-jpg.jpg",
+"https://i.postimg.cc/Kz56MpPv/work1-jpg.jpg",
+"https://i.postimg.cc/024LDwwh/work2-jpg.jpg",
+"https://i.postimg.cc/90nNd6rX/work3-jpg.jpg",
+"https://i.postimg.cc/x1HFmFYX/work4-jpg.jpg",
+"https://i.postimg.cc/NF5djdbS/work5-jpg.jpg",
+"https://i.postimg.cc/L8zN5YBX/work6-jpg.jpg",
+"https://i.postimg.cc/dtCzR0jY/work7-jpg.jpg",
+"https://i.postimg.cc/pTySmVLk/work8-jpg.jpg",
+"https://i.postimg.cc/qM25h5pn/work9-jpg.jpg",
+"https://i.postimg.cc/NF5djdbS/work5-jpg.jpg",
+"https://i.postimg.cc/024LDwwh/work2-jpg.jpg"
+];
+
+const grid = document.getElementById("galleryGrid");
+const ownerControls = document.getElementById("galleryOwnerControls");
+const loginForm = document.getElementById("galleryLoginForm");
+const loginToggle = document.getElementById("galleryLoginToggle");
+const logoutButton = document.getElementById("galleryLogout");
+const photoInput = document.getElementById("galleryPhotoInput");
+const status = document.getElementById("galleryUploadStatus");
+
+let isOwner = false;
+
+/* DISPLAY ORIGINAL PHOTOS */
+function addImage(url, storagePath = null) {
+    const card = document.createElement("div");
+    card.className = "gallery-card";
+
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = "SS Computer Services work";
+    img.loading = "lazy";
+    card.appendChild(img);
+
+    if (isOwner && storagePath) {
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "gallery-delete";
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", async () => {
+            if (!confirm("Are you sure you want to delete this photo?")) return;
+
+            const { error } = await supabase.storage
+                .from(BUCKET)
+                .remove([storagePath]);
+
+            if (error) {
+                status.textContent = "Delete failed: " + error.message;
+                return;
+            }
+
+            await loadGallery();
+            status.textContent = "Photo deleted.";
+        });
+
+        card.appendChild(deleteButton);
+    }
+
+    grid.appendChild(card);
+}
+
+/* LOAD PUBLIC GALLERY */
+async function loadGallery() {
+    grid.replaceChildren();
+
+    originalPhotos.forEach(url => addImage(url));
+
+    const { data, error } = await supabase.storage
+        .from(BUCKET)
+        .list("", {
+            limit: 200,
+            sortBy: { column: "created_at", order: "desc" }
+        });
+
+    if (error) {
+        status.textContent = "Could not load uploaded photos: " + error.message;
+        return;
+    }
+
+    (data || []).forEach(file => {
+        if (!file.name || file.name.startsWith(".")) return;
+
+        const { data: publicData } = supabase.storage
+            .from(BUCKET)
+            .getPublicUrl(file.name);
+
+        addImage(publicData.publicUrl, file.name);
+    });
+}
+
+/* CHECK OWNER ACCESS */
+async function checkOwner(session) {
+    isOwner = !!(
+        session &&
+        session.user &&
+        session.user.id === OWNER_UID
+    );
+
+    ownerControls.style.display = isOwner ? "block" : "none";
+    logoutButton.style.display = isOwner ? "inline-block" : "none";
+    loginForm.querySelector('[type="submit"]').style.display =
+        isOwner ? "none" : "inline-block";
+
+    loginToggle.textContent = isOwner ? "Owner Logged In" : "Owner Login";
+
+    await loadGallery();
+}
+
+/* LOGIN PANEL */
+loginToggle.addEventListener("click", () => {
+    loginForm.style.display =
+        loginForm.style.display === "none" ? "block" : "none";
+});
+
+/* OWNER LOGIN */
+loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("galleryEmail").value.trim();
+    const password = document.getElementById("galleryPassword").value;
+
+    status.textContent = "Checking login...";
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+    });
+
+    if (error) {
+        status.textContent = "Login failed: " + error.message;
+        return;
+    }
+
+    if (data.user.id !== OWNER_UID) {
+        await supabase.auth.signOut();
+        status.textContent = "Access denied. Owner account only.";
+        return;
+    }
+
+    document.getElementById("galleryPassword").value = "";
+    loginForm.style.display = "none";
+    status.textContent = "Owner login successful.";
+
+    await checkOwner(data.session);
+});
+
+/* OWNER LOGOUT */
+logoutButton.addEventListener("click", async () => {
+    await supabase.auth.signOut();
+    await checkOwner(null);
+    status.textContent = "You have logged out.";
+});
+
+/* OPEN LOCAL FILE STORAGE */
+document.getElementById("galleryAddPhotos")
+.addEventListener("click", () => {
+    if (!isOwner) {
+        status.textContent = "Owner login required.";
+        return;
+    }
+
+    photoInput.click();
+});
+
+/* UPLOAD MULTIPLE PHOTOS */
+photoInput.addEventListener("change", async () => {
+    if (!isOwner) return;
+
+    const files = Array.from(photoInput.files || []);
+    if (!files.length) return;
+
+    const allowed = ["image/jpeg", "image/png", "image/webp"];
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+
+        if (!allowed.includes(file.type)) {
+            status.textContent = "Only JPG, PNG and WebP are allowed.";
+            continue;
+        }
+
+        if (file.size > 8 * 1024 * 1024) {
+            status.textContent = file.name + " is larger than 8 MB.";
+            continue;
+        }
+
+        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+        const path = Date.now() + "-" + crypto.randomUUID() + "-" + safeName;
+
+        status.textContent =
+            "Uploading photo " + (i + 1) + " of " + files.length + "...";
+
+        const { error } = await supabase.storage
+            .from(BUCKET)
+            .upload(path, file, {
+                contentType: file.type,
+                cacheControl: "3600",
+                upsert: false
+            });
+
+        if (error) {
+            status.textContent = "Upload failed: " + error.message;
+            photoInput.value = "";
+            return;
+        }
+    }
+
+    photoInput.value = "";
+    await loadGallery();
+    status.textContent = "All selected photos uploaded successfully!";
+});
+
+/* INITIAL SESSION */
+const { data: sessionData } = await supabase.auth.getSession();
+await checkOwner(sessionData.session);
+
+/* REFRESH OWNER ACCESS AFTER AUTH CHANGES */
+supabase.auth.onAuthStateChange((event, session) => {
+    if (event === "SIGNED_IN" || event === "SIGNED_OUT" ||
+        event === "TOKEN_REFRESHED") {
+        setTimeout(() => checkOwner(session), 0);
+    }
+});
 
 </script>
-
 </body>
 </html>
